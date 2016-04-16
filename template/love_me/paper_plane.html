@@ -2,7 +2,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>纸飞机</title>
+
+    
+    <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/jslib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <script type="text/javascript" src="/jslib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 </head>
@@ -16,10 +21,24 @@
         <div id="images">
             <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">
         </div>
-        <div role="form">
-            <label for="how_much_love" > 😍的程度</label>
+        <div style="margin: 20px 0 0 0">
+            <span for="how_much_love" > 😍 的程度</span>
             <div >
-                <input id="how_much_love" type="password" class="form-control" placeholder="来点甜言蜜语吧 ~ ">
+                <input id="how_much_love" type="text" class="form-control" placeholder="来点甜言蜜语吧 ~ ">
+            </div>
+        </div>
+
+        <div style="margin: 20px 0 0 0">
+            <label for="when_begin_love"> 从什么时候开始滴 </label>
+            <div >
+                <input id="when_begin_love" type="text" class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <div style="margin: 20px 0 0 0">
+            <label for="want_to_say" > 你想对我说什么 </label>
+            <div >
+                <input id="want_to_say" type="text" class="form-control" placeholder="">
             </div>
         </div>
     </div>
