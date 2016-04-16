@@ -5,6 +5,10 @@
 
 Update
 ----------------------------
+
+cd /data/project/paper_plane/
+git fetch --all
+git reset --hard origin/master
 service apache2 restart
 
 
