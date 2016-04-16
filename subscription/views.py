@@ -1,13 +1,37 @@
 # -*- coding: utf-8 -*-
+
 import json
+import hashlib
+from lxml import etree
+from django.utils.encoding import smart_str
+from django.http import HttpResponse
 
-from django.shortcuts import HttpResponse
-from k_util.django_util import get_request_body
-from k_util.http_util import post_request
+
+WEIXIN_TOKEN = 'masterkang-token'
 
 
-def reply_to_token(request):
-    # token_url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx03e221e02725c914&secret=f6cf7cbe34a977276bd74f3c6a60af61'
-    # resp = post_request(token_url, method='GET')
-    token = 'paper_plane_token'
-    return HttpResponse(token)
+def weixin_entry(request):
+    """
+    所有的消息都会先进入这个函数进行处理，函数包含两个功能，
+    微信接入验证是GET方法，
+    微信正常的收发消息是用POST方法。
+    """
+    if request.method == "GET":
+        signature = request.GET.get("signature", None)
+        timestamp = request.GET.get("timestamp", None)
+        nonce = request.GET.get("nonce", None)
+        echostr = request.GET.get("echostr", None)
+        token = WEIXIN_TOKEN
+        tmp_list = [token, timestamp, nonce]
+        tmp_list.sort()
+        tmp_str = "%s%s%s" % tuple(tmp_list)
+        tmp_str = hashlib.sha1(tmp_str).hexdigest()
+        if tmp_str == signature:
+            return HttpResponse(echostr)
+        else:
+            return HttpResponse("weixin  index")
+    else:
+        xml_str = smart_str(request.body)
+        request_xml = etree.fromstring(xml_str)
+        # response_xml = auto_reply_main(request_xml)# 修改这里
+        return HttpResponse('')

@@ -8,5 +8,5 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^token/$', views.reply_to_token),
+    url(r'^weixin_entry/$', views.weixin_entry),
 )

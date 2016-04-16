@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import sys
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -135,7 +135,7 @@ STATIC_URL = '/static/'
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
@@ -146,26 +146,26 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
-            'formatter': 'simple',
+            'formatter': 'simple'
         },
     },
     'loggers': {
         'django': {
             'handlers': ['console'],
             'propagate': True,
-            'level': 'INFO',
         },
         'django.request': {
-            'handlers': ['console'],
+            'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': False,
         },
-        # 'django.db': {
-        #     'handlers': ['console'],
-        #     'level': 'DEBUG',
-        #     'propagate': False,
-        # },
+        'paper_plane': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'filters': ['special']
+        }
     }
 }
