@@ -147,7 +147,6 @@ LOGGING = {
     'handlers': {
         'console': {
             'level': 'INFO',
-            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple'
         },
@@ -158,14 +157,13 @@ LOGGING = {
             'propagate': True,
         },
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['console'],
             'level': 'ERROR',
             'propagate': False,
         },
         'paper_plane': {
             'handlers': ['console'],
-            'level': 'INFO',
-            'filters': ['special']
+            'level': 'ERROR',
         }
     }
 }

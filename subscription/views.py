@@ -5,7 +5,7 @@ import hashlib
 from lxml import etree
 from django.utils.encoding import smart_str
 from django.http import HttpResponse
-
+from k_util.k_logger import logger
 
 WEIXIN_TOKEN = 'masterkang-token'
 
@@ -17,6 +17,7 @@ def weixin_entry(request):
     微信正常的收发消息是用POST方法。
     """
     if request.method == "GET":
+        logger.info('IN weixin_entry ==================')
         signature = request.GET.get("signature", None)
         timestamp = request.GET.get("timestamp", None)
         nonce = request.GET.get("nonce", None)
