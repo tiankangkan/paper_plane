@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>纸飞机</title>
 
-    
+
     <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/jslib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
@@ -15,33 +15,56 @@
 <body>
     <div style="max-width: 1024px; margin-left: auto; margin-right: auto">
         <div id="div_title">
-            <h1 style="font-size: 50px"> 你觉得宝宝爱你吗 </h1>
+            <h1> 你觉得宝宝爱你吗 </h1>
             <hr style="width: 90%; margin-left: 10%">
         </div>
         <div id="images">
             <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">
         </div>
-        <div style="margin: 20px 0 0 0">
-            <span for="how_much_love" > 😍 的程度</span>
-            <div >
-                <input id="how_much_love" type="text" class="form-control" placeholder="来点甜言蜜语吧 ~ ">
+
+        <div style="width: 94%; margin-left: 3%">
+            <div style="margin: 20px 0 0 0">
+                <span for="how_much_love"> 😍 的程度</span>
+                <div >
+                    <input id="how_much_love" type="text" class="form-control" placeholder="来点甜言蜜语吧 ~ ">
+                </div>
+            </div>
+
+            <div style="margin: 20px 0 0 0">
+                <label for="when_begin_love"> 从什么时候开始滴 </label>
+                <div >
+                    <input id="when_begin_love" type="text" class="form-control" placeholder="">
+                </div>
+            </div>
+
+            <div style="margin: 20px 0 0 0">
+                <label for="want_to_say" > 你想对我说什么 </label>
+                <div >
+                    <textarea id="want_to_say"  class="form-control" placeholder=""> </textarea>
+                </div>
+            </div>
+
+            <div id="div_take_show" style="margin: 20px 0 0 0">
+                <label for="take_show" > 是时候表现一下啦 </label>
+                <div >
+                    <span id="take_show"  class="form-control"> 是到了你表现的时候啦, 戳链接哈: <a target="_blank" href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.2.5Nmq6k&id=522192378143&skuId=3132061310966&areaId=440000&cat_id=2&rn=604a048a51512c04b4f94dcc655251b8&user_id=704320142&is_b=1"> 点这里 </a>  </span>
+                </div>
+            </div>
+
+            <div id="div_is_read_msg" style="margin: 20px 0 0 0">
+                <input type="checkbox" for="is_read_msg" >  </input>
+                <span id="is_read_msg" > 小的已阅 </span>
             </div>
         </div>
 
-        <div style="margin: 20px 0 0 0">
-            <label for="when_begin_love"> 从什么时候开始滴 </label>
-            <div >
-                <input id="when_begin_love" type="text" class="form-control" placeholder="">
-            </div>
-        </div>
 
-        <div style="margin: 20px 0 0 0">
-            <label for="want_to_say" > 你想对我说什么 </label>
-            <div >
-                <input id="want_to_say" type="text" class="form-control" placeholder="">
-            </div>
-        </div>
     </div>
+
+<script>
+    $id_take_show = $('#div_take_show');
+{#    $id_take_show.hide();#}
+
+</script>
 
 </body>
 
