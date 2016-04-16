@@ -4,11 +4,13 @@ import json
 import hashlib
 from django.utils.encoding import smart_str
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from k_util.k_logger import logger
 
 WEIXIN_TOKEN = 'masterkang'
 
 
+@csrf_exempt
 def weixin_entry(request):
     """
     所有的消息都会先进入这个函数进行处理，函数包含两个功能，
