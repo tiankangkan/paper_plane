@@ -2,12 +2,11 @@
 
 import json
 import hashlib
-from lxml import etree
 from django.utils.encoding import smart_str
 from django.http import HttpResponse
 from k_util.k_logger import logger
 
-WEIXIN_TOKEN = 'masterkang-token'
+WEIXIN_TOKEN = 'masterkang'
 
 
 def weixin_entry(request):
@@ -33,6 +32,6 @@ def weixin_entry(request):
             return HttpResponse("weixin  index")
     else:
         xml_str = smart_str(request.body)
-        request_xml = etree.fromstring(xml_str)
+        # request_xml = etree.fromstring(xml_str)
         # response_xml = auto_reply_main(request_xml)# 修改这里
         return HttpResponse('')

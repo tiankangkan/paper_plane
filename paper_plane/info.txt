@@ -59,7 +59,6 @@ pip install Django==1.7
 log
 ----------------------------
 cat /data/logs/apache2/error_log.txt
-cat /data/logs/apache2/app_log.txt
 cat /data/app_log.txt
 
 url

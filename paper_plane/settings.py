@@ -135,35 +135,16 @@ STATIC_URL = '/static/'
 
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
-        },
-        'simple': {
-            'format': '%(levelname)s %(message)s'
-        },
-    },
+    'disable_existing_loggers': True,
     'handlers': {
         'console': {
-            'level': 'INFO',
             'class': 'logging.StreamHandler',
-            'formatter': 'simple'
         },
     },
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'propagate': True,
+            'level': 'INFO',
         },
-        'django.request': {
-            'handlers': ['console'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        'paper_plane': {
-            'handlers': ['console'],
-            'level': 'ERROR',
-        }
-    }
+    },
 }

@@ -1,4 +1,4 @@
 import logging
 
-logger = logging.getLogger('paper_plane')
+logger = logging.getLogger('django')
 
