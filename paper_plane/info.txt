@@ -3,10 +3,18 @@
 服务器名称	云主机ID	所在网络ID	内网IP	公网IP
 未命名	ins-2fuwc30h	基础网络	10.105.115.94	115.159.81.50
 
+Update
+----------------------------
+service apache2 restart
+
+
 
 Path
 ----------------------------
 root: /data/project/paper_plane/
+
+git fetch --all
+git reset --hard origin/master
 
 
 
