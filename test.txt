@@ -1,0 +1,13 @@
+
+DocumentRoot "/data/project/lin_master"
+ServerName lin-masterkang.com
+ErrorLog "/data/errlog.txt"
+CustomLog "/data/app_log.txt" common
+<Directory "/data/project/lin_master">
+    Options FollowSymLinks
+    AllowOverride None
+    Order deny,allow
+    Allow from all
+    Satisfy all
+</Directory>
+WSGIScriptAlias / "/data/project/lin_master/lin_master/wsgi.py"
