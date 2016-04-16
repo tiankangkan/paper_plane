@@ -4,6 +4,12 @@
 未命名	ins-2fuwc30h	基础网络	10.105.115.94	115.159.81.50
 
 
+Path
+----------------------------
+root: /data/project/paper_plane/
+
+
+
 Apache
 ----------------------------
 sudo apt-get install apache2
@@ -30,7 +36,6 @@ configs:
 ::
 
 
-uwsgi --http :8000 --chdir /data/project/paper_plane --module paper_plane/wsgi.py
 curl lin-masterkang.com:8000/love_me/show_form/
 curl lin-masterkang.com/love_me/show_form/
 
