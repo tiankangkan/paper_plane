@@ -1,0 +1,52 @@
+服务器操作系统为 Ubuntu Server 14.04.1 LTS 64位 ，默认账户为 ubuntu ，请使用密钥登录，密钥ID：skey-ezodjdef，并提供web客户端登录密码：G3xacpe5bMqCG
+
+服务器名称	云主机ID	所在网络ID	内网IP	公网IP
+未命名	ins-2fuwc30h	基础网络	10.105.115.94	115.159.81.50
+
+
+Apache
+----------------------------
+sudo apt-get install apache2
+curl 127.0.0.1
+
+configs:
+/etc/apache2/apache2.conf
+/etc/apache2/sites-available/000-default.conf
+
+:: lin-master config
+<VirtualHost *:80>
+    DocumentRoot "/data/project/paper_plane"
+    ServerName lin-masterkang.com
+    ErrorLog "/data/errlog.txt"
+    CustomLog "/data/app_log.txt" common
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Allow from all
+    </Directory>
+    WSGIScriptAlias / "/data/project/paper_plane/paper_plane/wsgi.py"
+</VirtualHost>
+::
+
+
+uwsgi --http :8000 --chdir /data/project/paper_plane --module paper_plane/wsgi.py
+curl lin-masterkang.com:8000/love_me/show_form/
+curl lin-masterkang.com/love_me/show_form/
+
+django
+----------------------------
+sudo apt-get install python-pip python-dev build-essential 
+pip install Django==1.7
+
+log
+----------------------------
+cat /data/logs/apache2/error_log.txt
+cat /data/logs/apache2/app_log.txt
+cat /data/app_log.txt
+
+url
+----------------------------
+http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/love_me/show_form/
+

@@ -44,7 +44,7 @@ print '平均绩点为: %s' % avg
 print '平均成绩为: %s' % sum_c
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lin_master.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "paper_plane.settings")
 from django.contrib.auth.models import User
 user = User.objects.get(username='admin')
 user.set_password('tiankang')

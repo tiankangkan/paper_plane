@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.8/howto/deployment/wsgi/
 
 import os
 import sys
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lin_master.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "paper_plane.settings")
 os.environ.setdefault("PYTHON_EGG_CACHE", "/tmp/.python-eggs")
 
 project = os.path.dirname(os.path.dirname(__file__))

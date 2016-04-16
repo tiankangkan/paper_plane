@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Django settings for lin_master project.
+Django settings for paper_plane project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -90,9 +90,9 @@ TEMPLATES = [
 ]
 
 
-ROOT_URLCONF = 'lin_master.urls'
+ROOT_URLCONF = 'paper_plane.urls'
 
-WSGI_APPLICATION = 'lin_master.wsgi.application'
+WSGI_APPLICATION = 'paper_plane.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'lin_master.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lin_master_db',
+        'NAME': 'paper_plane_db',
         'USER': 'root',
         'PASSWORD': 'tiankang',
         'HOST': '',

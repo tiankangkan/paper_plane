@@ -1,13 +1,13 @@
 
-DocumentRoot "/data/project/lin_master"
+DocumentRoot "/data/project/paper_plane"
 ServerName lin-masterkang.com
 ErrorLog "/data/errlog.txt"
 CustomLog "/data/app_log.txt" common
-<Directory "/data/project/lin_master">
+<Directory "/data/project/paper_plane">
     Options FollowSymLinks
     AllowOverride None
     Order deny,allow
     Allow from all
     Satisfy all
 </Directory>
-WSGIScriptAlias / "/data/project/lin_master/lin_master/wsgi.py"
+WSGIScriptAlias / "/data/project/paper_plane/paper_plane/wsgi.py"
