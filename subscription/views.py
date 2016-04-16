@@ -32,6 +32,7 @@ def weixin_entry(request):
             return HttpResponse("weixin  index")
     else:
         xml_str = smart_str(request.body)
+        logger.info('xml_str:\n%s' % xml_str)
         # request_xml = etree.fromstring(xml_str)
         # response_xml = auto_reply_main(request_xml)# 修改这里
         return HttpResponse('')
