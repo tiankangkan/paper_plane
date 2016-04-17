@@ -56,6 +56,8 @@ django
 sudo apt-get install python-pip python-dev build-essential 
 pip install Django==1.7
 
+
+
 log
 ----------------------------
 cat /data/logs/apache2/error_log.txt
@@ -66,3 +68,6 @@ url
 http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/love_me/show_form/
 
+admin
+----------------------------
+python manage.py createsuperuser
