@@ -106,9 +106,6 @@ DATABASES = {
         'PASSWORD': 'tiankang',
         'HOST': '',
         'PORT': '',
-        'OPTIONS': {
-            'unix_socket': '/tmp/mysql.sock',
-        }
     }
 }
 
