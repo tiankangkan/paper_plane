@@ -71,16 +71,20 @@ def update_conversation_page_db(t_id=None, source_id=None, target_id=None, conte
         except:
             source = None
         target = UserAccount.objects.get(wechat_openid=target_id) if target_id else None
+        values = dict(
+            source=source,
+            target=target,
+            content=json.dumps(content_dict),
+            is_read=is_read,
+            timestamp=datetime.datetime.now(),
+        )
         if t_id:
             obj = ConversationPage.objects.get(t_id=t_id)
+            obj.source, obj.target = source, target
+            obj.content, obj.is_read = values['content'], is_read
+            obj.timestamp = values['timestamp']
+            obj.save()
         else:
-            values = dict(
-                source=source,
-                target=target,
-                content=json.dumps(content_dict),
-                is_read=is_read,
-                timestamp=datetime.datetime.now(),
-            )
             obj = ConversationPage.objects.create(**values)
             obj.save()
     except Exception, e:
