@@ -3,7 +3,9 @@
 from account.models import UserAccount
 
 from paper_plane.url_manager import UrlManager
+from talker.talker_main import talker_inst
 from k_util.k_logger import logger
+from k_util.str_op import to_utf_8
 
 
 def save_user_to_db(wechat):
@@ -22,7 +24,12 @@ def reply_to_text_message(wechat):
     if u'飞机' in content or u'卖萌' in content:
         resp = handle_text_message_contains_paper_plane(wechat)
     else:
-        resp = wechat.response_text(u'未匹配的输入哎', escape=False)
+        talker_inst.set_human_name(u'baby')
+        print 'Start'
+        thinker_msg = talker_inst.respond_to_human_msg(content, keep_chinese=True, session_id=wechat.message.source)
+        print thinker_msg
+        thinker_msg = to_utf_8(thinker_msg)
+        resp = wechat.response_text(thinker_msg, escape=False)
     return resp
 
 

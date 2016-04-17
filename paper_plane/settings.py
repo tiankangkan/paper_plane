@@ -21,8 +21,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-LOCAL_FLAG = False
-ENTRY_HOST = 'http://127.0.0.1:8000/' if LOCAL_FLAG else 'http://115.159.81.50/'
 
 DEBUG = True
 
@@ -159,3 +157,8 @@ LOGGING = {
         },
     },
 }
+
+LOCAL_FLAG = True
+ENTRY_HOST = 'http://127.0.0.1:8000/' if LOCAL_FLAG else 'http://115.159.81.50/'
+
+print 'The LOCAL_FLAG is %s' % LOCAL_FLAG
