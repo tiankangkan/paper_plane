@@ -41,7 +41,8 @@ def weixin_entry(request):
         xml_str = smart_str(request.body)
         logger.info('xml_str:\n%s' % xml_str)
         wechat.parse_data(xml_str)
-        return dispatch_event(wechat)
+        resp = dispatch_event(wechat)
+        return HttpResponse(resp)
 
 
 def dispatch_event(wechat):
