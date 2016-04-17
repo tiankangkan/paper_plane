@@ -5,17 +5,17 @@ from django.db import models
 
 class UserAccount(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
-    account = models.CharField(max_length=128)
+    account = models.CharField(max_length=128, db_index=True, null=True, blank=True)
     password = models.CharField(max_length=128)
-    email = models.CharField(max_length=128)
-    phone_number = models.CharField(max_length=32)
-    qq_account = models.CharField(max_length=32)
-    wechat_account = models.CharField(max_length=32)
-    wechat_openid = models.CharField(max_length=64)
-    sex = models.CharField(max_length=16)
-    birthday = models.CharField(max_length=64)
-    age = models.IntegerField()
-    extra_info = models.TextField()
+    email = models.CharField(max_length=128, db_index=True, null=True, blank=True)
+    phone_number = models.CharField(max_length=32, db_index=True, null=True, blank=True)
+    qq_account = models.CharField(max_length=32, db_index=True, null=True, blank=True)
+    wechat_account = models.CharField(max_length=32, db_index=True, null=True, blank=True)
+    wechat_openid = models.CharField(max_length=64, db_index=True, null=True, blank=True)
+    sex = models.CharField(max_length=16, null=True, blank=True)
+    birthday = models.CharField(max_length=64, null=True, blank=True)
+    age = models.IntegerField(null=True, blank=True)
+    extra_info = models.TextField(null=True, blank=True)
 
     class Meta:
         db_table = 'user_account'

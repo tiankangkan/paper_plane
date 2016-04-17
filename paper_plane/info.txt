@@ -67,6 +67,12 @@ url
 ----------------------------
 http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/love_me/show_form/
+http://127.0.0.1:8000/subscription/weixin_entry/
+
+http://115.159.81.50/admin/
+http://115.159.81.50/love_me/paper_plane/
+http://115.159.81.50/subscription/weixin_entry/
+
 
 admin
 ----------------------------

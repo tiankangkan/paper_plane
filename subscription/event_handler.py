@@ -2,6 +2,8 @@
 
 from account.models import UserAccount
 
+from k_util.k_logger import logger
+
 
 def save_user_to_db(wechat):
     wechat_openid = wechat.message.source
@@ -10,6 +12,7 @@ def save_user_to_db(wechat):
         queryset.update(wechat_openid=wechat_openid)
     else:
         user = UserAccount.objects.create(wechat_openid=wechat_openid)
+    logger.info('<save_user_to_db>: wechat_openid is %s' % wechat_openid)
 
 
 def reply_to_text_message(wechat):
