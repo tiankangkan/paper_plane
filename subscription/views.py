@@ -42,11 +42,15 @@ def weixin_entry(request):
         logger.info('xml_str:\n%s' % xml_str)
         wechat.parse_data(xml_str)
         resp = dispatch_event(wechat)
+        logger.info('resp:\n%s' % resp)
         return HttpResponse(resp)
 
 
 def dispatch_event(wechat):
     if isinstance(wechat.message, messages.TextMessage):
+        user_id = wechat.message.source
+        user_info = wechat.get_user_info(user_id, lang='zh_CN')
+        logger.info('user_info:\n%s' % user_info)
         return event_handler.reply_to_text_message(wechat)
     else:
         return wechat.response_text('Unsupported Msg Type', escape=False)
