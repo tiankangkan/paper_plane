@@ -25,9 +25,8 @@ def reply_to_text_message(wechat):
         resp = handle_text_message_contains_paper_plane(wechat)
     else:
         talker_inst.set_human_name(u'baby')
-        print 'Start'
         thinker_msg = talker_inst.respond_to_human_msg(content, keep_chinese=True, session_id=wechat.message.source)
-        print thinker_msg
+        logger.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(content), to_utf_8(thinker_msg)))
         thinker_msg = to_utf_8(thinker_msg)
         resp = wechat.response_text(thinker_msg, escape=False)
     return resp
