@@ -61,7 +61,8 @@ def reply_to_voice_message(wechat):
     else:
         resp_content = handle_text_message_with_talker(wechat=wechat, human_msg=recognition)
     logger.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
-    return wechat.response_text(resp_content, escape=False)
+    return wechat.response_image(media_id='RC6tQbAn94Hk2t6ceO9PmqHs7pqRPeS37udiaaIOwIfylQfyVVDnSAzTgOrbsdSF3sqhxgVCKXWY0nHG3H2nq8w')
+    # return wechat.response_text(resp_content, escape=False)
 
 
 def reply_to_event_message(wechat):
@@ -117,5 +118,6 @@ def send_user_voice_message(wechat, text, sex=SpeechPeople.WOMAN):
     resp = upload_voice_message(wechat=wechat, file_obj=file_obj, extension='mp3')
     logger.info('<seed_voice_message>: resp: %s' % resp)
     return wechat.response_text(u'media_id: %s' % resp, escape=False)
+
 
 

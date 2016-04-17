@@ -78,3 +78,6 @@ wechat
 ----------------------------
 media_id: OIM_czapzfW0gkjQg9SA-QEFc03Eoi6ZLxVq1r41uJbTz95Nv6OLL1wAPAOe6LaE
 format: amr
+
+media_id: RC6tQbAn94Hk2t6ceO9PmqHs7pqRPeS37udiaaIOwIfylQfyVVDnSAzTgOrbsdSF3sqhxgVCKXWY0nHG3H2nq8w
+format: jpeg
