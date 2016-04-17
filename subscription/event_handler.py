@@ -45,7 +45,11 @@ def reply_to_voice_message(wechat):
     media_id = wechat.message.media_id
     format = wechat.message.format
     recognition = wechat.message.recognition
+    if not recognition:
+        resp_content = u'没听清楚,再讲一遍可以吗? 😳 '
+    else:
+        resp_content = handle_text_message_contains_paper_plane(recognition)
     logger.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
-    return wechat.response_text(u'语音消息目前还不支持哦', escape=False)
+    return wechat.response_text(resp_content, escape=False)
 
 
