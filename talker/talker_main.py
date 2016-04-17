@@ -17,6 +17,7 @@ import random
 
 from sentence_translate import SentenceTranslator
 from speech_translate import SPEECH_TRANSLATE
+from k_util.str_op import to_unicode
 from k_util.file_op import make_sure_file_dir_exists
 from k_util.sound_op import SoundUtil
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
@@ -79,9 +80,11 @@ class Talker(object):
             time.sleep(sleep_time)
 
     def respond_to_human_msg(self, msg, session_id=0, keep_chinese=True):
+        msg = to_unicode(msg)
         if keep_chinese:
             msg = self.sentence_trans.convert_to_en(msg)
         thinker_resp = self.thinker.respond(msg, sessionID=session_id)
+        print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
         if keep_chinese:
             thinker_resp = self.sentence_trans.convert_to_cn(thinker_resp)
         print 'Ask: %s, Answer: %s' % (msg, thinker_resp)

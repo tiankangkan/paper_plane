@@ -13,7 +13,7 @@ def request_with_text_msg():
         <FromUserName><![CDATA[gh_d9b64eb9e787]]></FromUserName>
         <CreateTime>1460873374</CreateTime>
         <MsgType><![CDATA[text]]></MsgType>
-        <Content><![CDATA[你好吗]]></Content>
+        <Content><![CDATA[ baby ]]></Content>
         </xml>
     """
     resp = post_request(url, data=xml_str)
