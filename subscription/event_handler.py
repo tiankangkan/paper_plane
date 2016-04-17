@@ -25,12 +25,18 @@ def reply_to_text_message(wechat):
     if u'飞机' in content or u'卖萌' in content:
         resp = handle_text_message_contains_paper_plane(wechat)
     else:
-        talker_inst.set_human_name(u'baby')
-        thinker_msg = talker_inst.respond_to_human_msg(content, keep_chinese=True, session_id=wechat.message.source)
-        logger.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(content), to_utf_8(thinker_msg)))
-        thinker_msg = to_utf_8(thinker_msg)
-        resp = wechat.response_text(thinker_msg, escape=False)
+        thinker_msg = handle_text_message_with_talker(wechat=wechat, human_msg=content)
+        resp_content = to_utf_8(thinker_msg)
+        resp = wechat.response_text(resp_content, escape=False)
     return resp
+
+
+def handle_text_message_with_talker(wechat, human_msg):
+    talker_inst.set_human_name(u'baby')
+    thinker_msg = talker_inst.respond_to_human_msg(human_msg, keep_chinese=True, session_id=wechat.message.source)
+    logger.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
+    thinker_msg = thinker_msg
+    return thinker_msg
 
 
 def handle_text_message_contains_paper_plane(wechat):
@@ -48,7 +54,7 @@ def reply_to_voice_message(wechat):
     if not recognition:
         resp_content = u'没听清楚,再讲一遍可以吗? 😳 '
     else:
-        resp_content = handle_text_message_contains_paper_plane(recognition)
+        resp_content = handle_text_message_with_talker(wechat=wechat, human_msg=recognition)
     logger.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
     return wechat.response_text(resp_content, escape=False)
 
