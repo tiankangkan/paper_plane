@@ -16,6 +16,11 @@ import base64
 from k_util.str_op import to_utf_8
 
 
+class SpeechPeople(object):
+    WOMAN = 'WOMAN'
+    MAN = 'MAN'
+
+
 class SpeechTranslate(object):
     TRANSLATION_ERROR = 'speech translation error occur'
     TRANSLATION_NOT_MATCH = 'speech translation not match'
@@ -71,9 +76,16 @@ class SpeechTranslate(object):
             text = self.TRANSLATION_NOT_MATCH
         return text
 
-    def get_speech_of_text(self, text, to_file=None, speech_sex='woman'):
+    def get_speech_of_text(self, text, to_file=None, speech_sex=SpeechPeople.WOMAN):
+        """
+        :Note: 默认返回 mp3 数据
+        :param text:
+        :param to_file:
+        :param speech_sex:
+        :return:
+        """
         self.check_token()
-        per = 0 if speech_sex == 'woman' else 1
+        per = 0 if speech_sex == SpeechPeople.WOMAN else 1
         post_data = dict(
             tok=self.token,
             cuid=self.cuid,
@@ -98,7 +110,7 @@ class SpeechTranslate(object):
         return resp
 
 
-SPEECH_TRANSLATE = SpeechTranslate()
+speech_trans_inst = SpeechTranslate()
 
 
 if __name__ == '__main__':

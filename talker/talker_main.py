@@ -16,7 +16,7 @@ import time
 import random
 
 from sentence_translate import SentenceTranslator
-from speech_translate import SPEECH_TRANSLATE
+from speech_translate import speech_trans_inst, SpeechPeople
 from k_util.str_op import to_unicode
 from k_util.file_op import make_sure_file_dir_exists
 from k_util.sound_op import SoundUtil
@@ -31,7 +31,7 @@ class Talker(object):
         self.thinker = None
         self.record_path = None
         self.speech_path = None
-        self.thinker_sex = 'woman'    # 'man' or 'woman'
+        self.thinker_sex = SpeechPeople.WOMAN    # 'MAN' or 'WOMAN'
         self.response_time = response_time
         self.sentence_trans = SentenceTranslator()
         self.tmp_path = os.path.join(TEMP_DIR, 'temp_master', 'talker')
@@ -106,8 +106,7 @@ class Talker(object):
             _ = raw_input('\n%8s >> %s' % ('system', 'Please speech ... Enter to stop'))
             sound_util.stop_record_wave()
             time.sleep(0.01)
-            st = SPEECH_TRANSLATE
-            human_msg = st.get_text_of_speech(self.record_path)
+            human_msg = speech_trans_inst.get_text_of_speech(self.record_path)
             human_print = '\n%8s >> %s' % (self.human_name, human_msg)
             print human_print
         human_msg = self.sentence_trans.convert_to_en(human_msg)
@@ -117,11 +116,10 @@ class Talker(object):
         thinker_resp_cn = self.sentence_trans.convert_to_cn(thinker_resp)
         thinker_msg = '\n%8s >> %s' % (self.thinker_name, thinker_resp_cn)
         print thinker_msg
-        st = SPEECH_TRANSLATE
         speech_name = 'speech_%s.mp3' % get_time_str_now(TIME_FORMAT_FOR_FILE)
         self.speech_path = os.path.join(TEMP_DIR, 'talker', 'audio', speech_name)
         make_sure_file_dir_exists(self.speech_path)
-        st.get_speech_of_text(thinker_resp_cn, to_file=self.speech_path, speech_sex=self.thinker_sex)
+        speech_trans_inst.get_speech_of_text(thinker_resp_cn, to_file=self.speech_path, speech_sex=self.thinker_sex)
         time.sleep(0.01)
         sound_util = SoundUtil()
         sound_util.play_mp3(self.speech_path)

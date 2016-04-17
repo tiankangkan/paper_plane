@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import k_util.set_default_encodeing
 import os
+import platform
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -163,3 +164,11 @@ LOCAL_FLAG = True
 ENTRY_HOST = 'http://127.0.0.1:8000/' if LOCAL_FLAG else 'http://115.159.81.50/'
 
 print 'The LOCAL_FLAG is %s' % LOCAL_FLAG
+
+
+SYSTEM = platform.system()
+TEMP_DIR = '/tmp/paper_plane/'
+if 'windows' in SYSTEM:
+    TEMP_DIR = 'D:\\paper_plane\\'
+else:
+    TEMP_DIR = '/tmp/paper_plane/'

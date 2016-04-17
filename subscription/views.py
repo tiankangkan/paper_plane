@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import paper_plane.django_init
 import json
 from wechat_sdk import messages
 from wechat_sdk import WechatBasic
@@ -57,3 +58,7 @@ def dispatch_event(wechat):
     else:
         resp = type(wechat.message)
         return wechat.response_text('Unsupported Msg Type: %s' % resp, escape=False)
+
+
+if __name__ == '__main__':
+    event_handler.send_user_voice_message(wechat, u'哈哈')

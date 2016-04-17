@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 
+import StringIO
+import json
+
 from account.models import UserAccount
 from wechat_sdk import WechatBasic
 
+from talker.speech_translate import speech_trans_inst, SpeechPeople
 from paper_plane.url_manager import UrlManager
+from paper_plane.file_manager import FileManager
 from talker.talker_main import talker_inst
 from k_util.k_logger import logger
 from k_util.str_op import to_utf_8
@@ -56,7 +61,7 @@ def reply_to_voice_message(wechat):
     else:
         resp_content = handle_text_message_with_talker(wechat=wechat, human_msg=recognition)
     logger.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
-    return wechat.response_text(resp_content, escape=False)
+    return wechat.response_text('<img src="https://www.evget.com/img/phonenew.gif">', escape=False)
 
 
 def reply_to_event_message(wechat):
@@ -64,7 +69,7 @@ def reply_to_event_message(wechat):
         key = wechat.message.key                        # 对应于 XML 中的 EventKey (普通关注事件时此值为 None)
         ticket = wechat.message.ticket                  # 对应于 XML 中的 Ticket (普通关注事件时此值为 None)
         save_user_to_db(wechat)
-        return wechat.response_text(u'欢迎来到小康君的地盘, 由我们家可爱Alice陪你聊天哦', escape=False)
+        return wechat.response_text(u'欢迎来到小康君的地盘, 由我们家可爱的Alice陪你聊天😊', escape=False)
     elif wechat.message.type == 'unsubscribe':  # 取消关注事件（无可用私有信息）
         pass
     elif wechat.message.type == 'scan':  # 用户已关注时的二维码扫描事件
@@ -84,3 +89,33 @@ def reply_to_event_message(wechat):
                                  'pic_photo_or_album', 'pic_weixin', 'location_select']:  # 其他事件
         key = wechat.message.key                          # 对应于 XML 中的 EventKey
     return wechat.response_text(u'其实,其实,,, 这个功能目前还没有实现 ...', escape=False)
+
+
+def convert_text_to_voice_file_obj(wechat, text, sex):
+    mp3_content = speech_trans_inst.get_speech_of_text(text=text, to_file=None, speech_sex=sex)
+    file_obj = StringIO.StringIO()
+    file_obj.write(mp3_content)
+    file_obj.flush()
+    file_obj.seek(0)
+    return file_obj
+
+
+def upload_voice_message(wechat, file_path=None, file_obj=None, extension=''):
+    media_file = file_path or file_obj
+    if not media_file:
+        raise ValueError('file_path and file_obj can not both be empty')
+    else:
+        resp = wechat.upload_media('voice', media_file, extension=extension)
+        if file_obj:
+            file_obj.closed()
+        print resp
+    return json.dumps(resp)
+
+
+def send_user_voice_message(wechat, text, sex=SpeechPeople.WOMAN):
+    file_obj = convert_text_to_voice_file_obj(wechat, text, sex=sex)
+    resp = upload_voice_message(wechat=wechat, file_obj=file_obj, extension='mp3')
+    logger.info('<seed_voice_message>: resp: %s' % resp)
+    return wechat.response_text(u'media_id: %s' % resp, escape=False)
+
+
