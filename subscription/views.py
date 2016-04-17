@@ -52,6 +52,8 @@ def dispatch_event(wechat):
         return event_handler.reply_to_text_message(wechat)
     elif isinstance(wechat.message, messages.VoiceMessage):
         return event_handler.reply_to_voice_message(wechat)
+    elif isinstance(wechat.message, messages.EventMessage):
+        return event_handler.reply_to_event_message(wechat)
     else:
         resp = type(wechat.message)
         return wechat.response_text('Unsupported Msg Type: %s' % resp, escape=False)
