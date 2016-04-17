@@ -8,7 +8,6 @@ git reset --hard origin/master
 service apache2 restart
 
 
-
 Path
 ----------------------------
 root: /data/project/paper_plane/
@@ -73,3 +72,9 @@ http://115.159.81.50/subscription/weixin_entry/
 admin
 ----------------------------
 python manage.py createsuperuser
+
+
+wechat
+----------------------------
+media_id: OIM_czapzfW0gkjQg9SA-QEFc03Eoi6ZLxVq1r41uJbTz95Nv6OLL1wAPAOe6LaE
+format: amr
