@@ -28,6 +28,7 @@ def reply_to_paper_plane(request):
     extra_source_id = req.get('extra_source_id', None)
     pic_name = req.get('pic_name', '0001.jpg')
     id = req.get('id', None)
+    id = int(id) if id else None
     values = dict(pic_name=pic_name, extra_source_id=extra_source_id, id=id)
     return render_to_response('paper_plane.html', {'values': json.dumps(values)})
 
@@ -42,8 +43,9 @@ def reply_to_paper_plane_do_submit(request):
     want_to_say = req.get('want_to_say', None)
     pic_name = req.get('pic_name', "0001.jpg")
     id = req.get('id', None)
-    # if not (id and extra_source_id):
-    #     return HttpResponse(json.dumps(dict(status='error', msg=u'未确定的网页来源...')))
+    id = int(id) if id else None
+    if not (id and extra_source_id):
+        return HttpResponse(json.dumps(dict(status='error', msg=u'未确定的网页来源...')))
     content_dict = dict(
         how_much_love=how_much_love,
         when_begin_love=when_begin_love,
@@ -51,6 +53,7 @@ def reply_to_paper_plane_do_submit(request):
         pic_name=pic_name,
         extra_source_id=extra_source_id
     )
+    print 'id is %s' % id
     print json.dumps(content_dict, indent=4)
     update_conversation_page_db(id=id, source_id=extra_source_id, content_dict=content_dict, is_read=True)
     return HttpResponse(json.dumps(dict(status='success', msg=u'成功')))
@@ -70,11 +73,9 @@ def update_conversation_page_db(id=None, source_id=None, target_id=None, content
         is_read=is_read,
     )
     if id:
-        try:
-            obj = ConversationPage.objects.get(id=id)
-            obj = obj.update(*values)
-        except:
-            obj = ConversationPage.objects.create(**values)
+        obj = ConversationPage.objects.get(id=id)
+        obj = obj.update(*values)
+        # obj = ConversationPage.objects.create(**values)
     else:
         obj = ConversationPage.objects.create(**values)
     return obj
