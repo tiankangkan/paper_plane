@@ -10,6 +10,7 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from k_util.k_logger import logger
+from k_util.django_util import get_request_body
 import event_handler
 
 
@@ -19,6 +20,8 @@ wechat = WechatBasic(
     appsecret='f6cf7cbe34a977276bd74f3c6a60af61'
 )
 
+wechat.self_space = dict()
+
 
 @csrf_exempt
 def weixin_entry(request):
@@ -27,6 +30,8 @@ def weixin_entry(request):
     微信接入验证是GET方法，
     微信正常的收发消息是用POST方法。
     """
+    req = get_request_body(request)
+    wechat.self_space['request'] = req
     if request.method == "GET":
         logger.info('IN weixin_entry ==================')
         signature = request.GET.get("signature", None)

@@ -19,7 +19,7 @@
             <hr style="width: 90%; margin-left: 10%">
         </div>
         <div id="images">
-            <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">
+{#            <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">#}
         </div>
 
         <div style="width: 94%; margin-left: 3%">
@@ -47,20 +47,62 @@
             <div id="div_take_show" style="margin: 20px 0 0 0">
                 <label for="take_show" > 是时候表现一下啦 </label>
                 <div >
-                    <span id="take_show"  class="form-control"> 是到了你表现的时候啦, 戳链接哈: <a target="_blank" href="https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.2.5Nmq6k&id=522192378143&skuId=3132061310966&areaId=440000&cat_id=2&rn=604a048a51512c04b4f94dcc655251b8&user_id=704320142&is_b=1"> 点这里 </a>  </span>
+                    <span id="take_show"  class="form-control"> 是到了你表现的时候啦, 戳链接哈: <a target="_blank" href="https://nvzhuang.tmall.com/?spm=875.7931836.2016010.1.eLaqtl&acm=lb-zebra-148799-667863.1003.8.708026&scm=1003.8.lb-zebra-148799-667863.ITEM_14561681423980_708026"> 点这里 </a>  </span>
                 </div>
             </div>
 
-            <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px"> 飞回去 </button>
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px" onclick="submit_form(this)"> 飞回去 </button>
 
         </div>
+
+        <div style="margin-bottom: 30px"><div>
 
 
     </div>
 
 <script>
+    url_submit_from = 'do_submit/';
     $id_take_show = $('#div_take_show');
-{#    $id_take_show.hide();#}
+    // $id_take_show.hide();
+
+    values = {{ values | safe }};
+    extra_source_id = values['extra_source_id'];
+    pic_name = values['pic_name'];
+    id = values['id'];
+
+    load_images(pic_name);
+
+    function submit_form(elem){
+        var how_much_love = document.getElementById('how_much_love').value;
+        var when_begin_love = document.getElementById('when_begin_love').value;
+        var want_to_say = document.getElementById('want_to_say').value;
+
+        $.ajax({
+            url: url_submit_from,
+            type: "POST",
+            data: {
+                'how_much_love': how_much_love,
+                'when_begin_love': when_begin_love,
+                'want_to_say': want_to_say,
+                'extra_source_id': extra_source_id,
+                'pic_name': pic_name,
+                'id': id
+            },
+            success: function(data){
+                //alert(data);
+                var resp = JSON.parse(data);
+                if (resp.status == 'error'){
+                    alert(resp.msg)
+                }
+            }
+        })
+    }
+
+    function load_images(pic_name){
+        var $images = $('#images');
+        $images.empty();
+        $images.append('<img src="/media/image/lover_1200_675/' + pic_name +'" alt="lover" class="img-thumbnail">');
+    }
 
 </script>
 

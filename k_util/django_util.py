@@ -21,14 +21,15 @@ def get_request_body(request, raw=None):
     if 'GET' == raw or 'POST' == raw:
         d = getattr(request, raw)
         if d:
-            body_dict.update(d)
+            for key in d:
+                body_dict[key] = d[key]
     else:
         if request.GET:
-            body_dict.update(request.GET)
+            for key in request.GET:
+                body_dict[key] = request.GET[key]
         if request.POST:
-            body_dict.update(request.POST)
-        if request.REQUEST:
-            body_dict.update(request.REQUEST)
+            for key in request.POST:
+                body_dict[key] = request.POST[key]
     return body_dict
 
 

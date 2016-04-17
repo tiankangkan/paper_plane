@@ -2,13 +2,15 @@
 
 import StringIO
 import json
+import urllib
+import random
 
 from account.models import UserAccount
 from wechat_sdk import WechatBasic
 
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from paper_plane.url_manager import UrlManager
-from paper_plane.file_manager import FileManager
+from love_me.views import reply_text_message_contains_paper_plane
 from talker.talker_main import talker_inst
 from k_util.k_logger import logger
 from k_util.str_op import to_utf_8
@@ -45,8 +47,7 @@ def handle_text_message_with_talker(wechat, human_msg):
 
 
 def handle_text_message_contains_paper_plane(wechat):
-    paper_plane_url = UrlManager().get_url_of_paper_plane()
-    text = u'扔个纸飞机吧: %s' % paper_plane_url
+    text = reply_text_message_contains_paper_plane(wechat.message.source)
     resp = wechat.response_text(text, escape=False)
     return resp
 
