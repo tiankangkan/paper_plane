@@ -45,7 +45,7 @@ def reply_to_paper_plane_do_submit(request):
     pic_name = req.get('pic_name', "0001.jpg")
     t_id = req.get('t_id', None)
     t_id = int(t_id) if t_id else None
-    if not (t_id and extra_source_id):
+    if not t_id:
         return HttpResponse(json.dumps(dict(status='error', msg=u'未确定的网页来源...')))
     content_dict = dict(
         how_much_love=how_much_love,
@@ -77,7 +77,7 @@ def update_conversation_page_db(t_id=None, source_id=None, target_id=None, conte
             obj = ConversationPage.objects.create()
         obj.source = source if source else obj.source
         obj.target = target if target else obj.target
-        obj.timestamp = datetime.datetime.now(tz=pytz.timezone(settings.TIME_ZONE))
+        obj.timestamp = datetime.datetime.now()
         obj.content = json.dumps(content_dict)
         obj.is_read = is_read
         obj = obj.save()
