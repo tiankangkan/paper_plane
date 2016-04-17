@@ -67,23 +67,19 @@ def update_conversation_page_db(t_id=None, source_id=None, target_id=None, conte
         print 'source_id...', source_id, target_id
         source = UserAccount.objects.get(wechat_openid=source_id) if source_id else None
         target = UserAccount.objects.get(wechat_openid=target_id) if target_id else None
-        values = dict(
-            source=source,
-            target=target,
-            timestamp=datetime.datetime.now(tz=pytz.timezone(settings.TIME_ZONE)),
-            content=json.dumps(content_dict),
-            is_read=is_read,
-        )
         if t_id:
             obj = ConversationPage.objects.get(t_id=t_id)
-            obj = obj.update(*values)
-            # obj = ConversationPage.objects.create(**values)
         else:
-            obj = ConversationPage.objects.create(**values)
-        return obj
+            obj = ConversationPage.objects.create()
+        obj.source = source
+        obj.target = target
+        obj.timestamp = datetime.datetime.now(tz=pytz.timezone(settings.TIME_ZONE))
+        obj.content = json.dumps(content_dict)
+        obj.is_read = is_read
+        obj = obj.save()
     except Exception, e:
         print traceback.format_exc(e)
-    return HttpResponse(json.dumps(dict(status='success', msg=u'成功')))
+    return obj
 
 
 @csrf_exempt
