@@ -61,7 +61,7 @@ def reply_to_voice_message(wechat):
     else:
         resp_content = handle_text_message_with_talker(wechat=wechat, human_msg=recognition)
     logger.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
-    return wechat.response_text('<img src="https://www.evget.com/img/phonenew.gif">', escape=False)
+    return wechat.response_text(resp_content, escape=False)
 
 
 def reply_to_event_message(wechat):
