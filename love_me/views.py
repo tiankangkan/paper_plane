@@ -45,8 +45,8 @@ def reply_to_paper_plane_do_submit(request):
     pic_name = req.get('pic_name', "0001.jpg")
     t_id = req.get('t_id', None)
     t_id = int(t_id) if t_id else None
-    # if not (t_id and extra_source_id):
-    #     return HttpResponse(json.dumps(dict(status='error', msg=u'未确定的网页来源...')))
+    if not (t_id and extra_source_id):
+        return HttpResponse(json.dumps(dict(status='error', msg=u'未确定的网页来源...')))
     content_dict = dict(
         how_much_love=how_much_love,
         when_begin_love=when_begin_love,
@@ -62,17 +62,21 @@ def reply_to_paper_plane_do_submit(request):
 
 @csrf_exempt
 def update_conversation_page_db(t_id=None, source_id=None, target_id=None, content_dict=None, is_read=False):
+    obj = None
     try:
         content_dict = content_dict or dict()
         print 'source_id...', source_id, target_id
-        source = UserAccount.objects.get(wechat_openid=source_id) if source_id else None
+        try:
+            source = UserAccount.objects.get(wechat_openid=source_id) if source_id else None
+        except:
+            source = None
         target = UserAccount.objects.get(wechat_openid=target_id) if target_id else None
         if t_id:
             obj = ConversationPage.objects.get(t_id=t_id)
         else:
             obj = ConversationPage.objects.create()
-        obj.source = source
-        obj.target = target
+        obj.source = source if source else obj.source
+        obj.target = target if target else obj.target
         obj.timestamp = datetime.datetime.now(tz=pytz.timezone(settings.TIME_ZONE))
         obj.content = json.dumps(content_dict)
         obj.is_read = is_read
