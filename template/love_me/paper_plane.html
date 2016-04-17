@@ -68,7 +68,7 @@
     values = {{ values | safe }};
     extra_source_id = values['extra_source_id'];
     pic_name = values['pic_name'];
-    id = values['id'];
+    t_id = values['t_id'];
 
     load_images(pic_name);
 
@@ -86,7 +86,7 @@
                 'want_to_say': want_to_say,
                 'extra_source_id': extra_source_id,
                 'pic_name': pic_name,
-                'id': id
+                't_id': t_id
             },
             success: function(data){
                 //alert(data);
