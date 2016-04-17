@@ -10,7 +10,7 @@ class ConversationPage(models.Model):
     target = models.ForeignKey(UserAccount, null=True, blank=True, related_name='target_account')
     timestamp = models.DateTimeField(db_index=True, null=True, blank=True)
     content = models.TextField(null=True, blank=True)
-    is_read = models.BooleanField(null=True, blank=True)
+    is_read = models.BooleanField()
 
     class Meta:
         db_table = 'conversation_page'

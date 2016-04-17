@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import paper_plane.django_init
 import json
 import random
 import datetime
@@ -7,7 +7,7 @@ import urllib
 import pytz
 import traceback
 
-from models import ConversationPage
+from love_me.models import ConversationPage
 from account.models import UserAccount
 from django.shortcuts import render_to_response, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -74,13 +74,15 @@ def update_conversation_page_db(t_id=None, source_id=None, target_id=None, conte
         if t_id:
             obj = ConversationPage.objects.get(t_id=t_id)
         else:
-            obj = ConversationPage.objects.create()
-        obj.source = source if source else obj.source
-        obj.target = target if target else obj.target
-        obj.timestamp = datetime.datetime.now()
-        obj.content = json.dumps(content_dict)
-        obj.is_read = is_read
-        obj = obj.save()
+            values = dict(
+                source=source,
+                target=target,
+                content=json.dumps(content_dict),
+                is_read=is_read,
+                timestamp=datetime.datetime.now(),
+            )
+            obj = ConversationPage.objects.create(**values)
+            obj.save()
     except Exception, e:
         print traceback.format_exc(e)
     return obj
@@ -97,3 +99,7 @@ def reply_text_message_contains_paper_plane(extra_source_id):
     paper_plane_url = '%s?%s' % (paper_plane_url, para_str)
     text = u'扔个纸飞机吧: %s' % paper_plane_url
     return text
+
+
+if __name__ == '__main__':
+    reply_text_message_contains_paper_plane(1123)
