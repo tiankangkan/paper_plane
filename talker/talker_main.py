@@ -84,10 +84,11 @@ class Talker(object):
         if keep_chinese:
             msg = self.sentence_trans.convert_to_en(msg)
         thinker_resp = self.thinker.respond(msg, sessionID=session_id)
-        print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
+        print type(msg), type(thinker_resp)
         if keep_chinese:
             thinker_resp = self.sentence_trans.convert_to_cn(thinker_resp)
-        print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
+        print type(msg), type(thinker_resp)
+        # print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
         return thinker_resp
 
     def shutdown(self):
