@@ -22,7 +22,7 @@
 {#            <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">#}
         </div>
 
-        <div style="width: 94%; margin-left: 3%">
+        <div id='div_form' style="width: 94%; margin-left: 3%">
             <div style="margin: 20px 0 0 0">
                 <span for="how_much_love"> 😍 的程度</span>
                 <div >
@@ -55,8 +55,7 @@
 
         </div>
 
-        <div style="margin-bottom: 30px"><div>
-
+        <div style="margin-bottom: 30px"></div>
 
     </div>
 
@@ -93,6 +92,8 @@
                 var resp = JSON.parse(data);
                 if (resp.status == 'error'){
                     alert(resp.msg)
+                }else{
+                    when_finish();
                 }
             }
         })
@@ -104,11 +105,19 @@
         $images.append('<img src="/media/image/lover_1200_675/' + pic_name +'" alt="lover" class="img-thumbnail">');
     }
 
+    function when_finish(){
+        var $div_form = $('#div_form');
+        $div_form.hide(1000);
+        load_images('0003.jpg');
+        var $images = $('#images');
+        $images.append('<h3 style="margin-top: 30px" align="center"> 提交成功, 让飞机飞一会 :) </h3>')
+    }
+
 </script>
 
 </body>
 
 
-<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500017780"></script>
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500054876" ></script>
 </html>
 
