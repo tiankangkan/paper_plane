@@ -1,7 +1,3 @@
-服务器操作系统为 Ubuntu Server 14.04.1 LTS 64位 ，默认账户为 ubuntu ，请使用密钥登录，密钥ID：skey-ezodjdef，并提供web客户端登录密码：G3xacpe5bMqCG
-
-服务器名称	云主机ID	所在网络ID	内网IP	公网IP
-未命名	ins-2fuwc30h	基础网络	10.105.115.94	115.159.81.50
 
 Update
 ----------------------------

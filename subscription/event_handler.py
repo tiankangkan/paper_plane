@@ -2,6 +2,7 @@
 
 from account.models import UserAccount
 
+from paper_plane.url_manager import UrlManager
 from k_util.k_logger import logger
 
 
@@ -16,8 +17,17 @@ def save_user_to_db(wechat):
 
 
 def reply_to_text_message(wechat):
-    content = wechat.message.content
-    resp = 'received: %s' % content
     save_user_to_db(wechat)
-    return wechat.response_text(resp, escape=False)
+    content = wechat.message.content
+    if u'飞机' in content or u'卖萌' in content:
+        resp = handle_text_message_contains_paper_plane(wechat)
+    else:
+        resp = wechat.response_text(u'未匹配的输入哎', escape=False)
+    return resp
 
+
+def handle_text_message_contains_paper_plane(wechat):
+    paper_plane_url = UrlManager().get_url_of_paper_plane()
+    text = u'扔个纸飞机吧: %s' % paper_plane_url
+    resp = wechat.response_text(text, escape=False)
+    return resp

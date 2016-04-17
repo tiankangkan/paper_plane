@@ -20,6 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+LOCAL_FLAG = False
+ENTRY_HOST = 'http://127.0.0.1:8000/' if LOCAL_FLAG else 'http://115.159.81.50/'
+
 DEBUG = True
 
 TEMPLATE_DEBUG = True
