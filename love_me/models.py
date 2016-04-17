@@ -8,9 +8,9 @@ class ConversationPage(models.Model):
     t_id = models.AutoField(primary_key=True, db_index=True)
     source = models.ForeignKey(UserAccount, null=True, blank=True, related_name='source_account')
     target = models.ForeignKey(UserAccount, null=True, blank=True, related_name='target_account')
-    timestamp = models.DateTimeField(db_index=True)
-    content = models.TextField()
-    is_read = models.BooleanField()
+    timestamp = models.DateTimeField(db_index=True, null=True, blank=True)
+    content = models.TextField(null=True, blank=True)
+    is_read = models.BooleanField(null=True, blank=True)
 
     class Meta:
         db_table = 'conversation_page'
