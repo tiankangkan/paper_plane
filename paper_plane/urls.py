@@ -5,6 +5,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf import settings
 import love_me.urls
+import lin.urls
 import subscription.urls
 import views
 
@@ -13,6 +14,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^love_me/', include(love_me.urls)),
+    url(r'^lin/', include(lin.urls)),
     url(r'^subscription/', include(subscription.urls)),
 )
 
