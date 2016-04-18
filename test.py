@@ -44,8 +44,7 @@ print '平均绩点为: %s' % avg
 print '平均成绩为: %s' % sum_c
 
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "paper_plane.settings")
-from django.contrib.auth.models import User
-user = User.objects.get(username='admin')
-user.set_password('tiankang')
-user.save()
+for parent,dirnames,filenames in os.walk('/Users/kangtian/Documents/Master/paper_plane/res/aiml-en-us-foundation-alice.v1-9'):
+    for file_name in filenames:
+        print '<learn>' + file_name +'</learn>'
+

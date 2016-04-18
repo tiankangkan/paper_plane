@@ -8,7 +8,7 @@ Note:
 # 2016/04/07   lin              created
 
 """
-
+import paper_plane.django_init
 import aiml
 import os
 import imp
@@ -23,6 +23,8 @@ from k_util.sound_op import SoundUtil
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
 from talker.talker_setting import TEMP_DIR
 
+from django.conf import settings
+
 
 class Talker(object):
     def __init__(self, human_name='Lin', thinker_name='Alice', try_load_brain=True, response_time=0.01):
@@ -35,24 +37,26 @@ class Talker(object):
         self.response_time = response_time
         self.sentence_trans = SentenceTranslator()
         self.tmp_path = os.path.join(TEMP_DIR, 'temp_master', 'talker')
-        self.saved_brain_path = os.path.join(self.tmp_path, 'saved_brain.brn')
+        self.version = '1.0'
+        self.saved_brain_path = os.path.join(self.tmp_path, 'saved_brain_%s.brn' % self.version)
+        self.last_saved = 0
+        self.auto_saved_period = 300
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):
         self.thinker = aiml.Kernel()
         make_sure_file_dir_exists(self.saved_brain_path)
-        if os.path.isfile(self.saved_brain_path):
+        if try_load_brain and os.path.isfile(self.saved_brain_path):
             self.thinker.bootstrap(brainFile=self.saved_brain_path)
         else:
-            aiml_path = self.get_aiml_path()
-            if aiml_path:
-                aiml_res_path = os.path.join(aiml_path, 'standard')
+            xml_file = self.get_aiml_startup_xml(use_site_package=False)
+            if xml_file:
                 cwd = os.getcwd()
-                os.chdir(aiml_res_path)
-                startup_path = os.path.join(aiml_res_path, "startup.xml")
-                self.thinker.learn(startup_path)
-                self.thinker.respond("LOAD AIML B")
+                os.chdir(os.path.dirname(xml_file))
+                self.thinker.learn(xml_file)
+                self.thinker.respond("LOAD ALICE")
                 self.thinker.saveBrain(self.saved_brain_path)
+                self.last_saved = time.time()
                 os.chdir(cwd)
         return self.thinker
 
@@ -62,11 +66,16 @@ class Talker(object):
     def set_thinker_name(self, thinker_name):
         self.thinker_name = thinker_name
 
-    def get_aiml_path(self):
-        aiml_path = imp.find_module('aiml')[1]
-        if not aiml:
-            print "aiml path do not exist, please install it"
-        return aiml_path
+    def get_aiml_startup_xml(self, use_site_package=False):
+        if use_site_package:
+            aiml_path = imp.find_module('aiml')[1]
+            if not aiml:
+                print "aiml path do not exist, please install it"
+            xml_file = os.path.join(aiml_path, 'alice', 'startup.xml')
+            print xml_file
+        else:
+            xml_file = os.path.join(settings.BASE_DIR, 'res', 'aiml-en-us-foundation-alice.v1-9', 'startup.xml')
+        return xml_file
 
     def start(self):
         print '\n\n' + '=' * 30
@@ -80,6 +89,8 @@ class Talker(object):
             time.sleep(sleep_time)
 
     def respond_to_human_msg(self, msg, session_id=0, keep_chinese=True):
+        if time.time() - self.last_saved > self.auto_saved_period:
+            self.thinker.saveBrain(self.saved_brain_path)
         msg = to_unicode(msg)
         if keep_chinese:
             msg = self.sentence_trans.convert_to_en(msg)
@@ -125,7 +136,7 @@ class Talker(object):
         sound_util.play_mp3(self.speech_path)
 
 
-talker_inst = Talker(try_load_brain=False)
+talker_inst = Talker(try_load_brain=True)
 
 
 if __name__ == '__main__':

@@ -2,8 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/love_me/paper_plane.html" afterPath="$PROJECT_DIR$/template/love_me/paper_plane.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/love_me/show_form.html" afterPath="$PROJECT_DIR$/template/love_me/show_form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/ai.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/alice.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/astrology.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/atomic.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/badanswer.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/biography.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/bot.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/bot_profile.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/client.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/client_profile.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/computers.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/continuation.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/date.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/default.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/drugs.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/emotion.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/food.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/geography.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/gossip.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/history.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/humor.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/imponderables.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/inquiry.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/interjection.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/iu.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/junktest.text" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/knowledge.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/literature.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/loebner10.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/money.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/movies.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp0.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp1.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp2.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp3.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp4.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp5.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/mp6.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/music.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/numbers.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/personality.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/phone.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/pickup.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/politics.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/primeminister.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/primitive-math.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/psychology.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/pyschology.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reduction.names.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reduction0.safe.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reduction1.safe.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reduction2.safe.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reduction3.safe.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reduction4.safe.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/reductions-update.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/religion.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/salutations.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/science.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/sex.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/sports.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/stack.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/stories.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/that.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update1.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update_mccormick.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/wallace.aiml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/xfind.aiml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/talker/talker_main.py" afterPath="$PROJECT_DIR$/talker/talker_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,10 +88,11 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/paper_plane$Test__requirements_min_txt.coverage" NAME="Test: requirements_min.txt Coverage Results" MODIFIED="1460886050222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/paper_plane$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1460924201313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/love_me" />
-    <SUITE FILE_PATH="coverage/paper_plane$talker_main.coverage" NAME="talker_main Coverage Results" MODIFIED="1460881979944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/talker" />
+    <SUITE FILE_PATH="coverage/paper_plane$talker_main.coverage" NAME="talker_main Coverage Results" MODIFIED="1460951376098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/talker" />
     <SUITE FILE_PATH="coverage/paper_plane$file_manager.coverage" NAME="file_manager Coverage Results" MODIFIED="1460899572060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/paper_plane" />
     <SUITE FILE_PATH="coverage/paper_plane$subscription.coverage" NAME="subscription Coverage Results" MODIFIED="1460887368195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/paper_plane$views.coverage" NAME="views Coverage Results" MODIFIED="1460909486445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/subscription" />
+    <SUITE FILE_PATH="coverage/paper_plane$test.coverage" NAME="test Coverage Results" MODIFIED="1460949594537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/paper_plane$Test__paper_plane_info_txt.coverage" NAME="Test: paper_plane.info.txt Coverage Results" MODIFIED="1460876813685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -53,46 +123,68 @@
         <entry file="file://$PROJECT_DIR$/paper_plane/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/site-packages/django/db/models/base.py">
+      <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.71153843">
+              <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding>
+                <element signature="e#137#167#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startup.xml" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/alice/startup.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="8.75">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Kernel.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/Kernel.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="733" column="0" selection-start-line="733" selection-start-column="0" selection-end-line="733" selection-end-column="0" />
+              <caret line="161" column="8" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="query.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/site-packages/django/db/models/query.py">
+      <file leaf-file-name="speech_translate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="347" column="0" selection-start-line="347" selection-start-column="0" selection-end-line="347" selection-end-column="0" />
+              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cursors.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/site-packages/MySQL_python-1.2.4b4-py2.7-macosx-10.5-x86_64.egg/MySQLdb/cursors.py">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paper_plane.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="paper_plane.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/love_me/paper_plane.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5933014">
+            <state vertical-scroll-proportion="-44.25">
               <caret line="112" column="84" selection-start-line="112" selection-start-column="84" selection-end-line="112" selection-end-column="84" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -102,40 +194,6 @@
                 <element signature="n#style#0;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/site-packages/django/db/backends/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compiler.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="973" column="0" selection-start-line="973" selection-start-column="0" selection-end-line="973" selection-end-column="0" />
-              <folding>
-                <marker date="1460788987000" expanded="true" signature="40017:40029" placeholder="INSERT INTO missing_value... " />
-                <marker date="1460788987000" expanded="true" signature="43321:43333" placeholder="DELETE FROM " />
-                <marker date="1460788987000" expanded="true" signature="49669:49697" placeholder="SELECT missi... missing_value" />
               </folding>
             </state>
           </provider>
@@ -167,7 +225,6 @@
         <option value="$PROJECT_DIR$/requirements_min.txt" />
         <option value="$PROJECT_DIR$/tests/subscription_test.py" />
         <option value="$PROJECT_DIR$/k_util/set_default_encodeing.py" />
-        <option value="$PROJECT_DIR$/talker/talker_main.py" />
         <option value="$PROJECT_DIR$/talker/speech_translate.py" />
         <option value="$PROJECT_DIR$/paper_plane/file_manager.py" />
         <option value="$PROJECT_DIR$/paper_plane/info.txt" />
@@ -182,6 +239,9 @@
         <option value="$PROJECT_DIR$/love_me/views.py" />
         <option value="$PROJECT_DIR$/template/love_me/show_form.html" />
         <option value="$PROJECT_DIR$/template/love_me/paper_plane.html" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml" />
+        <option value="$PROJECT_DIR$/talker/talker_main.py" />
       </list>
     </option>
   </component>
@@ -191,8 +251,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="477" />
-    <option name="y" value="68" />
+    <option name="x" value="163" />
+    <option name="y" value="96" />
     <option name="width" value="2134" />
     <option name="height" value="1104" />
   </component>
@@ -240,6 +300,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aiml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aiml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="standard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="site-packages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aiml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="alice" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,16 +454,26 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="image" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lover_1200_675" />
+              <option name="myItemId" value="aiml-en-us-foundation-alice.v1-9" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,43 +491,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="love_me" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,57 +544,19 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9" />
+      <recent name="$PROJECT_DIR$/res" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/talker" />
+      <recent name="$PROJECT_DIR$/k_util" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/paper_plane" />
       <recent name="$PROJECT_DIR$/static/media" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/talker" />
-      <recent name="$PROJECT_DIR$/k_util" />
-      <recent name="$PROJECT_DIR$/paper_plane" />
-      <recent name="$PROJECT_DIR$/static" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.views (1)">
-    <configuration default="false" name="subscription" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="paper_plane" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/subscription_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Test: requirements_min.txt" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="paper_plane" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="TARGET" value="requirements_min.txt" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.talker_main">
     <configuration default="false" name="file_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -549,6 +607,42 @@
       <module name="paper_plane" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/love_me/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="paper_plane" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="talker_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/talker" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="paper_plane" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/talker/talker_main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -836,19 +930,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Django server.paper_plane" />
-      <item index="1" class="java.lang.String" itemvalue="Python.subscription" />
-      <item index="2" class="java.lang.String" itemvalue="Django tests.Test: requirements_min.txt" />
-      <item index="3" class="java.lang.String" itemvalue="Python.file_manager" />
-      <item index="4" class="java.lang.String" itemvalue="Python.views" />
-      <item index="5" class="java.lang.String" itemvalue="Python.views (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.file_manager" />
+      <item index="2" class="java.lang.String" itemvalue="Python.views" />
+      <item index="3" class="java.lang.String" itemvalue="Python.views (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="5" class="java.lang.String" itemvalue="Python.talker_main" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.views (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.views" />
-        <item index="2" class="java.lang.String" itemvalue="Python.file_manager" />
-        <item index="3" class="java.lang.String" itemvalue="Python.subscription" />
-        <item index="4" class="java.lang.String" itemvalue="Django tests.Test: requirements_min.txt" />
+        <item index="0" class="java.lang.String" itemvalue="Python.talker_main" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.views (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.views" />
+        <item index="4" class="java.lang.String" itemvalue="Python.file_manager" />
       </list>
     </recent_temporary>
   </component>
@@ -874,8 +968,8 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="477" y="68" width="2134" height="1104" extended-state="0" />
-    <editor active="true" />
+    <frame x="163" y="96" width="2134" height="1104" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25717017" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -883,9 +977,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905138" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3992095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -915,55 +1009,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/wave.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="512" column="0" selection-start-line="512" selection-start-column="0" selection-end-line="512" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="557" column="0" selection-start-line="557" selection-start-column="0" selection-end-line="557" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/Kernel.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="299" column="38" selection-start-line="299" selection-start-column="29" selection-end-line="299" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5432692">
-          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/talker/sentence_translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8986175">
-          <caret line="39" column="66" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements_min.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4444447">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/k_util/set_default_encodeing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023041476">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/k_util/sound_op.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-48.88889">
@@ -1013,13 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0">
-          <caret line="121" column="44" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/paper_plane/url_manager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1064,13 +1102,6 @@
     <entry file="file://$PROJECT_DIR$/static/media/image/lover_1200_675/0002.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/account/urls.py">
@@ -1168,14 +1199,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/paper_plane/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="165" column="0" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1264,24 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/love_me/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.222221">
-          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/paper_plane/info.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/love_me/show_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.83253586">
@@ -1297,7 +1302,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/love_me/paper_plane.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5933014">
+        <state vertical-scroll-proportion="-44.25">
           <caret line="112" column="84" selection-start-line="112" selection-start-column="84" selection-end-line="112" selection-end-column="84" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1307,6 +1312,106 @@
             <element signature="n#style#0;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/iu.aiml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41474655">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/standard/startup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.625">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paper_plane/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34562212">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/Kernel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="161" column="8" selection-start-line="161" selection-start-column="8" selection-end-line="161" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/standard/std-robot.aiml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5299539">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paper_plane/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/love_me/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.222221">
+          <caret line="89" column="11" selection-start-line="89" selection-start-column="11" selection-end-line="89" selection-end-column="11" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/aiml/alice/startup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.75">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71153843">
+          <caret line="140" column="0" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding>
+            <element signature="e#137#167#0" expanded="true" />
           </folding>
         </state>
       </provider>
