@@ -33,12 +33,6 @@ ALLOWED_HOSTS = []
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 TEMPLATE_ROOT = os.path.join(BASE_DIR, 'template/')
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'template/service/'),
-    os.path.join(BASE_DIR, 'template/love_me/'),
-    os.path.join(BASE_DIR, 'template/lin/'),
-)
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -60,6 +54,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'account',
     'love_me',
+    'lin',
     'subscription',
 )
 
@@ -82,6 +77,7 @@ TEMPLATES = [
             TEMPLATE_ROOT,
             os.path.join(TEMPLATE_ROOT, 'love_me'),
             os.path.join(TEMPLATE_ROOT, 'service'),
+            os.path.join(TEMPLATE_ROOT, 'lin'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
