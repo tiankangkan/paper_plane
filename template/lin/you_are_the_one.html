@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>box 布局</title>
+        <style media="screen">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #content{
+            width:70%;
+            /*height: 300px;*/
+            background-color: #87CEFA;
+            margin:0 auto;
+        }
+        #header{
+            width:100%;
+            height: 100px;
+            background-color: #F0F8FF;
+            margin-bottom: 30px;
+        }
+        #footer{
+            margin-top: 200px;
+            width: 100%;
+
+            background-color: ##F8F8FF;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            color: #00f;
+            /*清除*/
+            clear: both;
+        }
+        .nav{
+            background-color: #F0FFF0;
+            float: left;
+            margin-left: auto;
+            padding: 0px 0px;
+            height: 260px;
+            width: 30%;
+        }
+        .data{
+            background-color: #fff;
+            float: left;
+            width:70%;
+            height: 260px;
+            margin-bottom: 30px;
+        }
+        p{
+            margin: 20px;
+            background-color: #FFDAB9;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+        }
+        /*伪类选择器*/
+        p:hover{
+            background-color: #666;
+        }
+        ul{
+            margin-left: 30px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="content">
+
+
+        <div id="header">
+
+            </div>
+            <div class="nav">
+                <ul >
+                    <li>若 只</li>
+                    <li>水 取</li>
+                    <li>三 一</li>
+                    <li>千 瓢</li>
+                    <li>， 饮</li>
+                    <li>我  </li>
+                </ul>
+
+            </div>
+            <div class="data">
+                <p>
+                    爱我吗？
+                </p>
+                <p>
+                    爱我吗？
+                </p>
+                <p>
+                    爱我吗？
+                </p>
+            </div>
+        <div id="footer">
+            <p>
+                copyright@abc.com
+            </p>
+
+        </div>
+        </div>
+
+    </body>
+</html>

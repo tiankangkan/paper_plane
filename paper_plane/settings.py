@@ -36,6 +36,7 @@ TEMPLATE_ROOT = os.path.join(BASE_DIR, 'template/')
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'template/service/'),
     os.path.join(BASE_DIR, 'template/love_me/'),
+    os.path.join(BASE_DIR, 'template/lin/'),
 )
 
 
