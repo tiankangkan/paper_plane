@@ -30,8 +30,8 @@ from django.conf import settings
 class Talker(object):
     def __init__(self, human_name='Lin', thinker_name='Alice', try_load_brain=True, use_site_package=False,
                  try_translate=True, response_time=0.01):
-        self.thinker_name = thinker_name
         self.human_name = human_name
+        self.thinker_name = thinker_name
         self.thinker = aiml.Kernel()
         self.record_path = None
         self.speech_path = None
@@ -45,8 +45,10 @@ class Talker(object):
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
         self.try_translate = try_translate
-        self.thinker.setBotPredicate('name', thinker_name)
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
+
+    def do_after_load_thinker(self):
+
 
     def load_thinker_with_aiml(self, try_load_brain=True):
         make_sure_file_dir_exists(self.saved_brain_path)
@@ -62,6 +64,7 @@ class Talker(object):
                 self.thinker.saveBrain(self.saved_brain_path)
                 self.last_saved = time.time()
                 os.chdir(cwd)
+        self.thinker.setBotPredicate('name', self.thinker_name)
         return self.thinker
 
     def set_human_name(self, human_name):
