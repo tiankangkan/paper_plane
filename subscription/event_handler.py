@@ -38,7 +38,7 @@ def reply_to_text_message(wechat):
 
 def handle_text_message_with_talker(wechat, human_msg):
     talker_inst.set_human_name(u'baby')
-    thinker_msg = talker_inst.respond_to_human_msg(human_msg, keep_chinese=True, session_id=wechat.message.source)
+    thinker_msg = talker_inst.respond_to_human_msg(human_msg, try_translate=True, session_id=wechat.message.source)
     log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
     thinker_msg = thinker_msg
     return thinker_msg
