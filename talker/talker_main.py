@@ -38,8 +38,8 @@ class Talker(object):
         self.thinker_sex = SpeechPeople.WOMAN    # 'MAN' or 'WOMAN'
         self.response_time = response_time
         self.sentence_trans = SentenceTranslator()
-        self.tmp_path = os.path.join(TEMP_DIR, 'temp_master', 'talker')
-        self.version = '1.0'
+        self.tmp_path = os.path.join(TEMP_DIR, 'brain')
+        self.version = '1.0'    # 改变 version 来重新加载大脑数据
         self.saved_brain_path = os.path.join(self.tmp_path, 'saved_brain_%s.brn' % self.version)
         self.last_saved = 0
         self.auto_saved_period = 300
