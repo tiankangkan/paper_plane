@@ -11,8 +11,6 @@
 <!-- -->
 
 
-
-
 <category>
 <pattern>WHAT ARE THE 3 LAWS *</pattern>
 <template><srai>what are the three laws <star/></srai></template>

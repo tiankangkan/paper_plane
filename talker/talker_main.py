@@ -28,10 +28,11 @@ from django.conf import settings
 
 
 class Talker(object):
-    def __init__(self, human_name='Lin', thinker_name='Alice', try_load_brain=True, response_time=0.01):
+    def __init__(self, human_name='Lin', thinker_name='Alice', try_load_brain=True, use_site_package=False,
+                 try_translate=True, response_time=0.01):
         self.thinker_name = thinker_name
         self.human_name = human_name
-        self.thinker = None
+        self.thinker = aiml.Kernel()
         self.record_path = None
         self.speech_path = None
         self.thinker_sex = SpeechPeople.WOMAN    # 'MAN' or 'WOMAN'
@@ -42,15 +43,17 @@ class Talker(object):
         self.saved_brain_path = os.path.join(self.tmp_path, 'saved_brain_%s.brn' % self.version)
         self.last_saved = 0
         self.auto_saved_period = 300
+        self.use_site_package = use_site_package
+        self.try_translate = try_translate
+        self.thinker.setBotPredicate('name', thinker_name)
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):
-        self.thinker = aiml.Kernel()
         make_sure_file_dir_exists(self.saved_brain_path)
         if try_load_brain and os.path.isfile(self.saved_brain_path):
             self.thinker.bootstrap(brainFile=self.saved_brain_path)
         else:
-            xml_file = self.get_aiml_startup_xml(use_site_package=False)
+            xml_file = self.get_aiml_startup_xml()
             if xml_file:
                 cwd = os.getcwd()
                 os.chdir(os.path.dirname(xml_file))
@@ -67,8 +70,8 @@ class Talker(object):
     def set_thinker_name(self, thinker_name):
         self.thinker_name = thinker_name
 
-    def get_aiml_startup_xml(self, use_site_package=False):
-        if use_site_package:
+    def get_aiml_startup_xml(self):
+        if self.use_site_package:
             aiml_path = imp.find_module('aiml')[1]
             if not aiml:
                 print "aiml path do not exist, please install it"
@@ -89,7 +92,8 @@ class Talker(object):
             sleep_time = random.uniform(0, 2*self.response_time)
             time.sleep(sleep_time)
 
-    def respond_to_human_msg(self, msg, session_id=0, try_translate=True):
+    def respond_to_human_msg(self, msg, session_id=0, try_translate=None):
+        try_translate = try_translate or self.try_translate
         if time.time() - self.last_saved > self.auto_saved_period:
             self.thinker.saveBrain(self.saved_brain_path)
         lang = get_language(msg)
@@ -144,9 +148,9 @@ talker_inst = Talker(try_load_brain=True)
 
 
 if __name__ == '__main__':
-    talker = Talker()
-    # talker.start()
-    talker.respond_to_human_msg(msg='hello')
-    talker.respond_to_human_msg(msg='你好吗')
+    talker = Talker(try_load_brain=False)
+    talker.start()
+    # talker.respond_to_human_msg(msg="what's your name")
+    # talker.respond_to_human_msg(msg='你叫什么名字')
 
 
