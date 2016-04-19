@@ -47,9 +47,6 @@ class Talker(object):
         self.try_translate = try_translate
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
-    def do_after_load_thinker(self):
-
-
     def load_thinker_with_aiml(self, try_load_brain=True):
         make_sure_file_dir_exists(self.saved_brain_path)
         if try_load_brain and os.path.isfile(self.saved_brain_path):
