@@ -104,7 +104,7 @@ class Talker(object):
         # print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
         log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (session_id, MSG_TALKER_TRANSLATE, msg, req_msg_t, thinker_resp, resp_msg)
         log_inst.info(log_msg)
-        return thinker_resp
+        return resp_msg
 
     def shutdown(self):
         self.thinker.saveBrain(self.saved_brain_path)

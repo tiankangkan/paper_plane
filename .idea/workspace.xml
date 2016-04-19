@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache_configs/apache2.conf" afterPath="$PROJECT_DIR$/apache_configs/apache2.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache_configs/paper_plane.conf" afterPath="$PROJECT_DIR$/apache_configs/paper_plane.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info.txt" afterPath="$PROJECT_DIR$/info.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subscription/event_handler.py" afterPath="$PROJECT_DIR$/subscription/event_handler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/talker/talker_main.py" afterPath="$PROJECT_DIR$/talker/talker_main.py" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,17 +45,17 @@
         <entry file="file://$PROJECT_DIR$/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="67" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.23634453">
+              <caret line="91" column="28" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="28" />
               <folding>
                 <element signature="e#137#167#0" expanded="true" />
               </folding>
@@ -66,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event_handler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="event_handler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.086134456">
+            <state vertical-scroll-proportion="0.0">
               <caret line="40" column="75" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="75" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
@@ -202,8 +199,8 @@
         <option value="$PROJECT_DIR$/info.txt" />
         <option value="$PROJECT_DIR$/apache_configs/paper_plane.conf" />
         <option value="$PROJECT_DIR$/apache_configs/apache2.conf" />
-        <option value="$PROJECT_DIR$/talker/talker_main.py" />
         <option value="$PROJECT_DIR$/subscription/event_handler.py" />
+        <option value="$PROJECT_DIR$/talker/talker_main.py" />
       </list>
     </option>
   </component>
@@ -213,8 +210,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="74" />
-    <option name="y" value="222" />
+    <option name="x" value="373" />
+    <option name="y" value="164" />
     <option name="width" value="2134" />
     <option name="height" value="1072" />
   </component>
@@ -808,7 +805,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="74" y="222" width="2134" height="1072" extended-state="0" />
+    <frame x="373" y="164" width="2134" height="1072" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1215,14 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apache_configs/paper_plane.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.6666666">
@@ -1255,22 +1244,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
+    <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="67" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="67" />
+          <caret line="40" column="75" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="75" />
           <folding>
-            <element signature="e#137#167#0" expanded="true" />
+            <element signature="e#25#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
+    <entry file="file://$PROJECT_DIR$/info.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.086134456">
-          <caret line="40" column="75" selection-start-line="40" selection-start-column="62" selection-end-line="40" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23634453">
+          <caret line="91" column="28" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="28" />
           <folding>
-            <element signature="e#25#40#0" expanded="true" />
+            <element signature="e#137#167#0" expanded="true" />
           </folding>
         </state>
       </provider>
