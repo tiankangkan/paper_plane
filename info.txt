@@ -27,8 +27,8 @@ configs:
 /etc/apache2/sites-available/000-default.conf
 
 log:
-ErrorLog "|/usr/bin/cronolog -l /data/logs/error/errorLog-%Y-%m-%d__%I.log 604800"
-CustomLog "|/usr/bin/cronolog -l /data/logs/custom/customLog-%Y-%m-%d__%I.log 604800" common
+ErrorLog "| /usr/bin/cronolog -l /data/logs/error/errorLog-%Y-%m-%d__%I.log 604800 480"
+CustomLog "| /usr/bin/cronolog -l /data/logs/custom/customLog-%Y-%m-%d__%I.log 604800 480" common
 
 :: lin-master config
 <VirtualHost *:80>
