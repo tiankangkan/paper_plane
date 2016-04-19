@@ -26,12 +26,16 @@ configs:
 /etc/apache2/apache2.conf
 /etc/apache2/sites-available/000-default.conf
 
+log:
+ErrorLog "|/usr/local/apache/bin/rotatelogs -l /data/logs/error-%Y-%m-%d.log 86400"
+CustomLog "|/usr/local/apache/bin/rotatelogs -l /data/logs/access-%Y-%m-%d.log 1M” common
+
 :: lin-master config
 <VirtualHost *:80>
     DocumentRoot "/data/project/paper_plane"
     ServerName lin-masterkang.com
-    ErrorLog "/data/errlog.txt"
-    CustomLog "/data/app_log.txt" common
+    ErrorLog "|bin/rotatelogs -l /data/logs/error-%Y-%m-%d.log 86400"
+    CustomLog "|bin/rotatelogs -l /data/logs/access-%Y-%m-%d.log 1M” common
     <Directory />
         Options FollowSymLinks
         AllowOverride None

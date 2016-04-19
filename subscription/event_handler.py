@@ -2,18 +2,15 @@
 
 import StringIO
 import json
-import urllib
-import random
 
 from account.models import UserAccount
-from wechat_sdk import WechatBasic
 
 from talker.speech_translate import speech_trans_inst, SpeechPeople
-from paper_plane.url_manager import UrlManager
-from love_me.views import reply_text_message_contains_paper_plane
 from talker.talker_main import talker_inst
-from k_util.k_logger import logger
+from love_me.views import reply_text_message_contains_paper_plane
 from k_util.str_op import to_utf_8
+from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE
+from paper_plane.settings import log_inst
 
 
 def save_user_to_db(wechat):
@@ -23,7 +20,8 @@ def save_user_to_db(wechat):
         queryset.update(wechat_openid=wechat_openid)
     else:
         user = UserAccount.objects.create(wechat_openid=wechat_openid)
-    logger.info('<save_user_to_db>: wechat_openid is %s' % wechat_openid)
+        user.save()
+    log_inst.info('<save_user_to_db>: wechat_openid is %s' % wechat_openid)
 
 
 def reply_to_text_message(wechat):
@@ -41,12 +39,14 @@ def reply_to_text_message(wechat):
 def handle_text_message_with_talker(wechat, human_msg):
     talker_inst.set_human_name(u'baby')
     thinker_msg = talker_inst.respond_to_human_msg(human_msg, keep_chinese=True, session_id=wechat.message.source)
-    logger.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
+    log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
     thinker_msg = thinker_msg
     return thinker_msg
 
 
 def handle_text_message_contains_paper_plane(wechat):
+    log_msg = '%s: content: %s' % (MSG_LOVE_ME_REQUEST, wechat.message.content)
+    log_inst.info(log_msg)
     text = reply_text_message_contains_paper_plane(wechat.message.source)
     resp = wechat.response_text(text, escape=False)
     return resp
@@ -61,15 +61,19 @@ def reply_to_voice_message(wechat):
         resp_content = u'没听清楚,再讲一遍可以吗? 😳 '
     else:
         resp_content = handle_text_message_with_talker(wechat=wechat, human_msg=recognition)
-    logger.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
+    log_inst.info('<reply_to_voice_message>: media_id: %s, format: %s, recognition: %s' % (media_id, format, recognition))
     return wechat.response_text(resp_content, escape=False)
 
 
 def reply_to_event_message(wechat):
+    log_msg = '%s: type: %s, id: %s' % (MSG_WX_EVENT_IGNORE, wechat.message.type, wechat.message.source)
+    log_inst.info(log_msg)
     if wechat.message.type == 'subscribe':  # 关注事件(包括普通关注事件和扫描二维码造成的关注事件)
         key = wechat.message.key                        # 对应于 XML 中的 EventKey (普通关注事件时此值为 None)
         ticket = wechat.message.ticket                  # 对应于 XML 中的 Ticket (普通关注事件时此值为 None)
         save_user_to_db(wechat)
+        log_msg = '%s: id: %s' % (MSG_WX_EVENT_FOLLOW, wechat.message.source)
+        log_inst.info(log_msg)
         return wechat.response_text(u'欢迎来到小康君的地盘, 由我们家可爱的Alice陪你聊天😊', escape=False)
     elif wechat.message.type == 'unsubscribe':  # 取消关注事件（无可用私有信息）
         pass
@@ -116,7 +120,7 @@ def upload_voice_message(wechat, file_path=None, file_obj=None, extension=''):
 def send_user_voice_message(wechat, text, sex=SpeechPeople.WOMAN):
     file_obj = convert_text_to_voice_file_obj(wechat, text, sex=sex)
     resp = upload_voice_message(wechat=wechat, file_obj=file_obj, extension='mp3')
-    logger.info('<seed_voice_message>: resp: %s' % resp)
+    log_inst.info('<seed_voice_message>: resp: %s' % resp)
     return wechat.response_text(u'media_id: %s' % resp, escape=False)
 
 

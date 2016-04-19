@@ -4,28 +4,25 @@ import json
 import random
 import datetime
 import urllib
-import pytz
 import traceback
 
 from love_me.models import ConversationPage
 from account.models import UserAccount
 from django.shortcuts import render_to_response, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.conf import settings
 
 from paper_plane.url_manager import UrlManager
+from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_LOVE_ME_SUBMIT
+from paper_plane.settings import log_inst
 from k_util.django_util import get_request_body
-
-
-def reply_to_show_form(request):
-    print '====================   get req   ===================='
-    return render_to_response('show_form.html')
 
 
 @csrf_exempt
 def reply_to_paper_plane(request):
     req = get_request_body(request)
-    print json.dumps(req, indent=4)
+    log_msg = '%s: %s' % (MSG_LOVE_ME_REQUEST, json.dumps(req, indent=4))
+    log_inst.info(log_msg)
+
     extra_source_id = req.get('extra_source_id', None)
     pic_name = req.get('pic_name', '0001.jpg')
     t_id = req.get('t_id', None)
@@ -37,7 +34,8 @@ def reply_to_paper_plane(request):
 @csrf_exempt
 def reply_to_paper_plane_do_submit(request):
     req = get_request_body(request)
-    print json.dumps(req, indent=4)
+    log_msg = '%s: %s' % (MSG_LOVE_ME_SUBMIT, json.dumps(req, indent=4))
+    log_inst.info(log_msg)
     extra_source_id = req.get('extra_source_id', None)
     how_much_love = req.get('how_much_love', None)
     when_begin_love = req.get('when_begin_love', None)
@@ -54,8 +52,6 @@ def reply_to_paper_plane_do_submit(request):
         pic_name=pic_name,
         extra_source_id=extra_source_id
     )
-    print 'id is %s' % t_id
-    print json.dumps(content_dict, indent=4)
     update_conversation_page_db(t_id=t_id, source_id=extra_source_id, content_dict=content_dict, is_read=True)
     return HttpResponse(json.dumps(dict(status='success', msg=u'成功')))
 

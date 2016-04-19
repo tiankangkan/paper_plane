@@ -11,7 +11,7 @@ Note:
 
 import urllib2
 import json
-from k_util.str_op import to_utf_8, to_unicode, is_chinese_char, is_ascii_char
+from k_util.str_op import to_utf_8, chinese_percent, english_percent, is_english, is_chinese
 
 
 class SentenceTranslator(object):
@@ -35,46 +35,27 @@ class SentenceTranslator(object):
         return translation
 
     def convert_to_en(self, sentence):
-        if self.is_english(sentence, percent=1.0):
+        if is_english(sentence, percent=1.0):
             return sentence
         translation_a = self.convert_between_ch_and_en_with_youdao(sentence)
         translation_b = self.convert_between_ch_and_en_with_youdao(translation_a)
-        if self.english_percent(translation_a) > self.english_percent(translation_b):
+        if english_percent(translation_a) > english_percent(translation_b):
             translation = translation_a
         else:
             translation = translation_b
         return translation
 
     def convert_to_cn(self, sentence):
-        if self.is_chinese(sentence, percent=0.8):
+        if is_chinese(sentence, percent=0.8):
             return sentence
         translation_a = self.convert_between_ch_and_en_with_youdao(sentence)
         translation_b = self.convert_between_ch_and_en_with_youdao(translation_a)
-        if self.chinese_percent(translation_a) > self.chinese_percent(translation_b):
+        if chinese_percent(translation_a) > chinese_percent(translation_b):
             translation = translation_a
         else:
             translation = translation_b
         return translation
 
-    @staticmethod
-    def chinese_percent(s):
-        s = to_unicode(s)
-        ch_num = len([ch for ch in s if is_chinese_char(ch)])
-        percent = ch_num / (len(s) + 0.000001)
-        return percent
-
-    @staticmethod
-    def english_percent(s):
-        s = to_unicode(s)
-        ascii_num = len([ch for ch in s if is_ascii_char(ch)])
-        percent = ascii_num / (len(s) + 0.000001)
-        return percent
-
-    def is_english(self, s, percent):
-        return self.english_percent(s) > percent
-
-    def is_chinese(self, s, percent):
-        return self.chinese_percent(s) > percent
 
 if __name__ == '__main__':
     t = SentenceTranslator()

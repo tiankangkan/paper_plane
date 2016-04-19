@@ -17,12 +17,13 @@ import random
 
 from sentence_translate import SentenceTranslator
 from speech_translate import speech_trans_inst, SpeechPeople
-from k_util.str_op import to_unicode
+from k_util.str_op import to_unicode, is_chinese, is_english, get_language, Language
 from k_util.file_op import make_sure_file_dir_exists
 from k_util.sound_op import SoundUtil
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
 from talker.talker_setting import TEMP_DIR
-
+from paper_plane.proj_setting import MSG_TALKER_TRANSLATE
+from paper_plane.settings import log_inst
 from django.conf import settings
 
 
@@ -88,18 +89,21 @@ class Talker(object):
             sleep_time = random.uniform(0, 2*self.response_time)
             time.sleep(sleep_time)
 
-    def respond_to_human_msg(self, msg, session_id=0, keep_chinese=True):
+    def respond_to_human_msg(self, msg, session_id=0, try_translate=True):
         if time.time() - self.last_saved > self.auto_saved_period:
             self.thinker.saveBrain(self.saved_brain_path)
-        msg = to_unicode(msg)
-        if keep_chinese:
-            msg = self.sentence_trans.convert_to_en(msg)
-        thinker_resp = self.thinker.respond(msg, sessionID=session_id)
-        print type(msg), type(thinker_resp)
-        if keep_chinese:
-            thinker_resp = self.sentence_trans.convert_to_cn(thinker_resp)
-        print type(msg), type(thinker_resp)
+        lang = get_language(msg)
+        req_msg = to_unicode(msg)
+        req_msg_t = req_msg
+        if lang == Language.CN and try_translate:
+            req_msg_t = self.sentence_trans.convert_to_en(msg)
+        thinker_resp = self.thinker.respond(req_msg_t, sessionID=session_id)
+        resp_msg = thinker_resp
+        if lang == Language.CN:
+            resp_msg = self.sentence_trans.convert_to_cn(thinker_resp)
         # print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
+        log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (session_id, MSG_TALKER_TRANSLATE, msg, req_msg_t, thinker_resp, resp_msg)
+        log_inst.info(log_msg)
         return thinker_resp
 
     def shutdown(self):
@@ -141,6 +145,8 @@ talker_inst = Talker(try_load_brain=True)
 
 if __name__ == '__main__':
     talker = Talker()
-    talker.start()
+    # talker.start()
+    talker.respond_to_human_msg(msg='hello')
+    talker.respond_to_human_msg(msg='你好吗')
 
 

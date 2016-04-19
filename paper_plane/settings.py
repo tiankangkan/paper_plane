@@ -173,3 +173,5 @@ if 'windows' in SYSTEM:
     TEMP_DIR = 'D:\\paper_plane\\'
 else:
     TEMP_DIR = '/tmp/paper_plane/'
+
+from k_util.k_logger import log_inst

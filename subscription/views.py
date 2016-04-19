@@ -2,6 +2,8 @@
 
 import paper_plane.django_init
 import json
+import event_handler
+
 from wechat_sdk import messages
 from wechat_sdk import WechatBasic
 
@@ -9,9 +11,9 @@ from django.utils.encoding import smart_str
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from k_util.k_logger import logger
 from k_util.django_util import get_request_body
-import event_handler
+from paper_plane.proj_setting import MSG_WX_REQUEST
+from paper_plane.settings import log_inst
 
 
 wechat = WechatBasic(
@@ -33,7 +35,6 @@ def weixin_entry(request):
     req = get_request_body(request)
     wechat.self_space['request'] = req
     if request.method == "GET":
-        logger.info('IN weixin_entry ==================')
         signature = request.GET.get("signature", None)
         timestamp = request.GET.get("timestamp", None)
         nonce = request.GET.get("nonce", None)
@@ -45,14 +46,15 @@ def weixin_entry(request):
             return HttpResponse("weixin  index")
     else:
         xml_str = smart_str(request.body)
-        logger.info('=' * 30+'xml_str:\n%s' % xml_str)
         wechat.parse_data(xml_str)
         resp = dispatch_event(wechat)
-        logger.info('resp:\n%s' % resp)
         return HttpResponse(resp)
 
 
 def dispatch_event(wechat):
+    m = wechat.message
+    log_msg = '%s: source:%s, target: %s, content: %s' % (MSG_WX_REQUEST, m.source, m.target, m.content)
+    log_inst.info(log_msg)
     if isinstance(wechat.message, messages.TextMessage):
         # logger.info('=' * 30+'user_info:\n%s' % user_info)
         return event_handler.reply_to_text_message(wechat)
