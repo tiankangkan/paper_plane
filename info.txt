@@ -16,6 +16,21 @@ git fetch --all
 git reset --hard origin/master
 
 
+url
+----------------------------
+http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/love_me/paper_plane/
+http://127.0.0.1:8000/subscription/weixin_entry/
+
+http://115.159.81.50/admin/
+http://115.159.81.50/love_me/paper_plane/
+http://115.159.81.50/subscription/weixin_entry/
+
+http://iready-go.com/love_me/paper_plane/
+http://iready-go.com/lin/do_you_love_me/
+http://iready-go.com/lin/you_are_the_one/
+
+
 
 Apache
 ----------------------------
@@ -24,11 +39,11 @@ curl 127.0.0.1
 
 configs:
 /etc/apache2/apache2.conf
-/etc/apache2/sites-available/000-default.conf
+/etc/apache2/sites-available/paper_plane.conf
 
 log:
 ErrorLog "|/usr/bin/cronolog  /data/logs/error/errorLog-%Y-%m-%d.log --period='1 days'"
-CustomLog "|/usr/bin/cronolog /data/logs/custom/customLog-%Y-%m-%d__%I.log --period='1 days'" common
+CustomLog "|/usr/bin/cronolog /data/logs/custom/customLog-%Y-%m-%d.log --period='1 days'" common
 
 
 :: lin-master config
@@ -62,16 +77,6 @@ log
 ----------------------------
 cat /data/logs/apache2/error_log.txt
 cat /data/app_log.txt
-
-url
-----------------------------
-http://127.0.0.1:8000/admin/
-http://127.0.0.1:8000/love_me/show_form/
-http://127.0.0.1:8000/subscription/weixin_entry/
-
-http://115.159.81.50/admin/
-http://115.159.81.50/love_me/paper_plane/
-http://115.159.81.50/subscription/weixin_entry/
 
 
 admin

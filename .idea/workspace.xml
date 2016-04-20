@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/talker/talker_main.py" afterPath="$PROJECT_DIR$/talker/talker_main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info.txt" afterPath="$PROJECT_DIR$/info.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paper_plane/settings.py" afterPath="$PROJECT_DIR$/paper_plane/settings.py" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,10 +43,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6114865">
+            <state vertical-scroll-proportion="-13.407408">
               <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="e#137#167#0" expanded="true" />
@@ -53,21 +55,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="talker_setting.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/talker/talker_setting.py">
+      <file leaf-file-name="info.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="32" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="32" />
+              <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/info.txt">
+      <file leaf-file-name="note_of_lin.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/note_of_lin.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/paper_plane/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4911147">
+              <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="paper_plane.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apache_configs/paper_plane.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.6666665">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="apache2.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apache_configs/apache2.conf">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-38.333332">
+              <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -122,7 +154,6 @@
         <option value="$PROJECT_DIR$/lin/views.py" />
         <option value="$PROJECT_DIR$/paper_plane/urls.py" />
         <option value="$PROJECT_DIR$/note_of_lin.txt" />
-        <option value="$PROJECT_DIR$/paper_plane/settings.py" />
         <option value="$PROJECT_DIR$/talker/sentence_translate.py" />
         <option value="$PROJECT_DIR$/k_util/str_op.py" />
         <option value="$PROJECT_DIR$/love_me/urls.py" />
@@ -133,8 +164,6 @@
         <option value="$PROJECT_DIR$/paper_plane.conf" />
         <option value="$PROJECT_DIR$/k_util/backup.py" />
         <option value="$PROJECT_DIR$/backup.py" />
-        <option value="$PROJECT_DIR$/info.txt" />
-        <option value="$PROJECT_DIR$/apache_configs/paper_plane.conf" />
         <option value="$PROJECT_DIR$/apache_configs/apache2.conf" />
         <option value="$PROJECT_DIR$/subscription/event_handler.py" />
         <option value="$PROJECT_DIR$/k_util/k_logger.py" />
@@ -142,6 +171,9 @@
         <option value="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update1.aiml" />
         <option value="/usr/local/lib/python2.7/site-packages/aiml/standard/startup.xml" />
         <option value="$PROJECT_DIR$/talker/talker_main.py" />
+        <option value="$PROJECT_DIR$/apache_configs/paper_plane.conf" />
+        <option value="$PROJECT_DIR$/info.txt" />
+        <option value="$PROJECT_DIR$/paper_plane/settings.py" />
       </list>
     </option>
   </component>
@@ -819,7 +851,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="373" y="164" width="2134" height="1072" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1083,9 +1115,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,22 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apache_configs/paper_plane.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6666666">
-          <caret line="3" column="84" selection-start-line="3" selection-start-column="84" selection-end-line="3" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apache_configs/apache2.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.703703">
-          <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1144,14 +1158,6 @@
           <folding>
             <element signature="e#25#40#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/paper_plane/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="36" selection-start-line="176" selection-start-column="28" selection-end-line="176" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,17 +1209,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.txt">
+    <entry file="file://$PROJECT_DIR$/apache_configs/paper_plane.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apache_configs/apache2.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-38.333332">
+          <caret line="160" column="22" selection-start-line="160" selection-start-column="22" selection-end-line="160" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/talker/talker_setting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.5088853">
           <caret line="22" column="32" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="32" />
           <folding />
         </state>
@@ -1221,11 +1235,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6114865">
+        <state vertical-scroll-proportion="-13.407408">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="e#137#167#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note_of_lin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/paper_plane/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4911147">
+          <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
