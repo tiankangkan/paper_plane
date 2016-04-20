@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/love_me/paper_plane_receiver.html" afterPath="$PROJECT_DIR$/template/love_me/paper_plane_receiver.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/love_me/paper_plane_review.html" afterPath="$PROJECT_DIR$/template/love_me/paper_plane_review.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/love_me/paper_plane_sender.html" afterPath="$PROJECT_DIR$/template/love_me/paper_plane_sender.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/love_me/views.py" afterPath="$PROJECT_DIR$/love_me/views.py" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/love_me/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3809524">
+              <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
               <folding>
                 <element signature="e#24#54#0" expanded="true" />
               </folding>
@@ -128,10 +126,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paper_plane_sender.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="paper_plane_sender.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/love_me/paper_plane_sender.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0990099">
+            <state vertical-scroll-proportion="-2.5">
               <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
               <folding />
             </state>
@@ -205,10 +203,10 @@
         <option value="$PROJECT_DIR$/info.txt" />
         <option value="$PROJECT_DIR$/subscription/views.py" />
         <option value="$PROJECT_DIR$/subscription/event_handler.py" />
-        <option value="$PROJECT_DIR$/love_me/views.py" />
         <option value="$PROJECT_DIR$/template/love_me/paper_plane_review.html" />
         <option value="$PROJECT_DIR$/template/love_me/paper_plane_receiver.html" />
         <option value="$PROJECT_DIR$/template/love_me/paper_plane_sender.html" />
+        <option value="$PROJECT_DIR$/love_me/views.py" />
       </list>
     </option>
   </component>
@@ -1225,24 +1223,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/love_me/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#24#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/love_me/paper_plane_review.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5">
@@ -1261,9 +1241,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/love_me/paper_plane_sender.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0990099">
+        <state vertical-scroll-proportion="-2.5">
           <caret line="4" column="111" selection-start-line="4" selection-start-column="111" selection-end-line="4" selection-end-column="111" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/love_me/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3809524">
+          <caret line="61" column="62" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
+          <folding>
+            <element signature="e#24#54#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

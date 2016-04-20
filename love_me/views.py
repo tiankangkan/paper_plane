@@ -59,6 +59,7 @@ def reply_to_paper_plane_sender_do_submit(request):
         req_dict = dict()
         for field in field_list:
             req_dict[field] = req.get(field, None)
+        req_dict['nick_name'] = req_dict['nick_name'] or u'宝宝'
 
         db_obj = update_conversation_page_db(source_id=req_dict['extra_source_id'], content_dict=req_dict, is_read=False)
         qrcode_id = 'qrcode_%s.jpg' % get_time_str_now_for_file()
