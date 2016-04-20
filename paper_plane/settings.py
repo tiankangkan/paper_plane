@@ -163,7 +163,7 @@ import getpass
 USER = getpass.getuser()
 
 LOCAL_FLAG = True if USER == 'kangtian' else False
-ENTRY_HOST = 'http://127.0.0.1:8000/' if LOCAL_FLAG else 'http://iready-go.com/'
+ENTRY_HOST = 'http://127.0.0.1:8000/' if LOCAL_FLAG else 'http://115.159.81.50/'
 
 print 'The LOCAL_FLAG is %s' % LOCAL_FLAG
 
