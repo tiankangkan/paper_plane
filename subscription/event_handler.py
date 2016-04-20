@@ -27,7 +27,7 @@ def save_user_to_db(wechat):
 
 def query_from_mail_msg(wechat, t_type=None):
     source_id = wechat.message.source
-    acc_obj = UserAccount.objects.get(source_id=source_id)
+    acc_obj = UserAccount.objects.get(wechat_openid=source_id)
     if t_type:
         queryset = MailMsg.objects.filter(target=acc_obj, t_type=t_type, is_read=False)
     else:

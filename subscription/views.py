@@ -65,7 +65,7 @@ def dispatch_event(wechat):
         return event_handler.reply_to_event_message(wechat)
     else:
         resp = type(wechat.message)
-        return wechat.response_text('Unsupported Msg Type: %s' % resp, escape=False)
+        return wechat.response_text(u'其实, 我不会告诉程序现在出错了的', escape=False)
 
 
 if __name__ == '__main__':
