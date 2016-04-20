@@ -96,11 +96,13 @@ def update_conversation_page_db(source_id=None, target_id=None, content_dict=Non
         try:
             source = UserAccount.objects.get(wechat_openid=source_id) if source_id else None
         except:
-            source = UserAccount.objects.create(wechat_openid=source_id).save()
+            source = UserAccount.objects.create(wechat_openid=source_id)
+            source.save()
         try:
             target = UserAccount.objects.get(wechat_openid=target_id) if target_id else None
         except:
-            target = UserAccount.objects.create(wechat_openid=target_id).save()
+            target = UserAccount.objects.create(wechat_openid=target_id)
+            target.save()
         values = dict(
             source=source,
             target=target,
@@ -108,7 +110,8 @@ def update_conversation_page_db(source_id=None, target_id=None, content_dict=Non
             is_read=is_read,
             timestamp=datetime.datetime.now(),
         )
-        obj = ConversationPage.objects.create(**values).save()
+        obj = ConversationPage.objects.create(**values)
+        obj.save()
     except Exception, e:
         print traceback.format_exc(e)
     return obj
