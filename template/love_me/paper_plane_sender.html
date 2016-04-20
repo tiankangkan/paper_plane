@@ -15,7 +15,7 @@
 <body>
     <div style="max-width: 765px; margin-left: auto; margin-right: auto">
         <div id="div_title">
-            <h1> ~ 你爱宝宝吗 </h1>
+            <h1> ~ 爱宝宝就大声说出来 </h1>
             <hr style="width: 90%; margin-left: 10%">
         </div>
         <div id="images" align="center">
@@ -33,19 +33,19 @@
             <div style="margin: 20px 0 0 0">
                 <span for="how_much_love"> 😍 的程度</span>
                 <div >
-                    <input id="how_much_love" type="text" class="form-control" placeholder="TA 要填的" disabled>
+                    <input id="how_much_love" type="text" class="form-control" placeholder="Ta 要填的" disabled>
                 </div>
             </div>
 
             <div style="margin: 20px 0 0 0">
                 <label for="when_begin_love"> 从什么时候开始滴 </label>
                 <div >
-                    <input id="when_begin_love" type="text" class="form-control" placeholder="TA 要填的" disabled>
+                    <input id="when_begin_love" type="text" class="form-control" placeholder="Ta 要填的" disabled>
                 </div>
             </div>
 
             <div style="margin: 20px 0 0 0">
-                <label for="want_to_say" > 你想对我说什么(TA 要填) </label>
+                <label for="want_to_say" > 你想对我说什么 (Ta 要填) </label>
                 <div >
                     <textarea id="want_to_say"  class="form-control" disabled> </textarea>
                 </div>
@@ -54,14 +54,14 @@
             <div id="div_take_show" style="margin: 20px 0 0 0">
                 <label for="take_show" > 是时候表现一下啦 </label>
                 <div >
-                    <input id="take_show" type="text" class="form-control" placeholder="输入想传达给 TA 的话吧(Maybe 淘宝链接 ...)">
+                    <input id="take_show" type="text" class="form-control" placeholder="输入想传达给 Ta 的话吧(Maybe 淘宝链接 ...)">
                 </div>
             </div>
 
             <div id="div_take_show" style="margin: 20px 0 0 0">
                 <label for="extra_0_question" > 一个额外的问题 </label>
                 <div >
-                    <input id="extra_0_question" type="text" class="form-control" placeholder="可以输入一个额外的问题哦">
+                    <input id="extra_0_question" type="text" class="form-control" placeholder="这是你的自由想象空间">
                 </div>
             </div>
 
@@ -88,13 +88,15 @@
     function submit_form(elem){
         var field_list = ['nick_name', 'how_much_love', 'when_begin_love', 'want_to_say', 'take_show', 'extra_0_question'];
         var post_data = {};
-        for (var i = 0; i <  field_list.length; i ++){
-            field = field_list[i];
-            post_data[field] = document.getElementById(field).value;
-        }
+
         for (var field in values){
             if (values.hasOwnProperty(field))
                 post_data[field] = values[field];
+        }
+
+        for (var i = 0; i <  field_list.length; i ++){
+            field = field_list[i];
+            post_data[field] = document.getElementById(field).value;
         }
 
         $.ajax({

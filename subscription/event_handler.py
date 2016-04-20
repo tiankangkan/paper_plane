@@ -46,7 +46,7 @@ def get_love_me_review_mail(wechat):
         content_str = msg['content'] or '{}'
         content = json.loads(content_str)
         url = content['url']
-        msg_str = '%s\n%s\n%s' % ('有一个小飞机飞到你这里 :)', '-'*15, url)
+        msg_str = '%s\n%s\n%s' % ('新到小飞机一枚 :)', '-'*15, url)
         msg_list_show.append(msg_str)
     return msg_list_show
 
@@ -62,7 +62,7 @@ def reply_to_text_message(wechat):
     msg_list_show = get_love_me_review_mail(wechat)
     if len(msg_list_show) > 0:
         msg = '\n\n'.join(msg_list_show)
-        resp_content = msg + resp_content
+        resp_content = msg + '\n%s\n' % '-'*15 + resp_content
     resp = wechat.response_text(resp_content, escape=False)
     return resp
 

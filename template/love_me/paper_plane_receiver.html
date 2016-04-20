@@ -15,7 +15,7 @@
 <body>
     <div style="max-width: 765px; margin-left: auto; margin-right: auto">
         <div id="div_title">
-            <h1 id="h_title"> ~ 你爱宝宝吗 </h1>
+            <h1 id="h_title"> ~ 爱我就大声说出来 </h1>
             <hr style="width: 90%; margin-left: 10%">
         </div>
         <div id="images" align="center">
@@ -56,7 +56,7 @@
             <div id="div_take_show" style="margin: 30px 0 0 0">
                 <label id="extra_0_question" for="extra_0_answer" > 一个额外的问题 </label>
                 <div>
-                    <input id="extra_0_answer" type="text" class="form-control" placeholder="">
+                    <textarea id="extra_0_answer" type="text" class="form-control" placeholder=""> </textarea>
                 </div>
             </div>
 
@@ -89,13 +89,15 @@
     function submit_form(elem){
         var field_list = ['how_much_love', 'when_begin_love', 'want_to_say', 'extra_0_question', 'extra_0_answer'];
         var post_data = {};
-        for (var i = 0; i <  field_list.length; i ++){
-            field = field_list[i];
-            post_data[field] = document.getElementById(field).value;
-        }
+
         for (var field in values){
             if (values.hasOwnProperty(field))
                 post_data[field] = values[field];
+        }
+
+        for (var i = 0; i <  field_list.length; i ++){
+            field = field_list[i];
+            post_data[field] = document.getElementById(field).value;
         }
 
         $.ajax({
