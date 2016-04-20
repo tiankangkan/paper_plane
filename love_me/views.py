@@ -76,7 +76,7 @@ def reply_to_paper_plane_sender_do_submit(request):
             extra_source_id=req_dict['extra_source_id']
         )
         db_obj = update_conversation_page_db(source_id=req_dict['extra_source_id'], content_dict=content_dict, is_read=True)
-        qrcode_id = 'qrcode_%s.png' % get_time_str_now_for_file()
+        qrcode_id = 'qrcode_%s.jpg' % get_time_str_now_for_file()
         qrcode_path = FileManager().get_path_of_qrcode(res_id=qrcode_id)
         receiver_url = req_dict['receiver_url'] + '&t_id=%s' % db_obj.t_id
         make_qrcode(receiver_url, qrcode_path)
