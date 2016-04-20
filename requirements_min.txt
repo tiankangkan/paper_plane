@@ -8,6 +8,8 @@ tzlocal==1.2
 MySQL-python==1.2.4
 wechat-sdk==0.6.3
 xmltodict==0.9.2
+qrcode
+pillow
 
 future==0.15.2
 futures==3.0.3

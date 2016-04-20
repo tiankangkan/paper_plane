@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'love_me',
     'lin',
     'subscription',
+    'common',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import os
-from django.conf import settings
 
 from k_util.file_op import make_sure_file_dir_exists
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
-from paper_plane.settings import IMAGE_RES
+from paper_plane.settings import IMAGE_RES, TEMP_DIR
 
 
 class FileManager(object):
-    tmp_dir = settings.TEMP_DIR
+    tmp_dir = TEMP_DIR
 
     def get_tmp_dir(self, *args):
         tmp_dir = os.path.join(self.tmp_dir, *args)
@@ -34,6 +33,7 @@ class FileManager(object):
         return IMAGE_RES
 
     def get_path_of_qrcode(self, res_id):
+        res_id = str(res_id)
         qrcode_path = os.path.join(self.get_path_of_res_image(), 'qrcode', res_id)
         if res_id:
             make_sure_file_dir_exists(qrcode_path, is_dir=False)
@@ -42,3 +42,4 @@ class FileManager(object):
 if __name__ == '__main__':
     fm = FileManager()
     print fm.get_tmp_file_with_stamp('as', 'voice', 'f.txt')
+    print os.path.dirname(FileManager().get_path_of_qrcode(0))

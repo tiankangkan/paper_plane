@@ -7,6 +7,7 @@ from django.conf import settings
 import love_me.urls
 import lin.urls
 import subscription.urls
+import common.urls
 import views
 
 admin.autodiscover()
@@ -16,6 +17,7 @@ urlpatterns = patterns('',
     url(r'^love_me/', include(love_me.urls)),
     url(r'^lin/', include(lin.urls)),
     url(r'^subscription/', include(subscription.urls)),
+    url(r'^common/', include(common.urls)),
 )
 
 urlpatterns += patterns('django.views.static',

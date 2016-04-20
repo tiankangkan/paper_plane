@@ -22,6 +22,7 @@ class UrlManager(object):
         return r'%(host)s%(path)s' % dict(host=self.host, path=path)
 
     def get_url_of_qrcode(self, res_id):
+        res_id = str(res_id)
         qrcode_url = '%s?res_id=%s' % (self.get_url_of_res_image(), res_id)
         return qrcode_url
 
