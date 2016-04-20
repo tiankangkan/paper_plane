@@ -91,3 +91,11 @@ format: amr
 
 media_id: RC6tQbAn94Hk2t6ceO9PmqHs7pqRPeS37udiaaIOwIfylQfyVVDnSAzTgOrbsdSF3sqhxgVCKXWY0nHG3H2nq8w
 format: jpeg
+
+
+SQL
+---------------------------
+kill `cat /usr/local/mysql/data/kangtian.local.pid`
+
+alert database *** character set utf8
+alter table *** convert to character set utf8

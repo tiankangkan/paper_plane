@@ -23,6 +23,6 @@ class UrlManager(object):
 
     def get_url_of_qrcode(self, res_id):
         res_id = str(res_id)
-        qrcode_url = '%s/%s' % (self.get_url_of_res_image(), res_id)
+        qrcode_url = '%s%s' % (self.get_url_of_res_image(), res_id)
         return qrcode_url
 

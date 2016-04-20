@@ -77,17 +77,23 @@
     console.log(JSON.stringify(values));
 
     load_images(values['pic_name']);
+    field_list = ['how_much_love', 'when_begin_love', 'want_to_say', 'extra_0_question', 'extra_0_answer'];
 
-    function load_sender_info(){
+    function load_review_info(){
         $('#h_title').html('你爱 ' + values['nick_name'] + '吗?');
-        $('#take_show').text(values['take_show']);
+        $('#take_show').html(values['take_show']);
         $('#extra_0_question').html(values['extra_0_question']);
-        $('#button_submit').html('飞回 ' + values['nick_name'] +' 身边');
+        $('#button_submit').html('已阅');
+
+        for (var i = 0, field = ''; i <  field_list.length; i ++){
+            field = field_list[i];
+            $('#'+field).attr('value', values[field]);
+            console.log(field+'____'+values[field]);
+        }
     }
 
 
     function submit_form(elem){
-        var field_list = ['how_much_love', 'when_begin_love', 'want_to_say', 'extra_0_question', 'extra_0_answer'];
         var post_data = {};
         for (var i = 0; i <  field_list.length; i ++){
             field = field_list[i];
@@ -137,7 +143,7 @@
         $images.append('<h4 style="margin-top: 6px" align="center"> '+msg+'</h4>');
     }
 
-    load_sender_info();
+    load_review_info();
 
 </script>
 

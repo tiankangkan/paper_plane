@@ -57,6 +57,7 @@ INSTALLED_APPS = (
     'lin',
     'subscription',
     'common',
+    'mail_msg',
 )
 
 MIDDLEWARE_CLASSES = (

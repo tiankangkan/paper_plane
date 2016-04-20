@@ -75,7 +75,7 @@
 
 <script>
     this_url = window.location.href;
-    receiver_url = this_url + '&role=' + 'receiver';
+    receiver_url = this_url + '?f=true' + '&role=' + 'receiver';
     url_submit_from = 'sender_do_submit/';
     $id_take_show = $('#div_take_show');
     // $id_take_show.hide();
@@ -86,7 +86,7 @@
     load_images(values['pic_name']);
 
     function submit_form(elem){
-        var field_list = ['nick_name', 'how_much_love', 'when_begin_love', 'when_begin_love', 'want_to_say', 'extra_0_question'];
+        var field_list = ['nick_name', 'how_much_love', 'when_begin_love', 'want_to_say', 'take_show', 'extra_0_question'];
         var post_data = {};
         for (var i = 0; i <  field_list.length; i ++){
             field = field_list[i];

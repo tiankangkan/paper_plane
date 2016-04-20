@@ -4,6 +4,7 @@ import StringIO
 import json
 
 from account.models import UserAccount
+from mail_msg.models import MailMsg
 
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from talker.talker_main import talker_inst
@@ -24,15 +25,45 @@ def save_user_to_db(wechat):
     log_inst.info('<save_user_to_db>: wechat_openid is %s' % wechat_openid)
 
 
+def query_from_mail_msg(wechat, t_type=None):
+    source_id = wechat.message.source
+    acc_obj = UserAccount.objects.get(source_id=source_id)
+    if t_type:
+        queryset = MailMsg.objects.filter(target=acc_obj, t_type=t_type, is_read=False)
+    else:
+        queryset = MailMsg.objects.filter(target=acc_obj)
+    msg_list = queryset.values() if queryset else []
+    queryset.update(is_read=True)
+    queryset.save()
+    return msg_list
+
+
+def get_love_me_review_mail(wechat):
+    msg_list = query_from_mail_msg(wechat=wechat, t_type='love_me')
+    msg_list.sort(key=lambda d: d['timestamp'])
+    msg_list_show = list()
+    for msg in msg_list:
+        content_str = msg['content'] or '{}'
+        content = json.loads(content_str)
+        url = content['url']
+        msg_str = '%s\n%s\n%s' % ('有一个小飞机飞到你这里 :)', '-'*15, url)
+        msg_list_show.append(msg_str)
+    return msg_list_show
+
+
 def reply_to_text_message(wechat):
     save_user_to_db(wechat)
     content = wechat.message.content
     if u'飞机' in content or u'卖萌' in content:
-        resp = handle_text_message_contains_paper_plane(wechat)
+        resp_content = handle_text_message_contains_paper_plane(wechat)
     else:
         thinker_msg = handle_text_message_with_talker(wechat=wechat, human_msg=content)
         resp_content = to_utf_8(thinker_msg)
-        resp = wechat.response_text(resp_content, escape=False)
+    msg_list_show = get_love_me_review_mail(wechat)
+    if len(msg_list_show) > 0:
+        msg = '\n\n'.join(msg_list_show)
+        resp_content = msg + resp_content
+    resp = wechat.response_text(resp_content, escape=False)
     return resp
 
 
@@ -48,8 +79,7 @@ def handle_text_message_contains_paper_plane(wechat):
     log_msg = '%s: content: %s' % (MSG_LOVE_ME_REQUEST, wechat.message.content)
     log_inst.info(log_msg)
     text = reply_text_message_contains_paper_plane(wechat.message.source)
-    resp = wechat.response_text(text, escape=False)
-    return resp
+    return text
 
 
 def reply_to_voice_message(wechat):
