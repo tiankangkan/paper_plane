@@ -53,7 +53,8 @@ def weixin_entry(request):
 
 def dispatch_event(wechat):
     m = wechat.message
-    log_msg = '%s: source:%s, target: %s, content: %s' % (MSG_WX_REQUEST, m.source, m.target, m.content)
+    content = m.content if hasattr(m, 'content') else None
+    log_msg = '%s: source:%s, target: %s, content: %s' % (MSG_WX_REQUEST, m.source, m.target, content)
     log_inst.info(log_msg)
     if isinstance(wechat.message, messages.TextMessage):
         # logger.info('=' * 30+'user_info:\n%s' % user_info)

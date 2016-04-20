@@ -48,3 +48,6 @@ for parent,dirnames,filenames in os.walk('/Users/kangtian/Documents/Master/paper
     for file_name in filenames:
         print '<learn>' + file_name +'</learn>'
 
+f = lambda f, p: reduce(lambda c: c + 1, [lambda a: a + 1 for i in range(0, 3)])
+print f(lambda a: a + 1, 0)
+

@@ -16,3 +16,12 @@ class UrlManager(object):
     def get_url_of_weixin_entry(self):
         path = 'subscription/weixin_entry/'
         return self.make_url_with_path(path)
+
+    def get_url_of_res_image(self):
+        path = 'common/res_img/'
+        return r'%(host)s%(path)s' % dict(host=self.host, path=path)
+
+    def get_url_of_qrcode(self, res_id):
+        qrcode_url = '%s?res_id=%s' % (self.get_url_of_res_image(), res_id)
+        return qrcode_url
+

@@ -15,6 +15,10 @@ def get_time_str_now(time_format):
     return convert_time_obj_to_time_str(date_time_obj, time_format)
 
 
+def get_time_str_now_for_file():
+    return get_time_str_now(TIME_FORMAT_FOR_FILE)
+
+
 def convert_time_obj_to_time_str(date_time_obj=None, time_format=TIME_FORMAT_DEFAULT):
     date_time_obj = date_time_obj or datetime.datetime.now()
     return date_time_obj.strftime(time_format)

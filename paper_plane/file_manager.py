@@ -5,6 +5,7 @@ from django.conf import settings
 
 from k_util.file_op import make_sure_file_dir_exists
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
+from paper_plane.settings import IMAGE_RES
 
 
 class FileManager(object):
@@ -27,6 +28,16 @@ class FileManager(object):
         file_path = '%s__%s%s' % (file_name, time_str, ext)
         make_sure_file_dir_exists(file_path, is_dir=False)
         return file_path
+
+    def get_path_of_res_image(self):
+        make_sure_file_dir_exists(IMAGE_RES, is_dir=False)
+        return IMAGE_RES
+
+    def get_path_of_qrcode(self, res_id):
+        qrcode_path = os.path.join(self.get_path_of_res_image(), 'qrcode', res_id)
+        if res_id:
+            make_sure_file_dir_exists(qrcode_path, is_dir=False)
+        return qrcode_path
 
 if __name__ == '__main__':
     fm = FileManager()

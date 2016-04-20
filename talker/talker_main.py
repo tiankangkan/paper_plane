@@ -106,7 +106,7 @@ class Talker(object):
         if lang == Language.CN:
             resp_msg = self.sentence_trans.convert_to_cn(thinker_resp)
         # print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
-        log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (session_id, MSG_TALKER_TRANSLATE, msg, req_msg_t, thinker_resp, resp_msg)
+        log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (MSG_TALKER_TRANSLATE, session_id, msg, req_msg_t, thinker_resp, resp_msg)
         log_inst.info(log_msg)
         return resp_msg
 

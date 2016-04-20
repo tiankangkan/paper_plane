@@ -170,8 +170,18 @@ print 'The LOCAL_FLAG is %s' % LOCAL_FLAG
 SYSTEM = platform.system()
 TEMP_DIR = '/tmp/paper_plane/'
 if 'windows' in SYSTEM:
-    TEMP_DIR = 'D:\\paper_plane\\'
+    TEMP_DIR = 'D:\\paper_plane\\temp\\'
 else:
     TEMP_DIR = '/tmp/paper_plane/'
 
+RES_DIR = '/data/res/'
+if 'windows' in SYSTEM:
+    TEMP_DIR = 'D:\\paper_plane\\res\\'
+else:
+    TEMP_DIR = '/tmp/paper_plane/'
+
+IMAGE_RES = os.path.join(RES_DIR, 'img')
+
 from k_util.k_logger import log_inst
+
+
