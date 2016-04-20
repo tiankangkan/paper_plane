@@ -18,7 +18,7 @@
             <h1> ~ 你爱宝宝吗 </h1>
             <hr style="width: 90%; margin-left: 10%">
         </div>
-        <div id="images">
+        <div id="images" align="center">
 {#            <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">#}
         </div>
 
@@ -122,10 +122,10 @@
     function when_submit_success(resp){
         var qrcode_url = resp['qrcode_url'];
         var $div_form = $('#div_form');
-        $div_form.hide(1000);
-        load_images('0003.jpg');
+        $div_form.hide(500);
         var $images = $('#images');
-        $images.append('<div align="center" style="width: 100%"><img width="600" height="600" src="'+qrcode_url+'"></div>');
+        $images.empty();
+        $images.append('<img class="img-rounded" src="'+qrcode_url+'"></img>');
         $images.append('<h4 style="margin: 6px 0 0 20px" align="left"> 提交成功<br><br>[ 如何让 TA 知道 ]<br>方法一. 将二维码发送给TA...<br>方法二. 让TA关注我们的公众号(不一样的巧克力)输入你的昵称<br><br>回复后会在某个时刻通知你滴 :) </h4>');
     }
 
