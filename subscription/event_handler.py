@@ -62,7 +62,7 @@ def reply_to_text_message(wechat):
     msg_list_show = get_love_me_review_mail(wechat)
     if len(msg_list_show) > 0:
         msg = '\n\n'.join(msg_list_show)
-        resp_content = msg + '\n%s\n' % '-'*15 + resp_content
+        resp_content = msg + '\n%s\n' % ('-'*15) + resp_content
     resp = wechat.response_text(resp_content, escape=False)
     return resp
 
