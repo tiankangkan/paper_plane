@@ -184,11 +184,11 @@ else:
 IMAGE_RES = os.path.join(RES_DIR, 'img')
 
 
-STATICFILES_DIRS = [
-    STATIC_ROOT,
-    RES_DIR,
-    IMAGE_RES
-]
+# STATICFILES_DIRS = [
+#     STATIC_ROOT,
+#     RES_DIR,
+#     IMAGE_RES
+# ]
 
 from k_util.k_logger import log_inst
 

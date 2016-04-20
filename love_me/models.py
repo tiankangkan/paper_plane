@@ -16,6 +16,6 @@ class ConversationPage(models.Model):
         db_table = 'conversation_page'
 
     def __str__(self):
-        return 'id:%s, source: %s, timestamp: %s, is_read: %s' % (self.t_id, self.source, self.timestamp, self.is_read)
+        return 'timestamp: %s, id:%s, source: %s, target: %s, is_read: %s' % (self.timestamp, self.t_id, self.source, self.target, self.is_read)
 
 

@@ -123,18 +123,18 @@
         var qrcode_url = resp['qrcode_url'];
         var $div_form = $('#div_form');
         $div_form.hide(1000);
-        load_images('0003.jpg');
+        var $images = $('#images');
+        $images.empty();
         var $images = $('#images');
 
-        $images.append('<a align="center" href="'+qrcode_url+'" style="font-size: 12px">'+qrcode_url+'</a>');
-        $images.append('<h4 style="margin-top: 6px" align="center"> 提交成功, TA 回复后会通知你滴 :) </h4>');
+        $images.append('<div align="center"><img src="'+qrcode_url+'"></div>');
+        $images.append('<h4 style="margin: 6px 0 0 20px" align="left"> 提交成功<br><br>[ 如何让 TA 知道 ]<br>方法一. 将二维码发送给TA...<br>方法二. 让TA关注我们的公众号(不一样的巧克力)输入你的昵称<br><br>回复后会在某个时刻通知你滴 :) </h4>');
     }
 
     function when_submit_fail(msg){
         var $div_form = $('#div_form');
         $div_form.hide(200);
         load_images('0003.jpg');
-        var $images = $('#images');
         $images.append('<h4 style="margin-top: 6px" align="center"> '+msg+'</h4>');
     }
 
