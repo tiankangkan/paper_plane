@@ -90,6 +90,7 @@
         var field_list = ['how_much_love', 'when_begin_love', 'want_to_say', 'extra_0_question', 'extra_0_answer'];
         var post_data = {};
 
+        var extra_0_question = values['extra_0_question'];
         for (var field in values){
             if (values.hasOwnProperty(field))
                 post_data[field] = values[field];
@@ -99,7 +100,8 @@
             field = field_list[i];
             post_data[field] = document.getElementById(field).value;
         }
-
+        post_data['extra_0_question'] = extra_0_question;
+        
         $.ajax({
             url: url_submit_from,
             type: "POST",
