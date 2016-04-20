@@ -32,15 +32,15 @@ def query_from_mail_msg(wechat, t_type=None):
         queryset = MailMsg.objects.filter(target=acc_obj, t_type=t_type, is_read=False)
     else:
         queryset = MailMsg.objects.filter(target=acc_obj)
-    msg_list = queryset.values() if queryset else []
+    msg_list = list(queryset.values()) if queryset else []
     queryset.update(is_read=True)
-    queryset.save()
     return msg_list
 
 
 def get_love_me_review_mail(wechat):
     msg_list = query_from_mail_msg(wechat=wechat, t_type='love_me')
-    msg_list.sort(key=lambda d: d['timestamp'])
+    if msg_list:
+        msg_list.sort(key=lambda d: d['timestamp'])
     msg_list_show = list()
     for msg in msg_list:
         content_str = msg['content'] or '{}'
