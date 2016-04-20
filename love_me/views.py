@@ -67,9 +67,6 @@ def reply_to_paper_plane_sender_do_submit(request):
         req_dict = dict()
         for field in field_list:
             req_dict[field] = req.get(field, None)
-        qrcode_id = 'qrcode_%s.png' % get_time_str_now_for_file()
-        qrcode_path = FileManager().get_path_of_qrcode(res_id=qrcode_id)
-        make_qrcode(req_dict['receiver_url'], qrcode_path)
 
         content_dict = dict(
             how_much_love=req_dict['how_much_love'],
@@ -78,8 +75,12 @@ def reply_to_paper_plane_sender_do_submit(request):
             pic_name=req_dict['pic_name'],
             extra_source_id=req_dict['extra_source_id']
         )
-        qrcode_url = UrlManager().get_url_of_qrcode(qrcode_id)
         db_obj = update_conversation_page_db(source_id=req_dict['extra_source_id'], content_dict=content_dict, is_read=True)
+        qrcode_id = 'qrcode_%s.png' % get_time_str_now_for_file()
+        qrcode_path = FileManager().get_path_of_qrcode(res_id=qrcode_id)
+        receiver_url = req_dict['receiver_url'] + '&t_id=%s' % db_obj.t_id
+        make_qrcode(receiver_url, qrcode_path)
+        qrcode_url = UrlManager().get_url_of_qrcode(qrcode_id)
         return HttpResponse(json.dumps(dict(status='success', msg=u'成功', qrcode_url=qrcode_url)))
     except Exception, e:
         print traceback.format_exc(e)
@@ -118,8 +119,6 @@ def reply_text_message_contains_paper_plane(extra_source_id):
     paper_plane_url = UrlManager().get_url_of_paper_plane()
     pic_name = '%4.4d.jpg' % random.randrange(start=1, stop=10)
     content_dict = dict(extra_source_id=extra_source_id, pic_name=pic_name)
-    obj = update_conversation_page_db(source_id=extra_source_id, content_dict=content_dict, is_read=False)
-    content_dict['t_id'] = obj.t_id
     para_str = urllib.urlencode(content_dict)
     paper_plane_url = '%s?%s' % (paper_plane_url, para_str)
     text = u'扔个纸飞机吧: %s' % paper_plane_url
