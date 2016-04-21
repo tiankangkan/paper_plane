@@ -94,7 +94,7 @@
                 post_data[field] = values[field];
         }
 
-        for (var i = 0; i <  field_list.length; i ++){
+        for (var i = 0; i < field_list.length; i ++){
             field = field_list[i];
             post_data[field] = document.getElementById(field).value;
         }
@@ -124,8 +124,9 @@
     function when_submit_success(resp){
         var qrcode_url = resp['qrcode_url'];
         var $div_form = $('#div_form');
-        $div_form.hide(500);
         var $images = $('#images');
+        console.log('receiver_url: ' + resp['receiver_url']);
+        $div_form.hide(500);
         $images.empty();
         $images.append('<img style="width: 92%; " class="img-rounded" src="'+qrcode_url+'"></img>');
         $images.append('<h4 style="margin: 6px 0 0 20px" align="left"> 提交成功<br><br>[ 如何让 TA 知道 ]<br>方法一. 将二维码发送给TA...<br>方法二. 让TA关注我们的公众号(不一样的巧克力)输入你的昵称<br><br>回复后会在某个时刻通知你滴 :) </h4>');

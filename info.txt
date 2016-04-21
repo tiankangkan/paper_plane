@@ -8,13 +8,15 @@ git reset --hard origin/master
 service apache2 restart
 
 
+
+
 Path
 ----------------------------
 root: /data/project/paper_plane/
 
 git fetch --all
 git reset --hard origin/master
-
+​<a href="http://mp.weixin.qq.com/s?__biz=MzIyMjI5NjA2Nw==&mid=506286079&idx=1&sn=7cf733e6f0c2cfeb136bed71b82e233e#rd">点击</a>
 
 url
 ----------------------------
