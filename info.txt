@@ -8,8 +8,6 @@ git reset --hard origin/master
 service apache2 restart
 
 
-
-
 Path
 ----------------------------
 root: /data/project/paper_plane/
