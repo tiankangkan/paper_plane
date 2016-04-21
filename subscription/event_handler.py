@@ -79,7 +79,7 @@ def handle_text_message_contains_paper_plane(wechat):
     log_msg = '%s: content: %s' % (MSG_LOVE_ME_REQUEST, wechat.message.content)
     log_inst.info(log_msg)
     url = get_page_url_of_user_id(wechat.message.source)
-    redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%(appd_id)s&redirect_uri=%(url)s&response_type=code&scope=snsapi_base'
+    redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%(app_id)s&redirect_uri=%(url)s&response_type=code&scope=snsapi_base'
     redirect_url = redirect_url % (dict(app_id=wechat.conf.appid, url=url))
     return '飞一个纸飞机吧: \n%s' % redirect_url
 
