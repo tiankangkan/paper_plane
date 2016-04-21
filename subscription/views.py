@@ -56,7 +56,6 @@ def dispatch_event(wechat):
     content = m.content if hasattr(m, 'content') else None
     log_msg = '%s: source:%s, target: %s, content: %s' % (MSG_WX_REQUEST, m.source, m.target, content)
     log_inst.info(log_msg)
-    wechat.send_text_message(wechat.message.source, 'Hello')
     if isinstance(wechat.message, messages.TextMessage):
         # logger.info('=' * 30+'user_info:\n%s' % user_info)
         return event_handler.reply_to_text_message(wechat)
