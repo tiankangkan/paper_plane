@@ -162,15 +162,14 @@ def update_mail_msg_db(source_id=None, target_id=None, theme=None, t_type=None, 
 
 
 @csrf_exempt
-def reply_text_message_contains_paper_plane(extra_source_id='34567890_alice'):
+def get_page_url_of_user_id(extra_source_id='34567890_alice'):
     paper_plane_url = UrlManager().get_url_of_paper_plane()
     pic_name = '%4.4d.jpg' % random.randrange(start=1, stop=10)
     content_dict = dict(extra_source_id=extra_source_id, pic_name=pic_name, role='sender')
     para_str = urllib.urlencode(content_dict)
     paper_plane_url = '%s?%s' % (paper_plane_url, para_str)
-    text = u'扔个纸飞机吧: \n%s' % paper_plane_url
-    return text
+    return paper_plane_url
 
 
 if __name__ == '__main__':
-    reply_text_message_contains_paper_plane('1234')
+    get_page_url_of_user_id('1234')

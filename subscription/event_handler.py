@@ -8,7 +8,7 @@ from mail_msg.models import MailMsg
 
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from talker.talker_main import talker_inst
-from love_me.views import reply_text_message_contains_paper_plane
+from love_me.views import get_page_url_of_user_id
 from k_util.str_op import to_utf_8
 from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE
 from paper_plane.settings import log_inst
@@ -78,8 +78,10 @@ def handle_text_message_with_talker(wechat, human_msg):
 def handle_text_message_contains_paper_plane(wechat):
     log_msg = '%s: content: %s' % (MSG_LOVE_ME_REQUEST, wechat.message.content)
     log_inst.info(log_msg)
-    text = reply_text_message_contains_paper_plane(wechat.message.source)
-    return text
+    url = get_page_url_of_user_id(wechat.message.source)
+    redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%(appd_id)s&redirect_uri=%(url)s&response_type=code&scope=snsapi_base'
+    redirect_url = redirect_url % (dict(app_id=wechat.conf.app_id, url=url))
+    return '飞一个纸飞机吧: \n%s' % redirect_url
 
 
 def reply_to_voice_message(wechat):
