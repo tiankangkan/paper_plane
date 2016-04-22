@@ -214,7 +214,7 @@ class Talker(object):
         if self.get_rpc_type(resp_temp) == self.RPC_NOT_MATCH and lang == Language.CN:
             req_msg_en = self.sentence_trans.convert_to_en(req_msg)
             resp_temp = self.thinker.respond(req_msg_en, sessionID=session_id)
-            self.set_detail(req_msg_en, Language.EN, 'resp')
+            self.set_detail(req_msg_en, Language.EN, 'req')
             self.set_detail(resp_temp, get_language(resp_temp), 'resp')
         if self.is_un_escape(resp_temp):
             resp = resp_temp
