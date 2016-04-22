@@ -36,7 +36,8 @@ class Talker(object):
     rpc_type = {
         'RPC NOTXXMATCH': RPC_NOT_MATCH,
         'RPC SETXXENXXCN': RPC_SET_EN_CN,
-        'RPC OFFXXENXXCN': RPC_OFF_EN_CN
+        'RPC OFFXXENXXCN': RPC_OFF_EN_CN,
+        'RPC UNKNOWN': RPC_UNKNOWN
     }
 
     def __init__(self, human_name='Lin', thinker_name='Alice', try_load_brain=True, use_site_package=False,

@@ -39,4 +39,9 @@ class KVStoreShelve(object):
 
 if __name__ == '__main__':
     kv = KVStoreShelve()
+    c = ['apd, ''erty']
+    kv.put('key', ['apd, ''erty'])
+    print kv
+    c.append('sdasas')
+    kv.put('key', c)
     print kv
