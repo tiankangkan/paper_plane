@@ -69,18 +69,6 @@ class WeChatMsgHandler(object):
         resp = self.wechat.response_text(resp_content, escape=False)
         return resp
 
-    def handle_rpc(self, resp_msg):
-        t = talker_inst
-        resp = ''
-        if t.is_rpc(resp_msg):
-            if t.rpc_type(resp_msg) == t.RPC_SET_EN_CN:
-                self.set_english_chinese()
-                resp = u'开启中英互译'
-            elif t.rpc_type(resp_msg) == t.RPC_OFF_EN_CN:
-                self.off_english_chinese()
-                resp = u'关闭中英互译'
-        return resp
-
     def set_english_chinese(self):
         session_id = str(self.wechat.message.source)
         if session_id not in self.kv.inst:
@@ -105,14 +93,32 @@ class WeChatMsgHandler(object):
         session_id = str(self.wechat.message.source)
         return session_id in self.kv.inst and self.kv.inst[session_id]['mode_ch_en'] == 'OFF'
 
+    def handle_rpc(self, resp_msg):
+        t = talker_inst
+        resp = ''
+        if t.is_rpc(resp_msg):
+            if t.rpc_type(resp_msg) == t.RPC_SET_EN_CN:
+                self.set_english_chinese()
+                resp = u'开启英汉对照'
+            elif t.rpc_type(resp_msg) == t.RPC_OFF_EN_CN:
+                self.off_english_chinese()
+                resp = u'关闭英汉对照'
+            else:
+                pass
+        return resp
+
     def handle_text_message_with_talker(self, human_msg):
         talker_inst.set_human_name(u'baby')
-        thinker_msg = talker_inst.respond_to_msg(human_msg, session_id=self.wechat.message.source)
-        if self.is_set_english_chinese():
-            thinker_msg = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
-        if talker_inst.is_error_msg(thinker_msg):
-            thinker_msg = u'电量快用尽了 💔 '
-        log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
+        if talker_inst.is_rpc(human_msg):
+            thinker_msg = self.handle_rpc(human_msg)
+            thinker_msg = thinker_msg or talker_inst.empty_msg
+        else:
+            thinker_msg = talker_inst.respond_to_msg(human_msg, session_id=self.wechat.message.source)
+            if self.is_set_english_chinese():
+                thinker_msg = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
+            if talker_inst.is_error_msg(thinker_msg):
+                thinker_msg = u'电量快用尽了 💔 '
+            log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
         thinker_msg = thinker_msg
         return thinker_msg
 
