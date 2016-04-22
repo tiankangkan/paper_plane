@@ -72,6 +72,7 @@ class Talker(object):
         make_sure_file_dir_exists(self.saved_brain_path)
         if try_load_brain and os.path.isfile(self.saved_brain_path):
             self.thinker.bootstrap(brainFile=self.saved_brain_path)
+            self.load_filter_aiml(lambda file_name: file_name.startswith('update'))
         else:
             xml_file = self.get_aiml_startup_xml()
             load = self.load or "LOAD ALICE"
@@ -85,6 +86,17 @@ class Talker(object):
                 os.chdir(cwd)
         self.thinker.setBotPredicate('name', self.thinker_name)
         return self.thinker
+
+    def load_filter_aiml(self, filter_func=None):
+        if not filter_func:
+            filter_func = lambda file_name: file_name.startswith('update')
+        xml_file = self.get_aiml_startup_xml()
+        aiml_dir = os.path.dirname(xml_file)
+        for root, dirs, files in os.walk(aiml_dir):
+            for file_name in files:
+                file_path = os.path.join(root, file_name)
+                if filter_func(file_name):
+                    self.thinker.learn(file_path)
 
     def set_human_name(self, human_name):
         self.human_name = human_name
