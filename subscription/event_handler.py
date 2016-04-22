@@ -98,10 +98,10 @@ class WeChatMsgHandler(object):
         t = talker_inst
         resp = ''
         if t.is_rpc(resp_msg):
-            if t.rpc_type[resp_msg] == t.RPC_SET_EN_CN:
+            if t.get_rpc_type(resp_msg) == t.RPC_SET_EN_CN:
                 self.set_english_chinese()
                 resp = u'Alice 已经开启英汉对照'
-            elif t.rpc_type[resp_msg] == t.RPC_OFF_EN_CN:
+            elif t.rpc_type(resp_msg) == t.RPC_OFF_EN_CN:
                 self.off_english_chinese()
                 resp = u'Alice 已经关闭英汉对照'
             else:
