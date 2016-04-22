@@ -45,6 +45,7 @@ class Talker(object):
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
         self.try_translate = try_translate
+        self.empty_msg = u'很抱歉, 我目前好像不能回答这个.. 💔 '
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):
@@ -106,6 +107,7 @@ class Talker(object):
         if lang == Language.CN:
             resp_msg = self.sentence_trans.convert_to_cn(thinker_resp)
         # print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
+        resp_msg = resp_msg if resp_msg else self.empty_msg
         log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (MSG_TALKER_TRANSLATE, session_id, msg, req_msg_t, thinker_resp, resp_msg)
         log_inst.info(log_msg)
         return resp_msg
