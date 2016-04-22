@@ -11,13 +11,14 @@ from talker.talker_main import talker_inst
 from love_me.views import get_page_url_of_user_id
 from k_util.str_op import to_utf_8
 from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE
-from paper_plane.settings import log_inst
+from paper_plane.settings import log_inst, DB_DIR
 from k_util.key_value_store import KVStoreShelve
 
 
 class WeChatMsgHandler(object):
     def __init__(self, wechat):
         self.wechat = wechat
+        self.kv = KVStoreShelve(data_dir=DB_DIR, db_name='paper_plane')
 
     def save_user_to_db(self):
         wechat_openid = self.wechat.message.source
@@ -70,16 +71,43 @@ class WeChatMsgHandler(object):
 
     def handle_rpc(self, resp_msg):
         t = talker_inst
+        resp = ''
         if t.is_rpc(resp_msg):
             if t.rpc_type(resp_msg) == t.RPC_SET_EN_CN:
-                pass
+                self.set_english_chinese()
+                resp = u'开启中英互译'
+            elif t.rpc_type(resp_msg) == t.RPC_OFF_EN_CN:
+                self.off_english_chinese()
+                resp = u'关闭中英互译'
+        return resp
 
     def set_english_chinese(self):
         session_id = self.wechat.message.source
+        if session_id not in self.kv.inst:
+            self.kv.inst[session_id] = dict()
+        s = self.kv.inst[session_id]
+        s['mode_ch_en'] = 'ON'
+
+    def off_english_chinese(self):
+        session_id = self.wechat.message.source
+        if session_id not in self.kv.inst:
+            self.kv.inst[session_id] = dict()
+        s = self.kv.inst[session_id]
+        s['mode_ch_en'] = 'OFF'
+
+    def is_set_english_chinese(self):
+        session_id = self.wechat.message.source
+        return session_id in self.kv.inst and self.kv.inst[session_id]['mode_ch_en'] == 'ON'
+
+    def is_off_english_chinese(self):
+        session_id = self.wechat.message.source
+        return session_id in self.kv.inst and self.kv.inst[session_id]['mode_ch_en'] == 'OFF'
 
     def handle_text_message_with_talker(self, human_msg):
         talker_inst.set_human_name(u'baby')
         thinker_msg = talker_inst.respond_to_human_msg(human_msg, try_translate=True, session_id=self.wechat.message.source)
+        if self.is_set_english_chinese():
+            thinker_msg = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
         if talker_inst.is_error_msg(thinker_msg):
             thinker_msg = u'电量快用尽了 💔 '
         log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
@@ -162,4 +190,6 @@ class WeChatMsgHandler(object):
         return self.wechat.response_text(u'media_id: %s' % resp, escape=False)
 
 
+if __name__ == '__main__':
+    pass
 

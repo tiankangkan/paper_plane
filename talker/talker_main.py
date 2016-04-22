@@ -59,6 +59,10 @@ class Talker(object):
         self.use_site_package = use_site_package
         self.try_translate = try_translate
         self.session_id_now = 0
+        self.detail = dict(
+            req_cn=None, req_en=None,
+            resp_cn=None, resp_en=None
+        )
         self.empty_msg = u'很抱歉, 不能回答你, 我会成长起来的.. 🌹 '
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
@@ -167,19 +171,35 @@ class Talker(object):
             msg_resp = self.respond_to_human_msg(msg=new_msg, session_id=self.session_id_now)
         return msg_resp
 
+    def set_detail(self, msg, lang, role):
+        import copy
+        msg = copy.deepcopy(msg)
+        if lang == Language.CN and role == 'req':
+            self.detail['req_cn'] = msg
+        elif lang == Language.EN and role == 'req':
+            self.detail['req_en'] = msg
+        elif lang == Language.CN and role == 'resp':
+            self.detail['resp_cn'] = msg
+        elif lang == Language.EN and role == 'resp':
+            self.detail['resp_en'] = msg
+
     def respond_to_msg(self, msg, session_id=None):
         req_msg = to_unicode(msg)
         lang = get_language(req_msg)
+        self.set_detail(req_msg, lang, 'req')
         if session_id is not None:
             self.session_id_now = session_id
         if time.time() - self.last_saved > self.auto_saved_period:
             self.thinker.saveBrain(self.saved_brain_path)
         resp_temp = self.thinker.respond(req_msg, sessionID=session_id)
+        self.set_detail(resp_temp, get_language(resp_temp), 'resp')
         print '%s -->> %s' % (req_msg, resp_temp)
         req_msg_en = 'DO NOT NEED TRANSLATE'
         if self.get_rpc_type(resp_temp) == self.RPC_NOT_MATCH and lang == Language.CN:
             req_msg_en = self.sentence_trans.convert_to_en(req_msg)
             resp_temp = self.thinker.respond(req_msg_en, sessionID=session_id)
+            self.set_detail(req_msg_en, Language.EN, 'resp')
+            self.set_detail(resp_temp, get_language(resp_temp), 'resp')
         if self.is_un_escape(resp_temp):
             resp = resp_temp
         else:
@@ -191,6 +211,7 @@ class Talker(object):
                     resp = self.sentence_trans.convert_to_cn(resp_temp)
             else:
                 resp = resp_temp
+        self.set_detail(resp, get_language(resp), 'resp')
         log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (MSG_TALKER_TRANSLATE, session_id, req_msg, req_msg_en, resp_temp, resp)
         log_inst.info(log_msg)
         return resp
