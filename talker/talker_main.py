@@ -45,7 +45,7 @@ class Talker(object):
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
         self.try_translate = try_translate
-        self.empty_msg = u'很抱歉, 我目前好像不能回答这个.. 💔 '
+        self.empty_msg = u'很抱歉, 不能回答你, 我会成长起来的.. 🌹 '
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):
