@@ -37,7 +37,7 @@ class Talker(object):
         self.speech_path = None
         self.thinker_sex = SpeechPeople.WOMAN    # 'MAN' or 'WOMAN'
         self.response_time = response_time
-        self.sentence_trans = SentenceTranslator()
+        self.sentence_trans = SentenceTranslator(way=SentenceTranslator.WAY_BAIDU)
         self.tmp_path = os.path.join(TEMP_DIR, 'brain')
         self.version = '1.0'    # 改变 version 来重新加载大脑数据
         self.saved_brain_path = os.path.join(self.tmp_path, 'saved_brain_%s.brn' % self.version)
@@ -58,7 +58,7 @@ class Talker(object):
                 cwd = os.getcwd()
                 os.chdir(os.path.dirname(xml_file))
                 self.thinker.learn(xml_file)
-                self.thinker.respond("LOAD ALICE")
+                self.thinker.respond("LOAD AIML B")
                 self.thinker.saveBrain(self.saved_brain_path)
                 self.last_saved = time.time()
                 os.chdir(cwd)
@@ -76,7 +76,7 @@ class Talker(object):
             aiml_path = imp.find_module('aiml')[1]
             if not aiml:
                 print "aiml path do not exist, please install it"
-            xml_file = os.path.join(aiml_path, 'alice', 'startup.xml')
+            xml_file = os.path.join(aiml_path, 'standard', 'startup.xml')
             print xml_file
         else:
             xml_file = os.path.join(settings.BASE_DIR, 'res', 'aiml-en-us-foundation-alice.v1-9', 'startup.xml')
@@ -86,9 +86,9 @@ class Talker(object):
         print '\n\n' + '=' * 30
         while True:
             human_msg = self.get_human_msg()
-            # print 'TO   thinker: %s' % human_msg
-            thinker_resp = self.thinker.respond(human_msg)
-            # print 'FROM thinker: %s' % thinker_resp
+            print 'TO   thinker: %s' % human_msg
+            thinker_resp = self.respond_to_human_msg(human_msg)
+            print 'FROM thinker: %s' % thinker_resp
             self.put_thinker_msg(thinker_resp=thinker_resp)
             sleep_time = random.uniform(0, 2*self.response_time)
             time.sleep(sleep_time)
@@ -103,6 +103,8 @@ class Talker(object):
         if lang == Language.CN and try_translate:
             req_msg_t = self.sentence_trans.convert_to_en(msg)
         thinker_resp = self.thinker.respond(req_msg_t, sessionID=session_id)
+        if len(thinker_resp) == 0:
+            thinker_resp = self.empty_msg
         resp_msg = thinker_resp
         if lang == Language.CN:
             resp_msg = self.sentence_trans.convert_to_cn(thinker_resp)
@@ -130,17 +132,15 @@ class Talker(object):
             human_msg = speech_trans_inst.get_text_of_speech(self.record_path)
             human_print = '\n%8s >> %s' % (self.human_name, human_msg)
             print human_print
-        human_msg = self.sentence_trans.convert_to_en(human_msg)
         return human_msg
 
     def put_thinker_msg(self, thinker_resp):
-        thinker_resp_cn = self.sentence_trans.convert_to_cn(thinker_resp)
-        thinker_msg = '\n%8s >> %s' % (self.thinker_name, thinker_resp_cn)
+        thinker_msg = '\n%8s >> %s' % (self.thinker_name, thinker_resp)
         print thinker_msg
         speech_name = 'speech_%s.mp3' % get_time_str_now(TIME_FORMAT_FOR_FILE)
         self.speech_path = os.path.join(TEMP_DIR, 'talker', 'audio', speech_name)
         make_sure_file_dir_exists(self.speech_path)
-        speech_trans_inst.get_speech_of_text(thinker_resp_cn, to_file=self.speech_path, speech_sex=self.thinker_sex)
+        speech_trans_inst.get_speech_of_text(thinker_resp, to_file=self.speech_path, speech_sex=self.thinker_sex)
         time.sleep(0.01)
         sound_util = SoundUtil()
         sound_util.play_mp3(self.speech_path)
@@ -153,7 +153,7 @@ talker_inst = Talker(try_load_brain=True)
 
 
 if __name__ == '__main__':
-    talker = Talker(try_load_brain=True)
+    talker = Talker(try_load_brain=False, use_site_package=True)
     talker.start()
     # talker.respond_to_human_msg(msg="what's your name")
     # talker.respond_to_human_msg(msg='你叫什么名字')

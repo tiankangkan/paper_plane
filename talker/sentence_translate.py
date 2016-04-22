@@ -30,7 +30,8 @@ class SentenceTranslatorBaidu(object):
         '52001': ERR_TIMEOUT,
         '54003': ERR_FREQUENCY,
         '54005': ERR_TOO_LONG,
-        '58001': ERR_LANG
+        '58001': ERR_LANG,
+        '54000': ERR_EMPTY
     }
 
     LANG_EN = 'en'
@@ -65,10 +66,11 @@ class SentenceTranslatorBaidu(object):
         resp = json.loads(resp_str)
         error_code = resp.get('error_code', '52000')
         if error_code != '52000':
-            error_msg = self.error_msg.get(error_code, 'Un know error')
+            error_msg = self.error_msg.get(error_code, 'Un know error: %s' % error_code)
             result = error_msg
         else:
             result_both = resp.get('trans_result', {})
+            print result_both
             if result_both:
                 result = result_both[0].get('dst', self.ERR_EMPTY)
             else:
