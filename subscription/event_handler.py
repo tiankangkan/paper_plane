@@ -82,7 +82,7 @@ class WeChatMsgHandler(object):
         return resp
 
     def set_english_chinese(self):
-        session_id = self.wechat.message.source
+        session_id = str(self.wechat.message.source)
         if session_id not in self.kv.inst:
             self.kv.put(session_id, dict())
         s = self.kv.get(session_id)
@@ -90,7 +90,7 @@ class WeChatMsgHandler(object):
         self.kv.sync()
 
     def off_english_chinese(self):
-        session_id = self.wechat.message.source
+        session_id = str(self.wechat.message.source)
         if session_id not in self.kv.inst:
             self.kv.put(session_id, dict())
         s = self.kv.get(session_id)
@@ -98,11 +98,11 @@ class WeChatMsgHandler(object):
         self.kv.sync()
 
     def is_set_english_chinese(self):
-        session_id = self.wechat.message.source
+        session_id = str(self.wechat.message.source)
         return session_id in self.kv.inst and self.kv.inst[session_id]['mode_ch_en'] == 'ON'
 
     def is_off_english_chinese(self):
-        session_id = self.wechat.message.source
+        session_id = str(self.wechat.message.source)
         return session_id in self.kv.inst and self.kv.inst[session_id]['mode_ch_en'] == 'OFF'
 
     def handle_text_message_with_talker(self, human_msg):
