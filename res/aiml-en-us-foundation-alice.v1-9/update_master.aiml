@@ -75,12 +75,12 @@
 </category>
 
 <category>
-<pattern> 开启英汉对照 </pattern>
+<pattern> 开启 * 对照 </pattern>
 <template> <srai>SETXXENXXCH</srai> </template>
 </category>
 
 <category>
-<pattern> *开启英汉对照*</pattern>
+<pattern> *开启 * 对照*</pattern>
 <template> <srai>SETXXENXXCH</srai> </template>
 </category>
 
@@ -90,12 +90,12 @@
 </category>
 
 <category>
-<pattern> *关闭英汉对照*</pattern>
+<pattern> *关闭 * 对照*</pattern>
 <template> <srai>OFFXXENXXCH</srai> </template>
 </category>
 
 <category>
-<pattern> 关闭英汉对照</pattern>
+<pattern> 关闭 * 对照</pattern>
 <template> <srai>OFFXXENXXCH</srai> </template>
 </category>
 
