@@ -21,6 +21,8 @@ class SentenceTranslator(object):
         pass
 
     def convert_between_ch_and_en_with_youdao(self, sentence, host_name='Talker', app_key='1797213575'):
+        if sentence == self.TRANSLATION_ERROR:
+            return sentence + ''
         url_template = 'http://fanyi.youdao.com/openapi.do?keyfrom=%(host_name)s&key=%(app_key)s&type=data&doctype=json&version=1.1&q=%(sentence)s'
         sentence = to_utf_8(sentence)    # not support unicode
         sentence = urllib2.quote(sentence)
