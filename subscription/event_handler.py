@@ -116,7 +116,9 @@ class WeChatMsgHandler(object):
             thinker_msg = thinker_msg or talker_inst.empty_msg
         else:
             if self.is_set_english_chinese():
-                thinker_msg = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
+                req_part = '%s\n%s\n%s' % (talker_inst.detail['req_en'], '-'*10, talker_inst.detail['req_cn'])
+                resp_part = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
+                thinker_msg = '%s\n%s\n%s' % (req_part, '=' * 30, resp_part)
             if talker_inst.is_error_msg(thinker_msg):
                 thinker_msg = u'电量快用尽了 💔 '
             log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))

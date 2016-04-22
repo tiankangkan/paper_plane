@@ -183,9 +183,24 @@ class Talker(object):
         elif lang == Language.EN and role == 'resp':
             self.detail['resp_en'] = msg
 
+    def clean_detail(self):
+        self.detail['req_cn'], self.detail['req_en'] = None, None
+        self.detail['resp_cn'], self.detail['resp_en'] = None, None
+
+    def makeup_detail(self):
+        if not self.detail['req_cn']:
+            self.detail['req_cn'] = self.sentence_trans.convert_to_cn(self.detail['req_en'])
+        if not self.detail['req_en']:
+            self.detail['req_en'] = self.sentence_trans.convert_to_en(self.detail['req_cn'])
+        if not self.detail['resp_cn']:
+            self.detail['resp_cn'] = self.sentence_trans.convert_to_cn(self.detail['resp_en'])
+        if not self.detail['resp_en']:
+            self.detail['resp_en'] = self.sentence_trans.convert_to_en(self.detail['resp_cn'])
+
     def respond_to_msg(self, msg, session_id=None):
         req_msg = to_unicode(msg)
         lang = get_language(req_msg)
+        self.clean_detail()
         self.set_detail(req_msg, lang, 'req')
         if session_id is not None:
             self.session_id_now = session_id
