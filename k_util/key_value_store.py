@@ -1,6 +1,6 @@
 import shelve
 import os
-
+from file_op import make_sure_file_dir_exists
 
 class KVStoreShelve(object):
     def __init__(self, data_dir='', db_name=None, writeback=True):
@@ -8,9 +8,11 @@ class KVStoreShelve(object):
         self.file_path = os.path.join(data_dir, self.db_name)
         self.inst = None
         self.writeback = writeback
+        self.make_db_open()
 
     def make_db_open(self):
         if self.inst is None:
+            make_sure_file_dir_exists(self.file_path)
             self.inst = shelve.open(self.file_path, writeback=self.writeback)
 
     def close(self):
@@ -21,11 +23,14 @@ class KVStoreShelve(object):
     def put(self, key, value):
         self.make_db_open()
         self.inst[key] = value
-        self.inst.sync()
+        self.sync()
 
     def get(self, key):
         self.make_db_open()
         return self.inst[key]
+
+    def sync(self):
+        self.inst.sync()
 
     def __str__(self):
         self.make_db_open()

@@ -84,16 +84,18 @@ class WeChatMsgHandler(object):
     def set_english_chinese(self):
         session_id = self.wechat.message.source
         if session_id not in self.kv.inst:
-            self.kv.inst[session_id] = dict()
-        s = self.kv.inst[session_id]
+            self.kv.put(session_id, dict())
+        s = self.kv.get(session_id)
         s['mode_ch_en'] = 'ON'
+        self.kv.sync()
 
     def off_english_chinese(self):
         session_id = self.wechat.message.source
         if session_id not in self.kv.inst:
-            self.kv.inst[session_id] = dict()
-        s = self.kv.inst[session_id]
+            self.kv.put(session_id, dict())
+        s = self.kv.get(session_id)
         s['mode_ch_en'] = 'OFF'
+        self.kv.sync()
 
     def is_set_english_chinese(self):
         session_id = self.wechat.message.source
