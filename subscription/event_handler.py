@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
-
+import paper_plane.django_init
 import StringIO
 import json
 
 from account.models import UserAccount
 from mail_msg.models import MailMsg
+from wechat_sdk import WechatBasic
 
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from talker.talker_main import talker_inst
 from love_me.views import get_page_url_of_user_id
-from k_util.str_op import to_utf_8
 from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE
 from paper_plane.settings import log_inst, DB_DIR
 from k_util.key_value_store import KVStoreShelve
+from k_util.str_op import to_utf_8
 
 
 class WeChatMsgHandler(object):
@@ -109,11 +110,11 @@ class WeChatMsgHandler(object):
 
     def handle_text_message_with_talker(self, human_msg):
         talker_inst.set_human_name(u'baby')
-        if talker_inst.is_rpc(human_msg):
-            thinker_msg = self.handle_rpc(human_msg)
+        thinker_msg = talker_inst.respond_to_msg(human_msg, session_id=self.wechat.message.source)
+        if talker_inst.is_rpc(thinker_msg):
+            thinker_msg = self.handle_rpc(thinker_msg)
             thinker_msg = thinker_msg or talker_inst.empty_msg
         else:
-            thinker_msg = talker_inst.respond_to_msg(human_msg, session_id=self.wechat.message.source)
             if self.is_set_english_chinese():
                 thinker_msg = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
             if talker_inst.is_error_msg(thinker_msg):
@@ -199,5 +200,7 @@ class WeChatMsgHandler(object):
 
 
 if __name__ == '__main__':
-    pass
+    wechat = WechatBasic()
+    w = WeChatMsgHandler(wechat)
+    w.handle_text_message_with_talker(u'开启英汉对照')
 
