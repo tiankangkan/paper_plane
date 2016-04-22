@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paper_plane/settings.py" afterPath="$PROJECT_DIR$/paper_plane/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subscription/event_handler.py" afterPath="$PROJECT_DIR$/subscription/event_handler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/talker/talker_main.py" afterPath="$PROJECT_DIR$/talker/talker_main.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/k_util/kv_database.db" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/k_util/key_value_store.py" afterPath="$PROJECT_DIR$/k_util/key_value_store.py" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,7 +71,7 @@
       <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-128.33333">
+            <state vertical-scroll-proportion="-110.55556">
               <caret line="231" column="41" selection-start-line="231" selection-start-column="41" selection-end-line="231" selection-end-column="41" />
               <folding>
                 <element signature="e#137#167#0" expanded="true" />
@@ -92,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event_handler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="event_handler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7935483">
-              <caret line="193" column="8" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
+            <state vertical-scroll-proportion="-3.148148">
+              <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
               <folding>
                 <element signature="e#25#40#0" expanded="true" />
               </folding>
@@ -120,6 +118,18 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="key_value_store.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/k_util/key_value_store.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.18703242">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,13 +186,13 @@
         <option value="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update_cn.aiml" />
         <option value="$PROJECT_DIR$/aiml/LangSupport.py" />
         <option value="$PROJECT_DIR$/aiml/Kernel.py" />
-        <option value="$PROJECT_DIR$/k_util/key_value_store.py" />
         <option value="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update_master.aiml" />
         <option value="$PROJECT_DIR$/subscription/views.py" />
         <option value="$PROJECT_DIR$/talker/talker_main.py" />
         <option value="$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml" />
         <option value="$PROJECT_DIR$/paper_plane/settings.py" />
         <option value="$PROJECT_DIR$/subscription/event_handler.py" />
+        <option value="$PROJECT_DIR$/k_util/key_value_store.py" />
       </list>
     </option>
   </component>
@@ -310,6 +320,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="paper_plane" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="k_util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1135,36 +1163,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/k_util/str_op.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64143425">
           <caret line="81" column="4" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/k_util/key_value_store.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07968128">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subscription/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1177,19 +1179,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="27" selection-start-line="90" selection-start-column="27" selection-end-line="90" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-25.916666">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/talker/speech_translate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-110.55556">
+          <caret line="231" column="41" selection-start-line="231" selection-start-column="41" selection-end-line="231" selection-end-column="41" />
+          <folding>
+            <element signature="e#137#167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.148148">
+          <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
+          <folding>
+            <element signature="e#25#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,22 +1231,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
+    <entry file="file://$PROJECT_DIR$/subscription/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-128.33333">
-          <caret line="231" column="41" selection-start-line="231" selection-start-column="41" selection-end-line="231" selection-end-column="41" />
-          <folding>
-            <element signature="e#137#167#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
+    <entry file="file://$PROJECT_DIR$/k_util/key_value_store.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7935483">
-          <caret line="193" column="8" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.18703242">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding>
-            <element signature="e#25#40#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
