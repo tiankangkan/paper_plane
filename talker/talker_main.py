@@ -65,6 +65,7 @@ class Talker(object):
             resp_cn=None, resp_en=None
         )
         self.empty_msg = u'很抱歉, 不能回答你, 我会成长起来的.. 🌹 '
+        self.err_msg = u' 我是不会告诉你现在某些地方出错了的 😄 '
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):

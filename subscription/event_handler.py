@@ -100,10 +100,10 @@ class WeChatMsgHandler(object):
         if t.is_rpc(resp_msg):
             if t.get_rpc_type(resp_msg) == t.RPC_SET_EN_CN:
                 self.set_english_chinese()
-                resp = u'Alice 已经开启英汉对照'
+                resp = u'%s 已经开启英汉对照' % talker_inst.thinker_name
             elif t.get_rpc_type(resp_msg) == t.RPC_OFF_EN_CN:
                 self.off_english_chinese()
-                resp = u'Alice 已经关闭英汉对照'
+                resp = u'%s 已经关闭英汉对照' % talker_inst.thinker_name
             else:
                 pass
         return resp
@@ -111,9 +111,11 @@ class WeChatMsgHandler(object):
     def handle_text_message_with_talker(self, human_msg):
         talker_inst.set_human_name(u'baby')
         thinker_msg = talker_inst.respond_to_msg(human_msg, session_id=self.wechat.message.source)
+        if talker_inst.is_error_msg(thinker_msg):
+            thinker_msg = talker_inst
+        thinker_msg = thinker_msg or talker_inst.empty_msg
         if talker_inst.is_rpc(thinker_msg):
             thinker_msg = self.handle_rpc(thinker_msg)
-            thinker_msg = thinker_msg or talker_inst.empty_msg
         else:
             if self.is_set_english_chinese():
                 talker_inst.makeup_detail()
