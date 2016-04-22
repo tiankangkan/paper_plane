@@ -1,53 +1,37 @@
-# -*- coding: utf-8 -*-
+#/usr/bin/env python
+#coding=utf8
 
-t = [
-    (2.5, 1),
-    (4, 1),
-    (3, 1.7),
-    (0.375, 3.1),
-    (2, 2.5),
-    (2, 2.3),
-    (2, 4),
-    (2, 3.8),
-    (1.5, 4.2),
-    (1, 4),
-    (0.5, 4),
-    (1, 2.7),
-    (3, 3.1),
-    (0.5, 4),
-    (1, 3.6),
-    (1, 3.9),
+import httplib
+import md5
+import urllib
+import random
 
-    (2, 3.6),
-    (2.5, 2.4),
-    (3, 2.9),
-    (2, 4),
-    (2, 3.2),
-    (2.5, 3.4),
-    (1.5, 4),
-    (1, 4.5),
-    (2, 3.8),
-    (1, 3.2),
-    (0.5, 4),
-    (0.5, 4.4),
-    (1, 3.8),
-    (0.5, 4)
-]
+appid = '20151113000005349'
+secretKey = 'osubCEzlGjzvw8qdQc41'
 
-sum_a = sum([pair[0] for pair in t])
-sum_b = sum([pair[0]*pair[1] for pair in t])
-avg = float(sum_b) / sum_a
 
-sum_c = sum([pair[1] * 10 + 50 for pair in t]) / len(t) * 1.0
+httpClient = None
+myurl = '/api/trans/vip/translate'
+q = 'apple'
+fromLang = 'en'
+toLang = 'zh'
+salt = random.randint(32768, 65536)
 
-print '平均绩点为: %s' % avg
-print '平均成绩为: %s' % sum_c
+sign = appid+q+str(salt)+secretKey
+m1 = md5.new()
+m1.update(sign)
+sign = m1.hexdigest()
+myurl = myurl+'?appid='+appid+'&q='+urllib.quote(q)+'&from='+fromLang+'&to='+toLang+'&salt='+str(salt)+'&sign='+sign
 
-import os
-for parent,dirnames,filenames in os.walk('/Users/kangtian/Documents/Master/paper_plane/res/aiml-en-us-foundation-alice.v1-9'):
-    for file_name in filenames:
-        print '<learn>' + file_name +'</learn>'
+try:
+    httpClient = httplib.HTTPConnection('api.fanyi.baidu.com')
+    httpClient.request('GET', myurl)
 
-f = lambda f, p: reduce(lambda c: c + 1, [lambda a: a + 1 for i in range(0, 3)])
-print f(lambda a: a + 1, 0)
-
+    #response是HTTPResponse对象
+    response = httpClient.getresponse()
+    print response.read()
+except Exception, e:
+    print e
+finally:
+    if httpClient:
+        httpClient.close()

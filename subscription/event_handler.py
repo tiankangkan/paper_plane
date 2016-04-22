@@ -70,8 +70,8 @@ def reply_to_text_message(wechat):
 def handle_text_message_with_talker(wechat, human_msg):
     talker_inst.set_human_name(u'baby')
     thinker_msg = talker_inst.respond_to_human_msg(human_msg, try_translate=True, session_id=wechat.message.source)
-    if thinker_msg == talker_inst.error_msg:
-        thinker_msg = u'我读不懂符号唉 💔 '
+    if talker_inst.is_error_msg(thinker_msg):
+        thinker_msg = u'电量快用尽了 💔 '
     log_inst.info('<reply_to_text_message>: Ask is %s, Answer is %s' % (to_utf_8(human_msg), to_utf_8(thinker_msg)))
     thinker_msg = thinker_msg
     return thinker_msg

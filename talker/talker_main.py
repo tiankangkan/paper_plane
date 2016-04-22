@@ -45,7 +45,6 @@ class Talker(object):
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
         self.try_translate = try_translate
-        self.error_msg = SentenceTranslator.TRANSLATION_ERROR
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):
@@ -144,12 +143,15 @@ class Talker(object):
         sound_util = SoundUtil()
         sound_util.play_mp3(self.speech_path)
 
+    def is_error_msg(self, msg):
+        return self.sentence_trans.is_error_msg(msg)
+
 
 talker_inst = Talker(try_load_brain=True)
 
 
 if __name__ == '__main__':
-    talker = Talker(try_load_brain=False)
+    talker = Talker(try_load_brain=True)
     talker.start()
     # talker.respond_to_human_msg(msg="what's your name")
     # talker.respond_to_human_msg(msg='你叫什么名字')
