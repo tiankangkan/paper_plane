@@ -45,6 +45,7 @@ class Talker(object):
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
         self.try_translate = try_translate
+        self.error_msg = SentenceTranslator.TRANSLATION_ERROR
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
     def load_thinker_with_aiml(self, try_load_brain=True):
