@@ -107,7 +107,7 @@ class WeChatMsgHandler(object):
 
     def handle_text_message_with_talker(self, human_msg):
         talker_inst.set_human_name(u'baby')
-        thinker_msg = talker_inst.respond_to_human_msg(human_msg, try_translate=True, session_id=self.wechat.message.source)
+        thinker_msg = talker_inst.respond_to_msg(human_msg, try_translate=True, session_id=self.wechat.message.source)
         if self.is_set_english_chinese():
             thinker_msg = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
         if talker_inst.is_error_msg(thinker_msg):
