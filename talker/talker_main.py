@@ -17,7 +17,7 @@ import random
 
 from sentence_translate import SentenceTranslator
 from speech_translate import speech_trans_inst, SpeechPeople
-from k_util.str_op import to_unicode, is_chinese, is_english, get_language, Language
+from k_util.str_op import to_unicode, to_utf_8, is_chinese_char, is_ascii_char, get_language, Language
 from k_util.file_op import make_sure_file_dir_exists
 from k_util.sound_op import SoundUtil
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
@@ -28,8 +28,19 @@ from django.conf import settings
 
 
 class Talker(object):
+    RPC_NOT_MATCH = 'RPC NOTXXMATCH'
+    RPC_SET_EN_CN = 'RPC SETXXENXXCN'
+    RPC_OFF_EN_CN = 'RPC OFFXXENXXCN'
+    RPC_UNKNOWN = 'RPC UNKNOWN'
+
+    rpc_type = {
+        'RPC NOTXXMATCH': RPC_NOT_MATCH,
+        'RPC SETXXENXXCN': RPC_SET_EN_CN,
+        'RPC OFFXXENXXCN': RPC_OFF_EN_CN
+    }
+
     def __init__(self, human_name='Lin', thinker_name='Alice', try_load_brain=True, use_site_package=False,
-                 try_translate=True, response_time=0.01):
+                 try_translate=True, response_time=0.01, xml_path=None, load=None):
         self.human_name = human_name
         self.thinker_name = thinker_name
         self.thinker = aiml.Kernel()
@@ -37,6 +48,8 @@ class Talker(object):
         self.speech_path = None
         self.thinker_sex = SpeechPeople.WOMAN    # 'MAN' or 'WOMAN'
         self.response_time = response_time
+        self.xml_path = xml_path
+        self.load = None
         self.sentence_trans = SentenceTranslator(way=SentenceTranslator.WAY_BAIDU)
         self.tmp_path = os.path.join(TEMP_DIR, 'brain')
         self.version = '1.0'    # 改变 version 来重新加载大脑数据
@@ -45,6 +58,7 @@ class Talker(object):
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
         self.try_translate = try_translate
+        self.session_id_now = 0
         self.empty_msg = u'很抱歉, 不能回答你, 我会成长起来的.. 🌹 '
         self.load_thinker_with_aiml(try_load_brain=try_load_brain)
 
@@ -54,11 +68,12 @@ class Talker(object):
             self.thinker.bootstrap(brainFile=self.saved_brain_path)
         else:
             xml_file = self.get_aiml_startup_xml()
+            load = self.load or "LOAD ALICE"
             if xml_file:
                 cwd = os.getcwd()
                 os.chdir(os.path.dirname(xml_file))
                 self.thinker.learn(xml_file)
-                self.thinker.respond("LOAD AIML B")
+                self.thinker.respond(load)
                 self.thinker.saveBrain(self.saved_brain_path)
                 self.last_saved = time.time()
                 os.chdir(cwd)
@@ -71,7 +86,18 @@ class Talker(object):
     def set_thinker_name(self, thinker_name):
         self.thinker_name = thinker_name
 
+    @staticmethod
+    def add_space_between_cn_char(msg):
+        uni_msg = to_unicode(msg)
+        uni_msg_temp = ''.join([' %s ' % ch if is_chinese_char(ch) else ch for ch in uni_msg])
+        msg = ' '.join(uni_msg_temp.split())
+        if isinstance(msg, str):
+            msg = to_utf_8(uni_msg)
+        return msg
+
     def get_aiml_startup_xml(self):
+        if self.xml_path:
+            return self.xml_path
         if self.use_site_package:
             aiml_path = imp.find_module('aiml')[1]
             if not aiml:
@@ -87,32 +113,87 @@ class Talker(object):
         while True:
             human_msg = self.get_human_msg()
             print 'TO   thinker: %s' % human_msg
-            thinker_resp = self.respond_to_human_msg(human_msg)
+            thinker_resp = self.respond_to_msg(human_msg)
             print 'FROM thinker: %s' % thinker_resp
             self.put_thinker_msg(thinker_resp=thinker_resp)
             sleep_time = random.uniform(0, 2*self.response_time)
             time.sleep(sleep_time)
 
-    def respond_to_human_msg(self, msg, session_id=0, try_translate=None):
-        try_translate = try_translate or self.try_translate
+    def is_un_escape(self, msg):
+        return msg.lower().startswith('rpc ')
+
+    def is_rpc(self, msg):
+        return msg.lower().startswith('rpc ')
+
+    def get_rpc_type(self, msg):
+        rpc = msg.upper()
+        return self.rpc_type.get(rpc, self.RPC_UNKNOWN)
+
+    def respond_to_human_msg(self, msg, session_id=None, try_translate=None):
+        if session_id is not None:
+            self.session_id_now = session_id
+        if try_translate is None:
+            try_translate = self.try_translate
+        # if not try_translate:
+        #     msg = self.add_space_between_cn_char(msg)
+        #     print msg
         if time.time() - self.last_saved > self.auto_saved_period:
             self.thinker.saveBrain(self.saved_brain_path)
         lang = get_language(msg)
         req_msg = to_unicode(msg)
         req_msg_t = req_msg
+        print lang, try_translate
         if lang == Language.CN and try_translate:
-            req_msg_t = self.sentence_trans.convert_to_en(msg)
+            req_msg_t = self.sentence_trans.convert_to_en(req_msg)
         thinker_resp = self.thinker.respond(req_msg_t, sessionID=session_id)
-        if len(thinker_resp) == 0:
-            thinker_resp = self.empty_msg
-        resp_msg = thinker_resp
-        if lang == Language.CN:
-            resp_msg = self.sentence_trans.convert_to_cn(thinker_resp)
-        # print 'Ask: %s, Answer: %s' % (msg, thinker_resp)
-        resp_msg = resp_msg if resp_msg else self.empty_msg
+        if self.is_un_escape(thinker_resp):
+            if self.is_rpc(thinker_resp):
+                resp_msg = self.handle_rpc(req_msg, thinker_resp)
+        else:
+            if len(thinker_resp) == 0:
+                thinker_resp = self.empty_msg
+            resp_msg = thinker_resp
+            if lang == Language.CN:
+                resp_msg = self.sentence_trans.convert_to_cn(thinker_resp)
+            resp_msg = resp_msg if resp_msg else self.empty_msg
         log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (MSG_TALKER_TRANSLATE, session_id, msg, req_msg_t, thinker_resp, resp_msg)
         log_inst.info(log_msg)
         return resp_msg
+
+    def handle_rpc(self, msg_req, msg_resp):
+        if msg_resp == self.RPC_NOT_MATCH and msg_req != self.RPC_NOT_MATCH:
+            new_msg = self.sentence_trans.convert_to_en(msg_req)
+            print 'RPC_NOT_MATCH, %s -> %s' % (msg_req, new_msg)
+            msg_resp = self.respond_to_human_msg(msg=new_msg, session_id=self.session_id_now)
+        return msg_resp
+
+    def respond_to_msg(self, msg, session_id=None):
+        req_msg = to_unicode(msg)
+        lang = get_language(req_msg)
+        if session_id is not None:
+            self.session_id_now = session_id
+        if time.time() - self.last_saved > self.auto_saved_period:
+            self.thinker.saveBrain(self.saved_brain_path)
+        resp_temp = self.thinker.respond(req_msg, sessionID=session_id)
+        print '%s -->> %s' % (req_msg, resp_temp)
+        req_msg_en = 'DO NOT NEED TRANSLATE'
+        if self.get_rpc_type(resp_temp) == self.RPC_NOT_MATCH and lang == Language.CN:
+            req_msg_en = self.sentence_trans.convert_to_en(req_msg)
+            resp_temp = self.thinker.respond(req_msg_en, sessionID=session_id)
+        if self.is_un_escape(resp_temp):
+            resp = resp_temp
+        else:
+            req_lang, resp_lang = get_language(req_msg), get_language(resp_temp)
+            if req_lang != resp_lang:
+                if req_lang == Language.EN:
+                    resp = self.sentence_trans.convert_to_en(resp_temp)
+                else:
+                    resp = self.sentence_trans.convert_to_cn(resp_temp)
+            else:
+                resp = resp_temp
+        log_msg = '%s: [ID: %s] "%s" ->> "%s" ||->> "%s" ->> "%s"' % (MSG_TALKER_TRANSLATE, session_id, req_msg, req_msg_en, resp_temp, resp)
+        log_inst.info(log_msg)
+        return resp
 
     def shutdown(self):
         self.thinker.saveBrain(self.saved_brain_path)
@@ -149,11 +230,12 @@ class Talker(object):
         return self.sentence_trans.is_error_msg(msg)
 
 
-talker_inst = Talker(try_load_brain=True)
+talker_inst = Talker(try_load_brain=True)    # 不要更改这里的设置, 可能会丢失大脑保存的数据
 
 
 if __name__ == '__main__':
-    talker = Talker(try_load_brain=False, use_site_package=True)
+    # talker = Talker(try_load_brain=False, use_site_package=True, xml_path='/Users/kangtian/Documents/Master/paper_plane/res/aiml_master_v0.0/cn-startup.xml', load='LOAD ALICE')
+    talker = Talker(try_load_brain=False, try_translate=False)
     talker.start()
     # talker.respond_to_human_msg(msg="what's your name")
     # talker.respond_to_human_msg(msg='你叫什么名字')

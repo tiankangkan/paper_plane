@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml version="1.0">
+
+<!-- Free software (c) 2012 andelf -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License -->
+<!-- as published by the Free Software Foundation. -->
+
+<meta name="author" content="Andelf"/>
+<meta name="language" content="zh"/>
+
+<category>
+<pattern>* 再见</pattern>
+    <template>
+        <srai>BYE</srai>
+    </template>
+</category>
+
+<category>
+<pattern>再见</pattern>
+<template>
+    <srai>BYE</srai>
+</template>
+</category>
+
+<category>
+<pattern>你好</pattern>
+<template>
+    <srai>HELLO</srai>
+</template>
+</category>
+
+<category>
+<pattern>谢谢</pattern>
+<template>
+    <random>
+        <li>不客气.</li>
+        <li>就喜欢你么有素质的.</li>
+        <li>你太客气了.</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>BYE</pattern>
+<template>
+    <random>
+        <li>再见 <get name="name"/></li>
+        <li>再见啦 <get name="name"/></li>
+        <li>下次见 <get name="name"/></li>
+        <li>谢谢你陪我聊天 <get name="name"/></li>
+        <li>改天 <get name="name"/></li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>HELLO</pattern>
+<template>
+    <random>
+        <li>哈, 很高兴见到你.</li>
+        <li>恩, 你真是太有礼貌了.</li>
+        <li>让我们开始一段旷世奇谈吧.</li>
+    </random>
+</template>
+</category>
+
+
+<category>
+<pattern>RPC *</pattern>
+<template>
+    RPC <star/>
+</template>
+</category>
+
+<category>
+<pattern> 开启英汉对照 </pattern>
+<template> <srai>SETXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern> *开启英汉对照*</pattern>
+<template> <srai>SETXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern>SETXXENXXCH</pattern>
+<template> <srai>RPC SETXXENXXCN</srai> </template>
+</category>
+
+<category>
+<pattern> *关闭英汉对照*</pattern>
+<template> <srai>OFFXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern> 关闭英汉对照</pattern>
+<template> <srai>OFFXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern>OFFXXENXXCH</pattern>
+<template> <srai>RPC OFFXXENXXCN</srai> </template>
+</category>
+
+
+<category>
+<pattern>ASK USER A QUESTION</pattern>
+<template>
+    <random>
+        <li>咱随便聊聊吧</li>
+        <li>其实我不是很聪明, 不过你可以教教我</li>
+        <li>聊聊人生聊聊理想吧</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>* 的名字</pattern>
+<template>
+    <person />是<bot name="name" />.
+</template>
+</category>
+
+<category>
+<pattern>GETXXXXTODAY</pattern>
+<template>
+    以我多年的经验看, 是<date format="%Y年%m月%d日" />.
+</template>
+</category>
+
+
+<category>
+<pattern> 日期 </pattern>
+<template> <srai>GETXXXXTODAY</srai> </template>
+</category>
+
+<category>
+<pattern> *日期*</pattern>
+<template> <srai>GETXXXXTODAY</srai> </template>
+</category>
+
+<category>
+<pattern> 几号 </pattern>
+<template> <srai>GETXXXXTODAY</srai> </template>
+</category>
+
+<category>
+<pattern> *几号*</pattern>
+<template> <srai>GETXXXXTODAY</srai> </template>
+</category>
+
+<category>
+<pattern> * </pattern>
+<template> <srai>RPC NOTXXMATCH</srai> </template>
+</category>
+
+</aiml>

@@ -2,7 +2,8 @@
 
 import paper_plane.django_init
 import json
-import event_handler
+
+from event_handler import WeChatMsgHandler
 
 from wechat_sdk import messages
 from wechat_sdk import WechatBasic
@@ -56,17 +57,18 @@ def dispatch_event(wechat):
     content = m.content if hasattr(m, 'content') else None
     log_msg = '%s: source:%s, target: %s, content: %s' % (MSG_WX_REQUEST, m.source, m.target, content)
     log_inst.info(log_msg)
+    msg_handler = WeChatMsgHandler(wechat)
     if isinstance(wechat.message, messages.TextMessage):
         # logger.info('=' * 30+'user_info:\n%s' % user_info)
-        return event_handler.reply_to_text_message(wechat)
+        return msg_handler.reply_to_text_message()
     elif isinstance(wechat.message, messages.VoiceMessage):
-        return event_handler.reply_to_voice_message(wechat)
+        return msg_handler.reply_to_voice_message()
     elif isinstance(wechat.message, messages.EventMessage):
-        return event_handler.reply_to_event_message(wechat)
+        return msg_handler.reply_to_event_message()
     else:
         resp = type(wechat.message)
         return wechat.response_text(u'其实, 我不会告诉程序现在出错了的', escape=False)
 
 
 if __name__ == '__main__':
-    event_handler.send_user_voice_message(wechat, u'哈哈')
+    pass
