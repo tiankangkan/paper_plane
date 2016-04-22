@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/subscription/event_handler.py" afterPath="$PROJECT_DIR$/subscription/event_handler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/talker/talker_main.py" afterPath="$PROJECT_DIR$/talker/talker_main.py" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,8 +80,8 @@
       <file leaf-file-name="talker_main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.9629629">
-              <caret line="197" column="91" selection-start-line="197" selection-start-column="91" selection-end-line="197" selection-end-column="91" />
+            <state vertical-scroll-proportion="-19.0">
+              <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
               <folding>
                 <element signature="e#137#167#0" expanded="true" />
               </folding>
@@ -103,8 +102,8 @@
       <file leaf-file-name="event_handler.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6516129">
-              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.516129">
+              <caret line="118" column="43" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="43" />
               <folding>
                 <element signature="e#24#54#0" expanded="true" />
               </folding>
@@ -1253,14 +1252,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.541667">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/paper_plane/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1274,16 +1265,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/site-packages/wechat_sdk/basic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1311,10 +1292,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/startup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.541667">
+          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/wechat_sdk/basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="171" column="0" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/talker/talker_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.9629629">
-          <caret line="197" column="91" selection-start-line="197" selection-start-column="91" selection-end-line="197" selection-end-column="91" />
+        <state vertical-scroll-proportion="-19.0">
+          <caret line="230" column="30" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
           <folding>
             <element signature="e#137#167#0" expanded="true" />
           </folding>
@@ -1323,8 +1322,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subscription/event_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6516129">
-          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.516129">
+          <caret line="118" column="43" selection-start-line="118" selection-start-column="43" selection-end-line="118" selection-end-column="43" />
           <folding>
             <element signature="e#24#54#0" expanded="true" />
           </folding>

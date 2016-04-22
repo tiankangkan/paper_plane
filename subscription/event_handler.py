@@ -116,6 +116,7 @@ class WeChatMsgHandler(object):
             thinker_msg = thinker_msg or talker_inst.empty_msg
         else:
             if self.is_set_english_chinese():
+                talker_inst.makeup_detail()
                 req_part = '%s\n%s\n%s' % (talker_inst.detail['req_en'], '-'*10, talker_inst.detail['req_cn'])
                 resp_part = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
                 thinker_msg = '%s\n%s\n%s' % (req_part, '=' * 30, resp_part)
