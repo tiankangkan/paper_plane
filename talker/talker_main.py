@@ -23,7 +23,7 @@ from k_util.sound_op import SoundUtil
 from k_util.time_op import get_time_str_now, TIME_FORMAT_FOR_FILE
 from talker.talker_setting import TEMP_DIR
 from paper_plane.proj_setting import MSG_TALKER_TRANSLATE
-from paper_plane.settings import log_inst
+from paper_plane.settings import log_inst, DB_DIR
 from django.conf import settings
 
 
@@ -52,9 +52,9 @@ class Talker(object):
         self.xml_path = xml_path
         self.load = None
         self.sentence_trans = SentenceTranslator(way=SentenceTranslator.WAY_BAIDU)
-        self.tmp_path = os.path.join(TEMP_DIR, 'brain')
+        self.db_path = os.path.join(DB_DIR, 'brain')
         self.version = '1.0'    # 改变 version 来重新加载大脑数据
-        self.saved_brain_path = os.path.join(self.tmp_path, 'saved_brain_%s.brn' % self.version)
+        self.saved_brain_path = os.path.join(self.db_path, 'saved_brain_%s.brn' % self.version)
         self.last_saved = 0
         self.auto_saved_period = 300
         self.use_site_package = use_site_package
