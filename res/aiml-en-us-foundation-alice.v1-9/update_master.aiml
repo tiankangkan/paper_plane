@@ -105,6 +105,26 @@
 </category>
 
 <category>
+<pattern> * 学英语 </pattern>
+<template> <srai>SETXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern> 学英语 </pattern>
+<template> <srai>SETXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern> 要聊天 </pattern>
+<template> <srai>SETXXENXXCH</srai> </template>
+</category>
+
+<category>
+<pattern> * 要聊天 </pattern>
+<template> <srai>SETXXENXXCH</srai> </template>
+</category>
+
+<category>
 <pattern> 开启 * 对照 </pattern>
 <template> <srai>SETXXENXXCH</srai> </template>
 </category>
