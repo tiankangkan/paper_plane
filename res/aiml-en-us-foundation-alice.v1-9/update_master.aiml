@@ -68,6 +68,36 @@
 
 
 <category>
+<pattern>SHOWXXMENUS</pattern>
+<template>
+    1. 输入[飞机], 送给TA一份礼物
+    2. 输入[开启中英对照], 同时显示中英对话, 方便学习英语
+    3. 输入[关闭中英对照], 不同时显示中英对话
+</template>
+</category>
+
+<category>
+<pattern> * 功能 * </pattern>
+<template> <srai>SHOWXXMENUS</srai> </template>
+</category>
+
+<category>
+<pattern> 功能 </pattern>
+<template> <srai>SHOWXXMENUS</srai> </template>
+</category>
+
+<category>
+<pattern> * 菜单 * </pattern>
+<template> <srai>SHOWXXMENUS</srai> </template>
+</category>
+
+<category>
+<pattern> 菜单 </pattern>
+<template> <srai>SHOWXXMENUS</srai> </template>
+</category>
+
+
+<category>
 <pattern>RPC *</pattern>
 <template>
     RPC <star/>

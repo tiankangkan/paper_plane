@@ -104,8 +104,10 @@ class WeChatMsgHandler(object):
             elif t.get_rpc_type(resp_msg) == t.RPC_OFF_EN_CN:
                 self.off_english_chinese()
                 resp = u'%s 已经关闭英汉对照' % talker_inst.thinker_name
+            elif t.get_rpc_type(resp_msg) == t.RPC_NOT_MATCH:
+                resp = talker_inst.empty_msg
             else:
-                pass
+                resp = talker_inst.err_msg
         return resp
 
     def handle_text_message_with_talker(self, human_msg):
