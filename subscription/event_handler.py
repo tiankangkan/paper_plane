@@ -114,7 +114,7 @@ class WeChatMsgHandler(object):
         talker_inst.set_human_name(u'baby')
         thinker_msg = talker_inst.respond_to_msg(human_msg, session_id=self.wechat.message.source)
         if talker_inst.is_error_msg(thinker_msg):
-            thinker_msg = talker_inst
+            thinker_msg = talker_inst.err_msg
         thinker_msg = thinker_msg or talker_inst.empty_msg
         if talker_inst.is_rpc(thinker_msg):
             thinker_msg = self.handle_rpc(thinker_msg)
