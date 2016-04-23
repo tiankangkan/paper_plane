@@ -221,6 +221,7 @@ class Talker(object):
         if time.time() - self.last_saved > self.auto_saved_period:
             self.thinker.saveBrain(self.saved_brain_path)
         resp_temp = self.thinker.respond(req_msg, sessionID=session_id)
+        resp_temp = resp_temp.replace('\\n', '\n')    # 自己扩充的换行语法
         self.set_detail(resp_temp, get_language(resp_temp), 'resp')
         print '%s -->> %s' % (req_msg, resp_temp)
         req_msg_en = 'DO NOT NEED TRANSLATE'

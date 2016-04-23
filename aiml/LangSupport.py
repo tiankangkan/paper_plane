@@ -19,7 +19,6 @@ def isChinese(c):
     return any(s <= ord(c) <= e for s, e in r)
 
 def splitChinese(s):
-
     result = []
     for c in s:
         if isChinese(c):
@@ -59,6 +58,3 @@ def mergeChineseSpace(s):
             pass
     return u''.join(result).strip()
 
-
-finalResponse = u"我爱学英语"
-print mergeChineseSpace(unicode(finalResponse, 'utf-8') if type(finalResponse) == str else finalResponse)
