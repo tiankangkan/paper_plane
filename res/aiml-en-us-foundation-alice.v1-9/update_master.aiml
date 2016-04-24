@@ -258,22 +258,22 @@
 
 <category>
 <pattern> 哈哈 </pattern>
-<template> <srai>THANKSXXYOU</srai> </template>
+<template> <srai>FELLXXFUN</srai> </template>
 </category>
 
 <category>
 <pattern> 笑 * </pattern>
-<template> <srai>THANKSXXYOU</srai> </template>
+<template> <srai>FELLXXFUN</srai> </template>
 </category>
 
 <category>
 <pattern> * 笑 * </pattern>
-<template> <srai>THANKSXXYOU</srai> </template>
+<template> <srai>FELLXXFUN</srai> </template>
 </category>
 
 <category>
 <pattern> 嘻嘻 </pattern>
-<template> <srai>THANKSXXYOU</srai> </template>
+<template> <srai>FELLXXFUN</srai> </template>
 </category>
 
 
