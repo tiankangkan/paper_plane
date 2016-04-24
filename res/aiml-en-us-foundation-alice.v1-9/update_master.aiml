@@ -184,6 +184,23 @@
 <template> <srai>MISSXXYOU</srai> </template>
 </category>
 
+<category>
+<pattern>  * 放不下 *  </pattern>
+<template> <srai>MISSXXYOU</srai> </template>
+</category>
+
+
+<category>
+<pattern>  放不下 </pattern>
+<template> <srai>MISSXXYOU</srai> </template>
+</category>
+
+<category>
+<pattern>  放不下 * </pattern>
+<template> <srai>MISSXXYOU</srai> </template>
+</category>
+
+
 
 <category>
 <pattern>YOURXXMASTERXXWHO</pattern>
