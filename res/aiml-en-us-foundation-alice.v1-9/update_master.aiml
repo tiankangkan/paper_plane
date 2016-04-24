@@ -155,12 +155,12 @@
 </category>
 
 <category>
-<pattern>  * 主人在 *  </pattern>
+<pattern>  你主人在 *  </pattern>
 <template> <srai>YOURXXMASTERXXWHO</srai> </template>
 </category>
 
 <category>
-<pattern>  * 主人干 *  </pattern>
+<pattern>  你主人干 *  </pattern>
 <template> <srai>YOURXXMASTERXXWHO</srai> </template>
 </category>
 
