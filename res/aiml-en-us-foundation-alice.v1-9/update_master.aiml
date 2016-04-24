@@ -166,6 +166,26 @@
 
 
 <category>
+<pattern>MISSXXYOU</pattern>
+<template>
+    <random>
+        <li>握不住沙，就扬了它.</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>  想你 *  </pattern>
+<template> <srai>MISSXXYOU</srai> </template>
+</category>
+
+<category>
+<pattern>  * 放不下  </pattern>
+<template> <srai>MISSXXYOU</srai> </template>
+</category>
+
+
+<category>
 <pattern>YOURXXMASTERXXWHO</pattern>
 <template>
     <random>
@@ -368,6 +388,7 @@
 <category>
 <pattern>SHOWXXMENUS</pattern>
 <template>
+    0. 和我畅所欲言.
     1. 输入[飞机], 送给TA一份礼物\n
     2. 输入[开启中英对照], 同时显示中英对话, 方便学习英语\n
     3. 输入[关闭中英对照], 不同时显示中英对话\n
