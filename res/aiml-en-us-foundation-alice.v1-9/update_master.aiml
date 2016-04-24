@@ -184,11 +184,27 @@
 <pattern>YOURXXMASTERXXLIKE</pattern>
 <template>
     <random>
-        <li>我主人当然最喜欢琳菇凉!</li>
-        <li>我觉得我主人喜欢女人.. 咳咳, 具体点, 是琳菇凉</li>
+        <li>我觉得主人最喜欢琳菇凉 !</li>
+        <li>我觉得主人喜欢女人.. 咳咳, 具体点, 是琳菇凉</li>
     </random>
 </template>
 </category>
+
+<category>
+<pattern>  你主人喜欢 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
+<category>
+<pattern>  你主人怎么 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
+<category>
+<pattern>  你主人是不是 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
 
 
 <category>
