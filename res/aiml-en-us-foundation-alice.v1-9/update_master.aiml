@@ -69,22 +69,22 @@
 
 <category>
 <pattern> 瞌睡 * </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>WANTXXSLEEP</srai> </template>
 </category>
 
 <category>
 <pattern> * 瞌睡 * </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>WANTXXSLEEP</srai> </template>
 </category>
 
 <category>
 <pattern> 瞌睡 * </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>WANTXXSLEEP</srai> </template>
 </category>
 
 <category>
 <pattern> 瞌睡 </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>WANTXXSLEEP</srai> </template>
 </category>
 
 
