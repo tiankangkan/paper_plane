@@ -205,7 +205,7 @@
 
 
 <category>
-<pattern>THANKS</pattern>
+<pattern>THANKSXXYOU</pattern>
 <template>
     <random>
         <li>就喜欢你这么有素质的.</li>
@@ -216,12 +216,12 @@
 
 <category>
 <pattern> 谢谢 </pattern>
-<template> <srai>THANKS</srai> </template>
+<template> <srai>THANKSXXYOU</srai> </template>
 </category>
 
 <category>
-<pattern> 谢谢 * </pattern>
-<template> <srai>THANKS</srai> </template>
+<pattern> 谢谢你 </pattern>
+<template> <srai>THANKSXXYOU</srai> </template>
 </category>
 
 
