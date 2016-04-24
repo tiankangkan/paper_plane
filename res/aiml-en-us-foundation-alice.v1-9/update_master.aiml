@@ -160,15 +160,14 @@
 </category>
 
 <category>
-<pattern>  你 * 主人 * </pattern>
+<pattern>  你 * 主人是 * </pattern>
 <template> <srai>YOURXXMASTER</srai> </template>
 </category>
 
 <category>
-<pattern>  你主人* </pattern>
+<pattern>  你主人是* </pattern>
 <template> <srai>YOURXXMASTER</srai> </template>
 </category>
-
 
 <category>
 <pattern>  谁 * 主人</pattern>
@@ -180,6 +179,16 @@
 <template> <srai>YOURXXMASTER</srai> </template>
 </category>
 
+
+<category>
+<pattern>YOURXXMASTERXXLIKE</pattern>
+<template>
+    <random>
+        <li>我主人当然最喜欢琳菇凉!</li>
+        <li>我觉得我主人喜欢女人.. 咳咳, 具体点, 是琳菇凉</li>
+    </random>
+</template>
+</category>
 
 
 <category>
