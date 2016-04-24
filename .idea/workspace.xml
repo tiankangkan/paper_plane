@@ -51,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
+              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -60,8 +60,8 @@
       <file leaf-file-name="update_master.aiml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update_master.aiml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5548387">
-              <caret line="488" column="0" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.41935483">
+              <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -1206,15 +1206,15 @@
     <entry file="file://$PROJECT_DIR$/info.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="23" />
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/aiml-en-us-foundation-alice.v1-9/update_master.aiml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5548387">
-          <caret line="488" column="0" selection-start-line="488" selection-start-column="0" selection-end-line="488" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.41935483">
+          <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
           <folding />
         </state>
       </provider>
