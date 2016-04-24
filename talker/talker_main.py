@@ -286,7 +286,7 @@ talker_inst = Talker(try_load_brain=True)    # 不要更改这里的设置, 可�
 
 if __name__ == '__main__':
     # talker = Talker(try_load_brain=False, use_site_package=True, xml_path='/Users/kangtian/Documents/Master/paper_plane/res/aiml_master_v0.0/cn-startup.xml', load='LOAD ALICE')
-    talker = Talker(try_load_brain=False, try_translate=False)
+    talker = Talker(try_load_brain=True, try_translate=False)
     talker.start()
     # talker.respond_to_human_msg(msg="what's your name")
     # talker.respond_to_human_msg(msg='你叫什么名字')

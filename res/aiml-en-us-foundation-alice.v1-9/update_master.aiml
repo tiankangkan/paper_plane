@@ -10,50 +10,113 @@
 <meta name="author" content="Andelf"/>
 <meta name="language" content="zh"/>
 
-<category>
-<pattern>* 再见</pattern>
-    <template>
-        <srai>BYE</srai>
-    </template>
-</category>
 
-<category>
-<pattern>再见</pattern>
-<template>
-    <srai>BYE</srai>
-</template>
-</category>
-
-<category>
-<pattern>你好</pattern>
-<template>
-    <srai>HELLO</srai>
-</template>
-</category>
-
-<category>
-<pattern>谢谢</pattern>
-<template>
-    <random>
-        <li>不客气.</li>
-        <li>就喜欢你么有素质的.</li>
-        <li>你太客气了.</li>
-    </random>
-</template>
-</category>
 
 <category>
 <pattern>BYE</pattern>
 <template>
     <random>
-        <li>再见 <get name="name"/></li>
-        <li>再见啦 <get name="name"/></li>
-        <li>下次见 <get name="name"/></li>
-        <li>谢谢你陪我聊天 <get name="name"/></li>
-        <li>改天 <get name="name"/></li>
+        <li>恩, 再见. 我会想念你的 <get name="name"/></li>
+        <li>好, 再见啦, 你要加油哦 <get name="name"/></li>
+        <li>好, 希望你今天开心 😄 <get name="name"/></li>
+        <li>有一万种方式说再见, 但人家都不会表达, 只能说: 我会想你的 <get name="name"/></li>
+        <li>好滴, 拜拜哈 <get name="name"/></li>
     </random>
 </template>
 </category>
+
+<category>
+<pattern> 再见 </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> 再见* </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> * 走了 </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> * 睡觉 </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> 睡觉 </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> 睡觉* </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+
+
+<category>
+<pattern>WANTXXSLEEP</pattern>
+<template>
+    <random>
+        <li>那就休息吧, <get name="name"/> 不要像我的主人那样熬夜, 对身体不好</li>
+        <li>是啊, 不早了, 睡吧亲</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern> 瞌睡 * </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> * 瞌睡 * </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> 瞌睡 * </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> 瞌睡 </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+
+
+<category>
+<pattern>THANKSXXALL</pattern>
+<template>
+    <random>
+        <li>Alice 代小康君谢谢大家.</li>
+        <li>不要嘛, 人家很害羞的.</li>
+        <li>好, 谢谢大家 PS..欢迎分享关于我的公众号哦: 不一样的巧克力</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>来谢谢*</pattern>
+<template> <srai>THANKSXXALL</srai> </template>
+</category>
+
+<category>
+<pattern>*谢谢大家</pattern>
+<template> <srai>THANKSXXALL</srai> </template>
+</category>
+
+<category>
+<pattern>谢谢大家</pattern>
+<template> <srai>THANKSXXALL</srai> </template>
+</category>
+
+
+
 
 <category>
 <pattern>HELLO</pattern>
@@ -61,10 +124,150 @@
     <random>
         <li>哈, 很高兴见到你.</li>
         <li>恩, 你真是太有礼貌了.</li>
-        <li>让我们开始一段旷世奇谈吧.</li>
+        <li>Hi, Alice很高兴见到你哦.</li>
     </random>
 </template>
 </category>
+
+<category>
+<pattern> 你好 </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> HI * </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+<category>
+<pattern> 我来* </pattern>
+<template> <srai>HELLO</srai> </template>
+</category>
+
+
+
+
+<category>
+<pattern>YOURXXMASTER</pattern>
+<template>
+    <random>
+        <li>我的主人是人见人爱的小康君!</li>
+        <li>我的主人很神秘, 人称康哥.</li>
+        <li>不告诉你, 嘿嘿 你自己咋不去问他呢 .</li>
+        <li>管他干嘛, 整体就知道和那个蒲琳姑娘聊, 都不理我, 哼.</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>  你 * 主人 * </pattern>
+<template> <srai>YOURXXMASTER</srai> </template>
+</category>
+
+<category>
+<pattern>  你主人* </pattern>
+<template> <srai>YOURXXMASTER</srai> </template>
+</category>
+
+
+<category>
+<pattern>  谁 * 主人</pattern>
+<template> <srai>YOURXXMASTER</srai> </template>
+</category>
+
+<category>
+<pattern>  谁 * 主人 *</pattern>
+<template> <srai>YOURXXMASTER</srai> </template>
+</category>
+
+
+
+<category>
+<pattern>BEXXMASTER</pattern>
+<template>
+    <random>
+        <li>好呀好呀～ 以后叫你哥哥吧或者姐姐吧 !</li>
+        <li>好难为情, 我要和小康君商量下 ^_^ ||| </li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>  我 * 主人 * </pattern>
+<template> <srai>YOURXXMASTER</srai> </template>
+</category>
+
+<category>
+<pattern>  我 * 主人</pattern>
+<template> <srai>YOURXXMASTER</srai> </template>
+</category>
+
+
+
+<category>
+<pattern>THANKS</pattern>
+<template>
+    <random>
+        <li>就喜欢你这么有素质的.</li>
+        <li>嗯哼, 嗯哼, 蹦擦擦.</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern> 谢谢 </pattern>
+<template> <srai>THANKS</srai> </template>
+</category>
+
+<category>
+<pattern> 谢谢 * </pattern>
+<template> <srai>THANKS</srai> </template>
+</category>
+
+
+
+
+<category>
+<pattern>SHOWXXFUNCTION</pattern>
+<template>
+    <random>
+        <li>我能撒娇卖萌谈心事.</li>
+        <li>我的愿望就是让你开开心心哒.</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern> * 功能 * </pattern>
+<template> <srai>SHOWXXFUNCTION</srai> </template>
+</category>
+
+<category>
+<pattern> * 功能 </pattern>
+<template> <srai>SHOWXXFUNCTION</srai> </template>
+</category>
+
+<category>
+<pattern> 功能 </pattern>
+<template> <srai>SHOWXXFUNCTION</srai> </template>
+</category>
+
+<category>
+<pattern> * 干嘛 </pattern>
+<template> <srai>SHOWXXFUNCTION</srai> </template>
+</category>
+
+<category>
+<pattern> * 能做 * </pattern>
+<template> <srai>SHOWXXFUNCTION</srai> </template>
+</category>
+
+<category>
+<pattern> * 会做 * </pattern>
+<template> <srai>SHOWXXFUNCTION</srai> </template>
+</category>
+
+
 
 
 <category>
@@ -74,16 +277,6 @@
     2. 输入[开启中英对照], 同时显示中英对话, 方便学习英语\n
     3. 输入[关闭中英对照], 不同时显示中英对话\n
 </template>
-</category>
-
-<category>
-<pattern> * 功能 * </pattern>
-<template> <srai>SHOWXXMENUS</srai> </template>
-</category>
-
-<category>
-<pattern> 功能 </pattern>
-<template> <srai>SHOWXXMENUS</srai> </template>
 </category>
 
 <category>
@@ -97,11 +290,19 @@
 </category>
 
 
+
 <category>
 <pattern>RPC *</pattern>
 <template>
     RPC <star/>
 </template>
+</category>
+
+
+
+<category>
+<pattern>SETXXENXXCH</pattern>
+<template> <srai>RPC SETXXENXXCN</srai> </template>
 </category>
 
 <category>
@@ -134,9 +335,11 @@
 <template> <srai>SETXXENXXCH</srai> </template>
 </category>
 
+
+
 <category>
-<pattern>SETXXENXXCH</pattern>
-<template> <srai>RPC SETXXENXXCN</srai> </template>
+<pattern>OFFXXENXXCH</pattern>
+<template> <srai>RPC OFFXXENXXCN</srai> </template>
 </category>
 
 <category>
@@ -149,10 +352,6 @@
 <template> <srai>OFFXXENXXCH</srai> </template>
 </category>
 
-<category>
-<pattern>OFFXXENXXCH</pattern>
-<template> <srai>RPC OFFXXENXXCN</srai> </template>
-</category>
 
 
 <category>
@@ -165,6 +364,7 @@
     </random>
 </template>
 </category>
+
 
 <category>
 <pattern>* 的名字</pattern>
