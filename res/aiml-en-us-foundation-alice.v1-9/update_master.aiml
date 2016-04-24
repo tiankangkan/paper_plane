@@ -145,10 +145,29 @@
 </category>
 
 
+<category>
+<pattern>YOURXXMASTERXXWHERE</pattern>
+<template>
+    <random>
+        <li>主人在辛苦赚 Money，给媳妇儿买好吃的呢!</li>
+    </random>
+</template>
+</category>
+
+<category>
+<pattern>  * 主人在 *  </pattern>
+<template> <srai>YOURXXMASTERXXWHO</srai> </template>
+</category>
+
+<category>
+<pattern>  * 主人干 *  </pattern>
+<template> <srai>YOURXXMASTERXXWHO</srai> </template>
+</category>
+
 
 
 <category>
-<pattern>YOURXXMASTER</pattern>
+<pattern>YOURXXMASTERXXWHO</pattern>
 <template>
     <random>
         <li>我的主人是人见人爱的小康君!</li>
@@ -161,22 +180,22 @@
 
 <category>
 <pattern>  你 * 主人是 * </pattern>
-<template> <srai>YOURXXMASTER</srai> </template>
+<template> <srai>YOURXXMASTERXXWHO</srai> </template>
 </category>
 
 <category>
 <pattern>  你主人是* </pattern>
-<template> <srai>YOURXXMASTER</srai> </template>
+<template> <srai>YOURXXMASTERXXWHO</srai> </template>
 </category>
 
 <category>
 <pattern>  谁 * 主人</pattern>
-<template> <srai>YOURXXMASTER</srai> </template>
+<template> <srai>YOURXXMASTERXXWHO</srai> </template>
 </category>
 
 <category>
 <pattern>  谁 * 主人 *</pattern>
-<template> <srai>YOURXXMASTER</srai> </template>
+<template> <srai>YOURXXMASTERXXWHO</srai> </template>
 </category>
 
 
@@ -196,6 +215,26 @@
 </category>
 
 <category>
+<pattern>  你主人媳妇 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
+<category>
+<pattern>  你主人*媳妇 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
+<category>
+<pattern>  媳妇 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
+<category>
+<pattern>  * 媳妇 *</pattern>
+<template> <srai>YOURXXMASTERXXLIKE</srai> </template>
+</category>
+
+<category>
 <pattern>  你主人怎么 *</pattern>
 <template> <srai>YOURXXMASTERXXLIKE</srai> </template>
 </category>
@@ -206,12 +245,25 @@
 </category>
 
 
+<category>
+<pattern>FELLXXFUN</pattern>
+<template>
+    <random>
+        <li>你觉得开心, 爱妃就很满足了</li>
+        <li>呵呵..</li>
+        <li>生活就是这么的奇妙</li>
+    </random>
+</template>
+</category>
+
+
 
 <category>
 <pattern>BEXXMASTER</pattern>
 <template>
     <random>
         <li>好呀好呀～ 以后叫你哥哥吧或者姐姐吧 !</li>
+        <li>不行了啦，宝宝不能叛变小康哥哥～ 不过，如果你愿意，可以让你做老板娘的😳 </li>
         <li>好难为情, 我要和小康君商量下 ^_^ ||| </li>
     </random>
 </template>
