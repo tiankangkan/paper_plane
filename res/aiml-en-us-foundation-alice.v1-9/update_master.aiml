@@ -93,8 +93,8 @@
 <pattern>THANKSXXALL</pattern>
 <template>
     <random>
-        <li>Alice 代小康君谢谢大家.\n
-         PS..欢迎分享关于我的公众号哦: 不一样的巧克力</li>
+        <li>Alice 代小康君谢谢大家.\n\n
+         PS..欢迎关注我的公众号哦: 不一样的巧克力</li>
     </random>
 </template>
 </category>
