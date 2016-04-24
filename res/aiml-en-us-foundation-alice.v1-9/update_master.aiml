@@ -156,12 +156,12 @@
 
 <category>
 <pattern>  你主人在 *  </pattern>
-<template> <srai>YOURXXMASTERXXWHO</srai> </template>
+<template> <srai>YOURXXMASTERXXWHERE</srai> </template>
 </category>
 
 <category>
 <pattern>  你主人干 *  </pattern>
-<template> <srai>YOURXXMASTERXXWHO</srai> </template>
+<template> <srai>YOURXXMASTERXXWHERE</srai> </template>
 </category>
 
 
@@ -170,8 +170,8 @@
 <pattern>YOURXXMASTERXXWHO</pattern>
 <template>
     <random>
-        <li>我的主人是人见人爱的小康君!</li>
         <li>我的主人很神秘, 人称康哥.</li>
+        <li>我的主人是人见人爱的小康君!</li>
         <li>不告诉你, 嘿嘿 你自己咋不去问他呢 .</li>
         <li>管他干嘛, 整体就知道和那个蒲琳姑娘聊, 都不理我, 哼.</li>
     </random>
@@ -290,12 +290,12 @@
 
 <category>
 <pattern>  我 * 主人 * </pattern>
-<template> <srai>YOURXXMASTER</srai> </template>
+<template> <srai>BEXXMASTER</srai> </template>
 </category>
 
 <category>
 <pattern>  我 * 主人</pattern>
-<template> <srai>YOURXXMASTER</srai> </template>
+<template> <srai>BEXXMASTER</srai> </template>
 </category>
 
 
