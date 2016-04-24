@@ -121,8 +121,8 @@ class WeChatMsgHandler(object):
         else:
             if self.is_set_english_chinese():
                 talker_inst.makeup_detail()
-                req_part = '%s\n%s\n%s' % (talker_inst.detail['req_en'], '-'*10, talker_inst.detail['req_cn'])
-                resp_part = '%s\n%s\n%s' % (talker_inst.detail['resp_en'], '-'*10, talker_inst.detail['resp_cn'])
+                req_part = '%s\n%s' % (talker_inst.detail['req_en'], talker_inst.detail['req_cn'])
+                resp_part = '%s\n%s' % (talker_inst.detail['resp_en'], talker_inst.detail['resp_cn'])
                 thinker_msg = '%s\n%s\n%s' % (req_part, '=' * 20, resp_part)
             if talker_inst.is_error_msg(thinker_msg):
                 thinker_msg = u'电量快用尽了 💔 '
@@ -160,8 +160,8 @@ class WeChatMsgHandler(object):
             self.save_user_to_db()
             log_msg = '%s: id: %s' % (MSG_WX_EVENT_FOLLOW, self.wechat.message.source)
             log_inst.info(log_msg)
-            return self.wechat.response_text(u'欢迎来到小康君的地盘, 由我们家可爱的Alice陪你聊天😊', escape=False)
-        elif self.wechat.message.type == 'unsubscribe':  # 取消关注事件（无可用私有信息）
+            return self.wechat.response_text(u'欢迎来到小康君的地盘, 由我们家可爱的Alice陪你聊天😊 \nPS. 输入 "菜单"查询功能', escape=False)
+        elif self.wechat.message.type == 'unsubscribe':  # 取消关注事件(无可用私有信息)
             pass
         elif self.wechat.message.type == 'scan':  # 用户已关注时的二维码扫描事件
             key = self.wechat.message.key                        # 对应于 XML 中的 EventKey
