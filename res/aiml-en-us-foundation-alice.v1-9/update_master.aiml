@@ -50,32 +50,32 @@
 
 <category>
 <pattern> 再见 </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>BYE</srai> </template>
 </category>
 
 <category>
 <pattern> 再见* </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>BYE</srai> </template>
 </category>
 
 <category>
 <pattern> * 走了 </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>BYE</srai> </template>
 </category>
 
 <category>
 <pattern> * 睡觉 </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>BYE</srai> </template>
 </category>
 
 <category>
 <pattern> 睡觉 </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>BYE</srai> </template>
 </category>
 
 <category>
 <pattern> 睡觉* </pattern>
-<template> <srai>HELLO</srai> </template>
+<template> <srai>BYE</srai> </template>
 </category>
 
 
