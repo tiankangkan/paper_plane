@@ -7,6 +7,6 @@ logging.basicConfig(level=logging.DEBUG,
                     format=SIMPLE_FORMAT,
                     filemode='w')
 
-log_inst = logging.getLogger('django')
+log_inst = logging.getLogger('paper_plane')
 
 
