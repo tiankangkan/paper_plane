@@ -2,6 +2,7 @@ import shelve
 import os
 from file_op import make_sure_file_dir_exists
 
+
 class KVStoreShelve(object):
     def __init__(self, data_dir='', db_name=None, writeback=True):
         self.db_name = db_name or 'kv_database'
