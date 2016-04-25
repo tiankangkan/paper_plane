@@ -70,7 +70,8 @@ class WeChatMsgHandler(object):
             msg = '\n\n'.join(msg_list_show)
             resp_content = msg + '\n%s\n' % ('-'*15) + resp_content
         resp = self.wechat.response_text(resp_content, escape=False)
-        log_inst.info('%s: source_id: %s, target_id: %s, %s -->> %s' % (MSG_WX_TEXT_MSG, source, target, content, resp_content))
+        log_msg = '%s: source_id: %s, target_id: %s, %s -->> %s' % (MSG_WX_TEXT_MSG, source, target, content, resp_content)
+        log_inst.info(log_msg.encode('string_escape'))
         return resp
 
     def set_english_chinese(self):
