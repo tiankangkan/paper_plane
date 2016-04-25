@@ -10,7 +10,7 @@ from wechat_sdk import WechatBasic
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from talker.talker_main import talker_inst
 from love_me.views import get_page_url_of_user_id
-from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE
+from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE, MSG_WX_TEXT_MSG
 from paper_plane.settings import log_inst, DB_DIR
 from k_util.key_value_store import KVStoreShelve
 from k_util.str_op import to_utf_8
@@ -58,6 +58,8 @@ class WeChatMsgHandler(object):
     def reply_to_text_message(self):
         self.save_user_to_db()
         content = self.wechat.message.content
+        source = self.wechat.message.source
+        target = self.wechat.message.target
         if u'飞机' in content or u'卖萌' in content:
             resp_content = self.handle_text_message_contains_paper_plane()
         else:
@@ -68,6 +70,7 @@ class WeChatMsgHandler(object):
             msg = '\n\n'.join(msg_list_show)
             resp_content = msg + '\n%s\n' % ('-'*15) + resp_content
         resp = self.wechat.response_text(resp_content, escape=False)
+        log_inst.info('%s: source_id: %s, target_id: %s, %s -->> %s' % (MSG_WX_TEXT_MSG, source, target, content, resp))
         return resp
 
     def set_english_chinese(self):

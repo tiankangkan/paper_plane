@@ -37,3 +37,11 @@ def read_file_to_lines(file_path):
 
 def clear_dir(dir_path):
     shutil.rmtree(dir_path)
+
+
+def get_file_list_of_dir(dir_path):
+    file_list = list()
+    for dir_root, dirs, file_names in os.walk(dir_path):
+        for file_name in file_names:
+            file_list.append(os.path.join(dir_root, file_name))
+    return file_list
