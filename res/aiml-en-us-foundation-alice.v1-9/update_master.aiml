@@ -13,6 +13,29 @@
 
 
 <category>
+<pattern>SHOWXXMENUS</pattern>
+<template>
+    客官, 现在就可以和我畅所欲言了哦.
+    另外,
+    * 输入[飞机], 给TA机会来抒发对自己浓浓的爱～\n
+    * 输入[开启中英对照], 同时显示中英对话, 方便学习英语\n
+    * 输入[关闭中英对照], 不同时显示中英对话\n
+</template>
+</category>
+
+<category>
+<pattern> * 菜单 * </pattern>
+<template> <srai>SHOWXXMENUS</srai> </template>
+</category>
+
+<category>
+<pattern> 菜单 </pattern>
+<template> <srai>SHOWXXMENUS</srai> </template>
+</category>
+
+
+
+<category>
 <pattern>BYE</pattern>
 <template>
     <random>
@@ -397,29 +420,6 @@
 <category>
 <pattern> * 会做 * </pattern>
 <template> <srai>SHOWXXFUNCTION</srai> </template>
-</category>
-
-
-
-
-<category>
-<pattern>SHOWXXMENUS</pattern>
-<template>
-    0. 和我畅所欲言.
-    1. 输入[飞机], 送给TA一份礼物\n
-    2. 输入[开启中英对照], 同时显示中英对话, 方便学习英语\n
-    3. 输入[关闭中英对照], 不同时显示中英对话\n
-</template>
-</category>
-
-<category>
-<pattern> * 菜单 * </pattern>
-<template> <srai>SHOWXXMENUS</srai> </template>
-</category>
-
-<category>
-<pattern> 菜单 </pattern>
-<template> <srai>SHOWXXMENUS</srai> </template>
 </category>
 
 

@@ -160,7 +160,7 @@ class WeChatMsgHandler(object):
             self.save_user_to_db()
             log_msg = '%s: id: %s' % (MSG_WX_EVENT_FOLLOW, self.wechat.message.source)
             log_inst.info(log_msg)
-            return self.wechat.response_text(u'欢迎来到小康君的地盘, 由我们家可爱的Alice陪你聊天😊 \nPS. 输入 "菜单"查询功能', escape=False)
+            return self.wechat.response_text(u'欢迎来到小康君的地盘, Alice 出来接客啦 😊 \nPS. 输入 "菜单"查询功能', escape=False)
         elif self.wechat.message.type == 'unsubscribe':  # 取消关注事件(无可用私有信息)
             pass
         elif self.wechat.message.type == 'scan':  # 用户已关注时的二维码扫描事件
