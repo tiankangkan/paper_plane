@@ -18,9 +18,12 @@
             <h1> 爱宝宝就大声说出来 </h1>
             <hr style="width: 90%; margin-left: 10%">
         </div>
+
         <div id="images" align="center">
 {#            <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">#}
         </div>
+
+        <div id="form_body">
 
         <p style="padding: 0 20px 0 20px">温馨提示: 你将会发送一份类似于下表的形式的网页给别人，让TA来表述对自己浓浓的爱意，但是你仍然需要先填写一些额外的东西，例如你的昵称... <br/>* 灰色输入框是不需要自己写的部分哦</p>
 
@@ -69,6 +72,7 @@
 
             <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px" onclick="submit_form(this)"> 飞到 TA 身边 </button>
 
+        </div>
         </div>
 
         <div style="margin-bottom: 30px"></div>
@@ -125,10 +129,10 @@
 
     function when_submit_success(resp){
         var qrcode_url = resp['qrcode_url'];
-        var $div_form = $('#div_form');
+        var $form_body = $('#form_body');
         var $images = $('#images');
         console.log('receiver_url: ' + resp['receiver_url']);
-        $div_form.hide(500);
+        $form_body.hide(500);
         $images.empty();
         $images.append('<img style="width: 92%; " class="img-rounded" src="'+qrcode_url+'"></img>');
         $images.append('<h4 style="margin: 6px 0 0 20px" align="left"> 提交成功<br><br>[ 如何让 TA 知道 ]<br>方法一. 将二维码发送给TA...<br>方法二. 建设中<br><br>另外, 小康君的订阅号无法主动推消息给你, 你需要主动给Alice发一条任意消息来查看是否有回复 </h4>');
