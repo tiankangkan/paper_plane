@@ -70,8 +70,8 @@
         $('#label_sender_says').html('你对' + values['receiver_nick_name'] + '说:');
         $('#label_receiver_says').html(values['receiver_nick_name'] + '对你说:');
         $('#label_guess_who_send').html(values['receiver_nick_name'] + '觉得你是: ' + values['guess_who_send']);
-        $('#sender_says').html(values['sender_says']);
-        $('#receiver_says').html(values['receiver_says']);
+        $('#sender_says').text(values['sender_says']);
+        $('#receiver_says').text(values['receiver_says']);
         $('#button_submit').html('我知道啦');
     }
 
