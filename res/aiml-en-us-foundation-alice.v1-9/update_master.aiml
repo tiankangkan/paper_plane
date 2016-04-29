@@ -11,13 +11,13 @@
 <meta name="language" content="zh"/>
 
 
-
 <category>
 <pattern>SHOWXXMENUS</pattern>
 <template>
-    客官, 现在就可以和我畅所欲言了哦\n
+    亲爱的, 现在就可以和我畅所欲言了哦\n
     另外\n
-    * 输入[飞机], 给TA机会来抒发对自己浓浓的爱～\n
+    * 输入[纸条], 可给TA 一个暖暖的表白～\n
+    * 输入[飞机], 可给TA 机会来抒发对自己浓浓的爱～\n
     * 输入[开启中英对照], 同时显示中英对话, 方便学习英语\n
     * 输入[关闭中英对照], 不同时显示中英对话\n
 </template>
