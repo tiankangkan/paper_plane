@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>小纸条</title>
+
+
+    <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/jslib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/jslib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div style="max-width: 765px; margin-left: auto; margin-right: auto">
+<div id="div_title">
+            <h1 id="h_title"> ~ 小纸条 </h1>
+            <hr style="width: 90%; margin-left: 10%">
+        </div>
+
+        <div id="images" align="center">
+{#            <img src="/media/image/lover_1200_675/0001.jpg" alt="lover" class="img-thumbnail">#}
+        </div>
+
+        <div id="form_body">
+
+        <div id='div_form' style="width: 94%; margin-left: 3%">
+            <div style="margin: 20px 0 0 0">
+                <label id="label_sender_says" for="sender_says"> 你对 TA 说 </label>
+                <hr width="100%" style="padding: 0; margin: 0">
+                <div>
+                    <span id="sender_says"> </span>
+                </div>
+            </div>
+
+            <div style="margin: 20px 0 0 0">
+                <label id="label_guess_who_send" for="guess_who_send"> TA 觉得你是  </label>
+            </div>
+
+            <div style="margin: 20px 0 0 0">
+                <label id="label_receiver_says" for="receiver_says"> TA 对你说 </label>
+                <hr width="100%" style="padding: 0; margin: 0">
+                <div>
+                    <span id="receiver_says"></span>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px" onclick="submit_form(this)"> 我知道啦 </button>
+
+        </div>
+        </div>
+
+        <div style="margin-bottom: 30px"></div>
+
+    </div>
+
+<script>
+    this_url = window.location.href;
+    url_submit_from = 'review_do_submit/';
+
+    values = {{ values | safe }};
+
+    console.log(JSON.stringify(values));
+
+    load_images(values['pic_name']);
+
+    function load_review_info(){
+        $('#h_title').html('来自 ' + values['receiver_nick_name'] + '回复的小纸条');
+        $('#label_sender_says').html('你对' + values['receiver_nick_name'] + '说:');
+        $('#label_receiver_says').html(values['receiver_nick_name'] + '对你说:');
+        $('#label_guess_who_send').html(values['receiver_nick_name'] + '觉得你是: ' + values['guess_who_send']);
+        $('#sender_says').html(values['sender_says']);
+        $('#receiver_says').html(values['receiver_says']);
+        $('#button_submit').html('我知道啦');
+    }
+
+    function submit_form(elem){
+        when_submit_success({msg: ""});
+    }
+
+    function load_images(pic_name){
+        var $images = $('#images');
+        $images.empty();
+        $images.append('<img style="width: 100%" src="/media/image/lover_1200_675/' + pic_name +'" alt="lover" class="img-thumbnail">');
+    }
+
+    function when_submit_success(resp){
+        var $div_form = $('#div_form');
+        $div_form.hide(500);
+        load_images('0003.jpg');
+        var $images = $('#images');
+        $images.append('<h4 align="center" style="margin: 60px 0 0 20px" align="left"> ' + resp.msg + ' </h4>');
+    }
+
+    load_review_info();
+
+</script>
+
+</body>
+
+
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500054876" ></script>
+</html>
+

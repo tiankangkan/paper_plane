@@ -13,6 +13,10 @@ class UrlManager(object):
         path = 'love_me/paper_plane/'
         return self.make_url_with_path(path)
 
+    def get_url_of_confess(self):
+        path = 'love_me/confess/'
+        return self.make_url_with_path(path)
+
     def get_url_of_weixin_entry(self):
         path = 'subscription/weixin_entry/'
         return self.make_url_with_path(path)

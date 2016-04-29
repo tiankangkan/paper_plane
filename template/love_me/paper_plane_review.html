@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <button id="button_submit" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px" onclick="submit_form(this)"> 飞回 TA 身边 </button>
+            <button id="button_submit" type="button" class="btn btn-primary btn-lg btn-block" style="margin-top: 20px" onclick="submit_form(this)"> 已阅 </button>
 
         </div>
 
@@ -70,7 +70,7 @@
 
 <script>
     this_url = window.location.href;
-    url_submit_from = 'receiver_do_submit/';
+    url_submit_from = 'review_do_submit/';
 
     values = {{ values | safe }};
 
@@ -96,33 +96,7 @@
 
 
     function submit_form(elem){
-        var post_data = {};
-
-        for (var field in values){
-            if (values.hasOwnProperty(field))
-                post_data[field] = values[field];
-        }
-
-        for (var i = 0; i <  field_list.length; i ++){
-            field = field_list[i];
-            post_data[field] = document.getElementById(field).value;
-        }
-
-
-        $.ajax({
-            url: url_submit_from,
-            type: "POST",
-            data: post_data,
-            success: function(data){
-                //alert(data);
-                var resp = JSON.parse(data);
-                if (resp.status == 'error'){
-                    when_submit_fail(resp.msg)
-                }else{
-                    when_submit_success(resp);
-                }
-            }
-        })
+        when_submit_success({msg: ""});
     }
 
 
@@ -138,14 +112,6 @@
         load_images('0003.jpg');
         var $images = $('#images');
         $images.append('<h4 align="center" style="margin: 60px 0 0 20px" align="left"> ' + resp.msg + ' </h4>');
-    }
-
-    function when_submit_fail(msg){
-        var $div_form = $('#div_form');
-        $div_form.hide(200);
-        load_images('0003.jpg');
-        var $images = $('#images');
-        $images.append('<h4 style="margin-top: 6px" align="center"> '+msg+'</h4>');
     }
 
     load_review_info();

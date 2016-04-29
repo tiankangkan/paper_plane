@@ -9,7 +9,7 @@ from wechat_sdk import WechatBasic
 
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from talker.talker_main import talker_inst
-from love_me.views import get_page_url_of_user_id
+from love_me.views import get_paper_plane_url_of_user_id, get_confess_url_of_user_id
 from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE, MSG_WX_TEXT_MSG, MSG_MAIL_GET_NEW
 from paper_plane.settings import log_inst, DB_DIR
 from k_util.key_value_store import KVStoreShelve
@@ -50,10 +50,16 @@ class WeChatMsgHandler(object):
             msg_list.sort(key=lambda d: d['timestamp'])
         msg_list_show = list()
         for msg in msg_list:
+            theme = msg['theme']
             content_str = msg['content'] or '{}'
             content = json.loads(content_str)
             url = content['url']
-            msg_str = u'亲爱的，你的小飞机已经到了。\n请点击下方链接阅读:\n%s' % url
+            if theme == 'paper_plane_comes':
+                msg_str = u'亲爱的，TA 回复了你的小飞机。\n请点击下方链接阅读:\n%s' % url
+            elif theme == 'confess_comes':
+                msg_str = u'亲爱的，TA 回复了你的小纸条。\n请点击下方链接阅读:\n%s' % url
+            else:
+                msg_str = u'亲爱的，你有未读的信息。\n请点击下方链接阅读:\n%s' % url
             log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_MAIL_GET_NEW, source, target, self.wechat.message.content, msg_str)
             log_inst.info(log_msg)
             msg_list_show.append(msg_str)
@@ -64,8 +70,12 @@ class WeChatMsgHandler(object):
         content = self.wechat.message.content
         source = self.wechat.message.source
         target = self.wechat.message.target
-        if u'飞机' in content or u'卖萌' in content:
+        if u'飞机' in content:
             resp_content = self.handle_text_message_contains_paper_plane()
+            log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_LOVE_ME_REQUEST, source, target, self.wechat.message.content, resp_content)
+            log_inst.info(log_msg)
+        elif u'纸条' in content:
+            resp_content = self.handle_text_message_contains_confess()
             log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_LOVE_ME_REQUEST, source, target, self.wechat.message.content, resp_content)
             log_inst.info(log_msg)
         else:
@@ -142,10 +152,12 @@ class WeChatMsgHandler(object):
         return thinker_msg
 
     def handle_text_message_contains_paper_plane(self):
-        url = get_page_url_of_user_id(self.wechat.message.source)
-        # redirect_url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=%(app_id)s&redirect_uri=%(url)s&response_type=code&scope=snsapi_base'
-        # redirect_url = redirect_url % (dict(app_id=wechat.conf.appid, url=url))
+        url = get_paper_plane_url_of_user_id(self.wechat.message.source)
         return '飞一个纸飞机吧: \n%s' % url
+
+    def handle_text_message_contains_confess(self):
+        url = get_confess_url_of_user_id(self.wechat.message.source)
+        return '给 TA 扔一个小纸条吧: \n%s' % url
 
     def reply_to_voice_message(self):
         self.save_user_to_db()

@@ -162,7 +162,7 @@ def update_mail_msg_db(source_id=None, target_id=None, theme=None, t_type=None, 
 
 
 @csrf_exempt
-def get_page_url_of_user_id(extra_source_id='34567890_alice'):
+def get_paper_plane_url_of_user_id(extra_source_id='34567890_alice'):
     paper_plane_url = UrlManager().get_url_of_paper_plane()
     pic_name = '%4.4d.jpg' % random.randrange(start=1, stop=10)
     content_dict = dict(extra_source_id=extra_source_id, pic_name=pic_name, role='sender')
@@ -171,5 +171,95 @@ def get_page_url_of_user_id(extra_source_id='34567890_alice'):
     return paper_plane_url
 
 
+@csrf_exempt
+def reply_to_confess(request):
+    req = get_request_body(request)
+    log_msg = '%s: %s' % (MSG_LOVE_ME_REQUEST, json.dumps(req, indent=4))
+    log_inst.info(log_msg)
+    extra_source_id = req.get('extra_source_id', 'test_source_id_123')
+    pic_name = req.get('pic_name', '0001.jpg')
+    role = req.get('role', 'sender')
+    values = dict(pic_name=pic_name, extra_source_id=extra_source_id, role=role)
+    if role == 'sender':
+        return render_to_response('confess_sender.html', {'values': json.dumps(values)})
+    else:
+        t_id = req.get('t_id', None)
+        if t_id:
+            obj = ConversationPage.objects.get(t_id=t_id)
+            if obj:
+                obj.is_read = True
+                obj.save()
+                c_str = obj.content
+                content = json.loads(c_str) if c_str else {}
+                values.update(content)
+        if role == 'receiver':
+            return render_to_response('confess_receiver.html', {'values': json.dumps(values)})
+        else:
+            return render_to_response('confess_review.html', {'values': json.dumps(values)})
+
+
+@csrf_exempt
+def reply_to_confess_sender_do_submit(request):
+    try:
+        req = get_request_body(request)
+        log_msg = '%s: %s' % (MSG_LOVE_ME_SUBMIT, json.dumps(req, indent=4))
+        log_inst.info(log_msg)
+        field_list = ['sender_nick_name', 'receiver_nick_name', 'sender_says', 'receiver_url', 'extra_source_id']
+        req_dict = dict()
+        for field in field_list:
+            req_dict[field] = req.get(field, None)
+        req_dict['sender_nick_name'] = req_dict['sender_nick_name'] or u'宝宝'
+        req_dict['receiver_nick_name'] = req_dict['receiver_nick_name'] or u'圈圈'
+
+        db_obj = update_conversation_page_db(source_id=req_dict['extra_source_id'], content_dict=req_dict, is_read=False)
+        qrcode_id = 'qrcode_%s.jpg' % get_time_str_now_for_file()
+        qrcode_path = FileManager().get_path_of_qrcode(res_id=qrcode_id)
+        receiver_url = req_dict['receiver_url'] + '&t_id=%s' % db_obj.t_id
+        make_qrcode(receiver_url, qrcode_path)
+        qrcode_url = UrlManager().get_url_of_qrcode(qrcode_id)
+        print 'receiver_url:%s, qrcode_url: %s' % (receiver_url, qrcode_url)
+        return HttpResponse(json.dumps(dict(status='success', msg=u'成功', qrcode_url=qrcode_url, receiver_url=receiver_url)))
+    except Exception, e:
+        print traceback.format_exc(e)
+        return HttpResponse(json.dumps(dict(status='error', msg=u'(╯□╰) 这个世界需要再多一点爱')))
+
+
+@csrf_exempt
+def reply_to_confess_receiver_do_submit(request):
+    try:
+        req = get_request_body(request)
+        log_msg = '%s: %s' % (MSG_LOVE_ME_SUBMIT, json.dumps(req, indent=4))
+        log_inst.info(log_msg)
+        field_list = ['sender_nick_name', 'receiver_nick_name', 'sender_says', 'guess_who_send', 'receiver_says', 'pic_name', 'extra_source_id']
+        req_dict = dict()
+        for field in field_list:
+            req_dict[field] = req.get(field, None)
+        target_id = req_dict['extra_source_id']
+        db_obj = update_conversation_page_db(target_id=target_id, content_dict=req_dict, is_read=False)
+        para_dict = dict(target_id=target_id, pic_name=req_dict['pic_name'], role='review', t_id=db_obj.t_id)
+        para_str = urllib.urlencode(para_dict)
+        paper_plane_url = UrlManager().get_url_of_confess()
+        review_url = '%s?%s' % (paper_plane_url, para_str)
+        content_dict = dict(
+            url=review_url,
+        )
+        update_mail_msg_db(theme='confess_comes', target_id=target_id, content_dict=content_dict, t_type='love_me')
+        print 'review_url: %s' % review_url
+        return HttpResponse(json.dumps(dict(status='success', msg=u'回复 %s 的小纸条将不日送达  😊' % 'TA')))
+    except Exception, e:
+        print traceback.format_exc(e)
+        return HttpResponse(json.dumps(dict(status='error', msg=u'(╯□╰) 这个世界需要再多一点爱')))
+
+
+@csrf_exempt
+def get_confess_url_of_user_id(extra_source_id='34567890_alice'):
+    paper_plane_url = UrlManager().get_url_of_confess()
+    pic_name = '%4.4d.jpg' % random.randrange(start=1, stop=10)
+    content_dict = dict(extra_source_id=extra_source_id, pic_name=pic_name, role='sender')
+    para_str = urllib.urlencode(content_dict)
+    paper_plane_url = '%s?%s' % (paper_plane_url, para_str)
+    return paper_plane_url
+
+
 if __name__ == '__main__':
-    get_page_url_of_user_id('1234')
+    get_paper_plane_url_of_user_id('1234')

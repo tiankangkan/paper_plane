@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>纸飞机</title>
+    <title>小纸条</title>
 
 
     <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
@@ -15,7 +15,7 @@
 <body>
     <div style="max-width: 765px; margin-left: auto; margin-right: auto">
         <div id="div_title">
-            <h1> 爱宝宝就大声说出来 </h1>
+            <h1> 小纸条 </h1>
             <hr style="width: 90%; margin-left: 10%">
         </div>
 
@@ -25,48 +25,27 @@
 
         <div id="form_body">
 
-        <p style="padding: 0 20px 0 20px">温馨提示: 你将会发送一份类似于下面形式的页面给对方，让TA来表述对自己浓浓的爱意，但是你仍然需要先填写一些额外的东西，例如你的昵称... <br/>* 灰色输入框是不需要自己写的部分哦</p>
+        <p style="padding: 0 20px 0 20px">温馨提示: 你将会发送一份类似于下面形式的页面给对方，说出难以说出口的爱慕之情<br/>* 灰色输入框是不需要自己写的部分哦</p>
 
         <div id='div_form' style="width: 94%; margin-left: 3%">
             <div style="margin: 20px 0 0 0">
-                <span for="nick_name"> 你的昵称 </span>
+                <label for="sender_nick_name"> 你的昵称 </label>
                 <div >
-                    <input id="nick_name" type="text" class="form-control" placeholder="输入你的昵称 ≧▽≦ ">
+                    <input id="sender_nick_name" type="text" class="form-control" placeholder="输入你的昵称 ≧▽≦ ">
                 </div>
             </div>
 
             <div style="margin: 20px 0 0 0">
-                <span for="how_much_love"> 大声告诉我有多 💓?</span>
+                <label for="receiver_nick_name"> TA 的昵称 </label>
                 <div >
-                    <input id="how_much_love" type="text" class="form-control" placeholder="来点甜言蜜语吧 ~" disabled>
+                    <input id="receiver_nick_name" type="text" class="form-control" placeholder="输入她的昵称 ≧▽≦ ">
                 </div>
             </div>
 
             <div style="margin: 20px 0 0 0">
-                <label for="when_begin_love"> 从什么时候开始滴 ?</label>
+                <label for="sender_says"> 小纸条 </label>
                 <div >
-                    <input id="when_begin_love" type="text" class="form-control" placeholder="虽然可能是不经意的瞬间，但人家想知道嘛" disabled>
-                </div>
-            </div>
-
-            <div style="margin: 20px 0 0 0">
-                <label for="want_to_say" > 有什么想对我说的吗 ?</label>
-                <div >
-                    <input id="want_to_say"  class="form-control" placeholder="随意点，也可以讲个笑话给我听哦" disabled>
-                </div>
-            </div>
-
-            <div id="div_take_show" style="margin: 20px 0 0 0">
-                <label for="take_show" > 我想对你说 </label>
-                <div >
-                    <input id="take_show" type="text" class="form-control" placeholder="输入想传达给 Ta 的话吧(撒撒娇, 卖卖萌 ...)">
-                </div>
-            </div>
-
-            <div id="div_take_show" style="margin: 20px 0 0 0">
-                <label for="extra_0_question" > 一个额外的问题 </label>
-                <div >
-                    <input id="extra_0_question" type="text" class="form-control" placeholder="问 TA 一个平时没问过的问题吧">
+                    <textarea id="sender_says" class="form-control" placeholder="在这里写下想对 TA 说的话" rows="5"> </textarea>
                 </div>
             </div>
 
@@ -92,7 +71,7 @@
     load_images(values['pic_name']);
 
     function submit_form(elem){
-        var field_list = ['nick_name', 'how_much_love', 'when_begin_love', 'want_to_say', 'take_show', 'extra_0_question'];
+        var field_list = ['sender_nick_name', 'receiver_nick_name', 'sender_says'];
         var post_data = {};
 
         for (var field in values){
@@ -139,8 +118,8 @@
     }
 
     function when_submit_fail(msg){
-        var $form_body = $('#form_body');
-        $form_body.hide(500);
+        var $div_form = $('#div_form');
+        $div_form.hide(200);
         load_images('0003.jpg');
         var $images = $('#images');
         $images.append('<h4 style="margin-top: 6px" align="center"> '+msg+'</h4>');
