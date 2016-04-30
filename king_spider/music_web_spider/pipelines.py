@@ -31,4 +31,4 @@ class MusicWebSpiderPipeline(object):
                 identify=identify
             )
             web_page_info.save()
-        return ''
+        return item

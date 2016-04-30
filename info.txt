@@ -104,4 +104,4 @@ alter table *** convert to character set utf8
 spider
 ---------------------------
 cd king_spider
-scrapy crawl LuoWang
+scrapy crawl LuoWang -o luowang.json

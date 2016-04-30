@@ -10,5 +10,5 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'one_page/$', views.reply_to_one_page),
-
+    url(r'one_page/get_more/$', views.reply_to_one_page_get_more),
 )
