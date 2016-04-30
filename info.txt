@@ -101,11 +101,17 @@ kill `cat /usr/local/mysql/data/kangtian.local.pid`
 alert database *** character set utf8
 alter table *** convert to character set utf8
 
+mysql -uroot -p
+tiankang
+use paper_plane_db;
+
 
 spider
 ---------------------------
 cd king_spider
-scrapy crawl LuoWang -o luowang.json
+scrapy crawl LuoWangJournal -o luowang.json
+scrapy crawl LuoWangJournal
+scrapy crawl LuoWangEssays
 
 
 lib requirements

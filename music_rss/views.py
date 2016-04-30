@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 
 import json
+import datetime
 import traceback
 from models import WebPageInfo
 
 from k_util.k_logger import log_inst
 from k_util.str_op import to_unicode
+from k_util.django_util import get_request_body
+from k_util.time_op import convert_time_str_to_time_obj
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response, HttpResponse
 
@@ -18,8 +21,13 @@ def reply_to_one_page(request):
 @csrf_exempt
 def reply_to_one_page_get_more(request):
     try:
+        req = get_request_body(request)
+        update_time_str = req.get('update_time', '')
+        item_num = req.get('item_num', 10)
+        default_update_time = datetime.datetime(year=2100, month=1, day=1)
+        update_time = convert_time_str_to_time_obj(update_time_str) if update_time_str else default_update_time
         item_list = list()
-        web_pages = WebPageInfo.objects.all()
+        web_pages = WebPageInfo.objects.filter(update_time__lt=update_time).order_by('-update_time')[:item_num]
         page_values = web_pages.values()
         for page_item in page_values:
             item = json.loads(page_item['content'])

@@ -3,6 +3,7 @@
 import scrapy
 import datetime
 import tzlocal
+import time
 
 from items import MusicWebSpiderItem
 from music_rss.models import PageType
@@ -28,7 +29,14 @@ def flat_item_of_list(obj):
 
 
 def get_text_of_list(obj):
-    return '\n'.join(flat_item_of_list(obj))
+    return clean_string('\n'.join(flat_item_of_list(obj)))
+
+
+def clean_string(s):
+    s = ''.join([' ' if c.isspace() else c for c in s])
+    s = ' '.join(s.split(' '))
+    s = '\n'.join(s.split('\n'))
+    return s
 
 
 class StackOverflowSpider(scrapy.Spider):
@@ -50,8 +58,8 @@ class StackOverflowSpider(scrapy.Spider):
         }
 
 
-class LuoWangSpider(scrapy.Spider):
-    name = 'LuoWang'
+class LuoWangJournalSpider(scrapy.Spider):
+    name = 'LuoWangJournal'
     start_urls = ['http://www.luoo.net/music/']
 
     def parse(self, response):
@@ -73,7 +81,36 @@ class LuoWangSpider(scrapy.Spider):
         item['update_time'] = datetime.datetime.now(tz=tzlocal.get_localzone())
         yield item
 
-#
-# if __name__ == "__main__":
-#     print get_text_of_list(["我的", ['hello', ['haha', 'wode'], 'world']])
-#
+
+class LuoWangEssaysSpider(scrapy.Spider):
+    name = 'LuoWangEssays'
+    start_urls = ['http://www.luoo.net/essays/']
+
+    def parse(self, response):
+        href_list = list()
+        href = get_first_item_of_list(response.css('.essay-banner .meta a::attr(href)').extract()[0])
+        href_old_list = flat_item_of_list(response.css('.essay-list div a::attr(href)').extract())
+        href_list.append(href)
+        href_list += href_old_list
+        print 'url_list: ', href_list
+        for href in set(href_list):
+            full_url = response.urljoin(href)
+            yield scrapy.Request(full_url, callback=self.parse_essays)
+
+    def parse_essays(self, response):
+        item = MusicWebSpiderItem()
+        item['page_url'] = response.url
+        item['page_type'] = PageType.MUSIC_ARTICLE
+        item['category'] = u"落网"
+        item['label'] = ''
+        item['label_list'] = ''
+        item['author'] = ''
+        item['title'] = get_text_of_list(response.css('.essay-title ::text').extract()[0])
+        item['cover_url'] = response.urljoin(response.css('.essay-content img::attr(src)').extract()[0])
+        item['desc'] = get_text_of_list(response.css('.essay-content ::text').extract())[:225]
+        item['update_time'] = datetime.datetime.now(tz=tzlocal.get_localzone())
+        yield item
+
+if __name__ == "__main__":
+    pass
+
