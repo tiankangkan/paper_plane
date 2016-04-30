@@ -12,6 +12,7 @@ qrcode
 pillow
 jieba
 beautifulsoup4
+scrapy
 
 future==0.15.2
 futures==3.0.3

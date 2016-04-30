@@ -106,6 +106,8 @@
     var $item_template = $("#item_template");
     var $item_container = $("#item_container");
 
+    var JUMP_NEW_LABEL = false;
+
     var item_index = 0;
     var page_url = "http://www.luoo.net/music/811";
     var title = "在我们终将一无所有之前";
@@ -132,7 +134,10 @@
 
     function handle_item_click(elem){
         var page_url = elem.getAttribute("data-page_url");
-        window.open(page_url);
+        if (JUMP_NEW_LABEL)
+            window.open(page_url);
+        else
+            window.location.href = page_url;
     }
 
     function handle_get_more(){

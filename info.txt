@@ -24,6 +24,7 @@ http://127.0.0.1:8000/subscription/weixin_entry/
 
 http://115.159.81.50/admin/
 http://115.159.81.50/love_me/paper_plane/
+http://115.159.81.50/music_rss/one_page/
 http://115.159.81.50/subscription/weixin_entry/
 
 http://iready-go.com/love_me/paper_plane/
@@ -105,3 +106,9 @@ spider
 ---------------------------
 cd king_spider
 scrapy crawl LuoWang -o luowang.json
+
+
+lib requirements
+---------------------------
+# lxml
+sudo apt-get install python-dev libxml2-dev libxslt1-dev zlib1g-dev
