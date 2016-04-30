@@ -99,3 +99,9 @@ kill `cat /usr/local/mysql/data/kangtian.local.pid`
 
 alert database *** character set utf8
 alter table *** convert to character set utf8
+
+
+spider
+---------------------------
+cd king_spider
+scrapy crawl LuoWang

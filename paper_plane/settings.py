@@ -58,6 +58,7 @@ INSTALLED_APPS = (
     'subscription',
     'common',
     'mail_msg',
+    'music_rss',
 )
 
 MIDDLEWARE_CLASSES = (
