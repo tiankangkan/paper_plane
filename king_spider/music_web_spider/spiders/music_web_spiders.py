@@ -28,7 +28,7 @@ def flat_item_of_list(obj):
 
 
 def get_text_of_list(obj):
-    return '<br/>'.join(flat_item_of_list(obj))
+    return '\n'.join(flat_item_of_list(obj))
 
 
 class StackOverflowSpider(scrapy.Spider):
@@ -67,13 +67,13 @@ class LuoWangSpider(scrapy.Spider):
         item['label'] = ''
         item['label_list'] = ''
         item['author'] = ''
-        item['title'] = get_first_item_of_list(response.css('.vol-title::text').extract()),
+        item['title'] = get_text_of_list(response.css('.vol-title::text').extract()[0])
         item['cover_url'] = response.urljoin(response.css('.vol-cover-wrapper img::attr(src)').extract()[0])
         item['desc'] = get_text_of_list(response.css('.vol-desc::text').extract())
         item['update_time'] = datetime.datetime.now(tz=tzlocal.get_localzone())
         yield item
 
-
-if __name__ == "__main__":
-    print get_text_of_list(["我的", ['hello', ['haha', 'wode'], 'world']])
-
+#
+# if __name__ == "__main__":
+#     print get_text_of_list(["我的", ['hello', ['haha', 'wode'], 'world']])
+#

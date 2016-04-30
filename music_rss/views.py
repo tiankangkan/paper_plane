@@ -23,7 +23,8 @@ def reply_to_one_page_get_more(request):
         page_values = web_pages.values()
         for page_item in page_values:
             item = json.loads(page_item['content'])
-            item['desc'] = to_unicode(item['desc'])[:125]
+            desc_lines = to_unicode(item['desc'].replace('\n\n', '\n')).split("\n")
+            item['desc'] = '<br/>'.join(desc_lines[:5])[:125]
             item_list.append(item)
         log_inst.info(json.dumps(item_list, indent=4))
         return HttpResponse(json.dumps(dict(status='success', msg=u'成功', item_list=item_list)))
