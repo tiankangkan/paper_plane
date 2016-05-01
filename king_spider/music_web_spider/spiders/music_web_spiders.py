@@ -5,6 +5,7 @@ import datetime
 import tzlocal
 import time
 
+from k_util.time_op import get_time_str_unique, TZ_LOCAL, convert_time_obj_to_time_str, TIME_FORMAT_FOR_FILE
 from items import MusicWebSpiderItem
 from music_rss.models import PageType
 
@@ -78,7 +79,9 @@ class LuoWangJournalSpider(scrapy.Spider):
         item['title'] = get_text_of_list(response.css('.vol-title::text').extract()[0])
         item['cover_url'] = response.urljoin(response.css('.vol-cover-wrapper img::attr(src)').extract()[0])
         item['desc'] = get_text_of_list(response.css('.vol-desc::text').extract())
-        item['update_time'] = datetime.datetime.now(tz=tzlocal.get_localzone())
+        t = datetime.datetime.now(tz=TZ_LOCAL)
+        item['update_time'] = t
+        item['update_time_str'] = get_time_str_unique(time_obj=t, time_format=TIME_FORMAT_FOR_FILE)
         yield item
 
 
@@ -108,7 +111,9 @@ class LuoWangEssaysSpider(scrapy.Spider):
         item['title'] = get_text_of_list(response.css('.essay-title ::text').extract()[0])
         item['cover_url'] = response.urljoin(response.css('.essay-content img::attr(src)').extract()[0])
         item['desc'] = get_text_of_list(response.css('.essay-content ::text').extract())[:225]
-        item['update_time'] = datetime.datetime.now(tz=tzlocal.get_localzone())
+        t = datetime.datetime.now(tz=TZ_LOCAL)
+        item['update_time'] = t
+        item['update_time_str'] = get_time_str_unique(convert_time_obj_to_time_str(t, TIME_FORMAT_FOR_FILE))
         yield item
 
 if __name__ == "__main__":

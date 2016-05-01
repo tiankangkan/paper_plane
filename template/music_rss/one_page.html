@@ -87,8 +87,8 @@
             </div>
         </div>
 
-        <div align="center" style="margin:0 auto; padding: 100px 0 200px 0">
-            <div class="loader" style="width: 1%">
+        <div id="div_loading" align="center" style="margin:0 auto; padding: 100px 0 200px 0">
+            <div class="loader" align="center" style="position:relative; width: 1%">
                 <div class="loader-inner ball-scale-multiple" >
                     <div></div>
                     <div></div>
@@ -116,6 +116,10 @@
     var url_get_more = "get_more/";
     var $item_template = $("#item_template");
     var $item_container = $("#item_container");
+    var min_update_time = null;
+    var last_query_time = null;
+    var refresh_limit_sec = 3;
+    var at_the_end_flag = false;
 
     var JUMP_NEW_LABEL = false;
 
@@ -152,7 +156,14 @@
     }
 
     function handle_get_more(){
-        var post_data = {};
+        var now = Date.now();
+        if (at_the_end_flag == true || (last_query_time != null && now - last_query_time < refresh_limit_sec * 1000)){
+            console.log("refresh ignore ~");
+            return ;
+        }
+
+
+        var post_data = {'update_time_str': min_update_time};
         $.ajax({
             url: url_get_more,
             type: "POST",
@@ -166,14 +177,21 @@
                     when_get_more_success(resp['item_list'])
                 }
             }
-        })
+        });
+        last_query_time = now;
     }
 
     function when_get_more_success(item_list){
+        if (item_list.length == 0){
+            handle_at_the_end();
+            at_the_end_flag = true;
+            return ;
+        }
         for (var i = 0; i < item_list.length; i ++){
             var t = item_list[i];
-            console.log(t['page_url']);
-            console.log(t['desc']);
+            var time = t['update_time_str'];
+            min_update_time = (min_update_time == null || min_update_time > time) ? time : min_update_time;
+            console.log(time);
             append_item(t['page_url'], t['title'],  t['desc'],  t['cover_url']);
         }
     }
@@ -181,6 +199,32 @@
     function when_get_more_error(msg){
         alert(msg);
     }
+
+
+    function handle_mousewheel(){
+        var scrollTop = document.getElementsByTagName("body")[0].scrollTop;
+        var scrollHeight = document.getElementsByTagName("body")[0].scrollHeight;
+        var offset = scrollHeight - scrollTop - $(window).height();
+        if (offset < 50){
+            console.log('handle_get_more');
+            handle_get_more();
+        }
+
+    }
+
+    function handle_at_the_end(){
+        var $div_loading = $("#div_loading");
+        $div_loading.empty().append('<img src="/media/image/icon/at_the_end.jpg" class="img-rounded img-responsive">');
+    }
+
+
+    var mousewheel_countor = 0;
+    $("body").bind("mousewheel", function(){
+        mousewheel_countor += 1;
+        if (mousewheel_countor % 50 == 0){
+            handle_mousewheel();
+        }
+    });
 
     // append_item(page_url, title, desc, cover_url);
     handle_get_more();

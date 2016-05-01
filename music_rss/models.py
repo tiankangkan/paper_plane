@@ -14,6 +14,7 @@ class WebPageInfo(models.Model):
     label = models.CharField(db_index=True, blank=True, null=True, max_length=64)
     label_list = models.CharField(db_index=True, blank=True, null=True, max_length=256)
     update_time = models.DateTimeField(db_index=True, blank=True, null=True)
+    update_time_str = models.CharField(db_index=True, blank=True, null=True, max_length=64)
     page_url = models.TextField(blank=True, null=True)
     title = models.CharField(db_index=True, blank=True, null=True, max_length=1024)
     content = models.TextField(blank=True, null=True)

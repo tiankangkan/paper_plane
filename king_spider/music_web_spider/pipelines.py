@@ -25,6 +25,7 @@ class MusicWebSpiderPipeline(object):
                 label=i['label'],
                 label_list=i['label_list'],
                 update_time=update_time,
+                update_time_str=i['update_time_str'],
                 page_url=i['page_url'],
                 title=i['title'],
                 content=content,

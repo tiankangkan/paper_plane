@@ -14,6 +14,7 @@ class MusicWebSpiderItem(scrapy.Item):
     label = scrapy.Field()
     label_list = scrapy.Field()
     update_time = scrapy.Field()
+    update_time_str = scrapy.Field()
     page_url = scrapy.Field()
     title = scrapy.Field()
     cover_url = scrapy.Field()
