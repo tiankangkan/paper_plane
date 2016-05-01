@@ -4,12 +4,12 @@ import json
 import datetime
 import traceback
 from models import WebPageInfo
-import tzlocal
 
 from k_util.k_logger import log_inst
 from k_util.str_op import to_unicode
 from k_util.django_util import get_request_body
-from k_util.time_op import convert_time_str_to_time_obj, convert_time_obj_to_time_str, TZ_UTC, get_time_str_unique, TIME_FORMAT_FOR_FILE
+from k_util.time_op import convert_time_obj_to_time_str, get_time_str_unique, TIME_FORMAT_FOR_FILE
+from paper_plane.url_manager import url_manager_inst
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response, HttpResponse
 
@@ -33,6 +33,7 @@ def reply_to_one_page_get_more(request):
         page_values = web_pages.values()
         for page_item in page_values:
             item = json.loads(page_item['content'])
+            item['cover_url'] = url_manager_inst.url_warp(item['cover_url'])
             desc_lines = to_unicode(item['desc'].replace('\n\n', '\n')).split("\n")
             item['desc'] = '<br/>'.join(desc_lines[:5])[:125]
             item['update_time'] = convert_time_obj_to_time_str(page_item['update_time'])

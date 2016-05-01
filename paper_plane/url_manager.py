@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import re
+import urllib
+
 from django.conf import settings
 
 
@@ -30,3 +33,18 @@ class UrlManager(object):
         qrcode_url = '%s%s' % (self.get_url_of_res_image(), res_id)
         return qrcode_url
 
+    def get_warped_url(self, url):
+        para = urllib.urlencode(dict(url=url))
+        return '/common/agent/?%s' % para
+
+    def url_warp(self, url):
+        pattern_douban_img = 'http.*?img.*?\.douban.*?\.com\.*'
+        pattern_list = [pattern_douban_img]
+        for pattern in pattern_list:
+            m = re.match(pattern, url)
+            if m:
+                url = self.get_warped_url(url)
+                break
+        return url
+
+url_manager_inst = UrlManager()
