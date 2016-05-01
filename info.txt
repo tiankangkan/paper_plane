@@ -20,6 +20,7 @@ url
 ----------------------------
 http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/love_me/paper_plane/
+http://127.0.0.1:8000/music_rss/one_page/
 http://127.0.0.1:8000/subscription/weixin_entry/
 
 http://115.159.81.50/admin/
@@ -110,8 +111,11 @@ spider
 ---------------------------
 cd king_spider
 scrapy crawl LuoWangJournal -o luowang.json
+
 scrapy crawl LuoWangJournal
 scrapy crawl LuoWangEssays
+scrapy crawl YiKeEssays
+
 
 
 lib requirements

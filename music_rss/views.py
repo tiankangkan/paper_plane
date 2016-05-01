@@ -36,6 +36,7 @@ def reply_to_one_page_get_more(request):
             desc_lines = to_unicode(item['desc'].replace('\n\n', '\n')).split("\n")
             item['desc'] = '<br/>'.join(desc_lines[:5])[:125]
             item['update_time'] = convert_time_obj_to_time_str(page_item['update_time'])
+            item['update_time_str'] = page_item['update_time_str']
             log_inst.info(page_item['update_time_str'])
             item_list.append(item)
         log_inst.info(update_time_str + json.dumps(item_list, indent=4))

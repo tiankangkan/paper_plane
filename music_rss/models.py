@@ -5,6 +5,13 @@ from django.db import models
 
 class PageType(object):
     MUSIC_ARTICLE = 'MUSIC_ARTICLE'
+    MUSIC_FM = 'MUSIC_FM'
+
+
+class CategoryType(object):
+    WEB_LUO_WANG = 'WEB_LUO_WANG'
+    WEB_MAI_TIAN = 'WEB_MAI_TIAN'
+    WEB_YI_KE = 'WEB_YI_KE'
 
 
 class WebPageInfo(models.Model):
