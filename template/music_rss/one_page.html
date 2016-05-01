@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+<body id="the_body">
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: black">
         <div class="container">
@@ -110,6 +110,7 @@
 
     <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="/jslib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/jslib/iscroll-5/build/iscroll.js"></script>
 </body>
 
 <script>
@@ -227,11 +228,19 @@
         }
     });
 
-    // for mobile.
-    $body.bind("plusscrollbottom", function(){
-        console.log('plusscrollbottom comes');
-        handle_mousewheel();
-    });
+
+    function when_loaded() {
+        var myScroll = new IScroll('#the_body', {
+            useTransition: true,
+            onScrollMove: function () {
+                if (this.y > 10) {
+                    handle_get_more();
+                }
+            }
+        });
+    }
+    document.addEventListener('touchmove', function (e) {  e.preventDefault(); }, false);
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(when_loaded, 200); }, false);
 
     // append_item(page_url, title, desc, cover_url);
     handle_get_more();
