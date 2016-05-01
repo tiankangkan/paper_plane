@@ -219,11 +219,18 @@
 
 
     var mousewheel_countor = 0;
-    $("body").bind("mousewheel", function(){
+    var $body = $("body");
+    $body.bind("mousewheel", function(){
         mousewheel_countor += 1;
         if (mousewheel_countor % 50 == 0){
             handle_mousewheel();
         }
+    });
+
+    // for mobile.
+    $body.bind("plusscrollbottom", function(){
+        console.log('plusscrollbottom comes');
+        handle_mousewheel();
     });
 
     // append_item(page_url, title, desc, cover_url);
