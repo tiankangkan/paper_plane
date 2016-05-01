@@ -45,6 +45,7 @@ class UrlManager(object):
             if m:
                 url = self.get_warped_url(url)
                 break
+        url = url.replace('https', 'http')
         return url
 
 url_manager_inst = UrlManager()
