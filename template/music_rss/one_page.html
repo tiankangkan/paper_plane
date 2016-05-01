@@ -201,7 +201,7 @@
         var scrollTop = document.getElementsByTagName("body")[0].scrollTop;
         var scrollHeight = document.getElementsByTagName("body")[0].scrollHeight;
         var offset = scrollHeight - scrollTop - $(window).height();
-        if (offset < 50){
+        if (offset < $(window).height() / 3){
             console.log('handle_get_more');
             handle_get_more();
         }
