@@ -125,11 +125,6 @@
     var JUMP_NEW_LABEL = false;
 
     var item_index = 0;
-    var page_url = "http://www.luoo.net/music/811";
-    var title = "在我们终将一无所有之前";
-    var desc = '本期音乐为小提琴（Violin）音乐专题。小提琴的音色像是漂浮在空中的雾气，轻松而自由的穿梭在光的深处，时而缠绵流连,时而沉醉癫狂。回头望时，已飘散在远方的尽头。既让人郁结，又让人动容。现代意义上的小提琴最早出现于16世纪早期的意大利北部威尼斯、热那亚等港口。';
-    var cover_url = 'http://7xkszy.com2.z0.glb.qiniucdn.com/pics/vol/570aa78e5a395.jpg?imageView2/1/w/640/h/452';
-
 
     function append_item(page_url, title, desc, cover_url){
         var $new_item = $item_template.clone();
@@ -219,28 +214,33 @@
     }
 
 
-    var mousewheel_countor = 0;
-    var $body = $("body");
-    $body.bind("mousewheel", function(){
-        mousewheel_countor += 1;
-        if (mousewheel_countor % 50 == 0){
-            handle_mousewheel();
+    function get_device(){
+        var device = "pc";
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            device = "mobile";
         }
-    });
-
-
-    function when_loaded() {
-        var myScroll = new IScroll('#the_body', {
-            useTransition: true,
-            onScrollMove: function () {
-                if (this.y > 10) {
-                    handle_get_more();
-                }
-            }
-        });
+        return device;
     }
-    document.addEventListener('touchmove', function (e) {  e.preventDefault(); }, false);
-    document.addEventListener('DOMContentLoaded', function () { setTimeout(when_loaded, 200); }, false);
+
+
+    function init_for_device(){
+        var device = get_device();
+        if (device ==  "mobile"){
+            console.log('device: '+device);
+            setInterval(handle_mousewheel, 1000);
+        }
+    }
+
+    //var mousewheel_countor = 0;
+    //var $body = $("body");
+    //$body.bind("mousewheel", function(){
+    //    mousewheel_countor += 1;
+    //    if (mousewheel_countor % 50 == 0){
+    //        handle_mousewheel();
+    //    }
+    //});
+
+    setInterval(handle_mousewheel, 1000);
 
     // append_item(page_url, title, desc, cover_url);
     handle_get_more();

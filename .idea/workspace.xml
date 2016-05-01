@@ -5,78 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/minimap/ermine.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/parallax/galaxies1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/parallax/galaxies2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/carousel/gaugin.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/carousel/giotto.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/carousel/leonardo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/parallax/stars.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/carousel/warhol.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/.nodemonignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/RELEASENOTES.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/default/_animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/probe/_animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/snap/_end.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/indicator/_initIndicators.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/probe/_move.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/indicator/_transitionTime.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/indicator/_transitionTimingFunction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/indicator/_translate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/build.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/indicator/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/infinite/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/keys/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/probe/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/snap/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/wheel/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/zoom/build.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/close.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/infinite/dataset.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/default/handleEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/zoom/handleEvent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/2d-scroll/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/barebone/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/bounce-easing/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/carousel/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/click/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/event-passthrough/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/forms/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/horizontal/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/infinite/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/key-bindings/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/minimap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/no-transition/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/parallax/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/probe/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/scroll-to-element/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/scrollbars/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/simple/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/snap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/styled-scrollbars/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/tap/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/demos/zoom/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/probe/indicator._move.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/indicator/indicator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/infinite/infinite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/keys/keys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/open.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/probe/probe.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/infinite/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/snap/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/zoom/refresh.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/snap/snap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/wheel/wheel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/jslib/iscroll-5/src/zoom/zoom.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/music_rss/one_page.html" afterPath="$PROJECT_DIR$/template/music_rss/one_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -138,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/template/music_rss/one_page.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.51377636">
-              <caret line="233" column="32" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
+              <caret line="238" column="34" selection-start-line="238" selection-start-column="34" selection-end-line="238" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -306,8 +235,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="y" value="367" />
+    <option name="x" value="404" />
+    <option name="y" value="122" />
     <option name="width" value="1985" />
     <option name="height" value="1128" />
   </component>
@@ -1297,7 +1226,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="367" width="1985" height="1128" extended-state="0" />
+    <frame x="404" y="122" width="1985" height="1128" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32818532" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1712,14 +1641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/jslib/iscroll-5/build/iscroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.296296">
@@ -1746,10 +1667,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template/music_rss/one_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.51377636">
-          <caret line="233" column="32" selection-start-line="233" selection-start-column="32" selection-end-line="233" selection-end-column="32" />
+          <caret line="238" column="34" selection-start-line="238" selection-start-column="34" selection-end-line="238" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
