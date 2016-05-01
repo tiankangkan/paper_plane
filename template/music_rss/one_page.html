@@ -77,7 +77,7 @@
         <div id="item_container">
             <div id="item_template" style="padding: 0; margin: 0; border: 0">
                 <div class="featurette">
-                    <img class="item-img featurette-image img-rounded img-responsive" style="cursor:pointer;" src="http://placehold.it/500x500" onclick="handle_item_click(this)">
+                    <img class="item-img featurette-image img-rounded" style="cursor:pointer;" onclick="handle_item_click(this)">
                     <h2 class="item-title featurette-heading" style="cursor:pointer;" onclick="handle_item_click(this)">The Third Heading</h2>
                     <p class="item-desc lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
                 </div>
@@ -155,7 +155,6 @@
             return ;
         }
 
-
         var post_data = {'update_time_str': min_update_time};
         $.ajax({
             url: url_get_more,
@@ -218,7 +217,6 @@
         }
         return device;
     }
-
 
     function init_for_device(){
         var device = get_device();

@@ -59,6 +59,14 @@ footer {
     margin: 50px 0;
 }
 
+@media(min-width:768px) {
+    .featurette-image {
+        max-width: 60%;
+        max-height: 480px;
+    }
+}
+
+
 @media(max-width:1200px) {
     .headline h1 {
         font-size: 140px;
@@ -98,10 +106,6 @@ footer {
         margin: 40px 0;
     }
 
-    .featurette-image {
-        max-width: 50%;
-    }
-
     .featurette-image.pull-left {
         margin-right: 10px;
     }
@@ -118,6 +122,11 @@ footer {
 @media(max-width:768px) {
     .container {
         margin: 0 15px;
+    }
+
+    .featurette-image {
+        width: 100%;
+        padding-bottom: 20px;
     }
 
     .featurette-divider {
@@ -160,10 +169,6 @@ footer {
 @media(max-width:375px) {
     .featurette-divider {
         margin: 10px 0;
-    }
-
-    .featurette-image {
-        max-width: 100%;
     }
 
     .featurette-image.pull-left {
