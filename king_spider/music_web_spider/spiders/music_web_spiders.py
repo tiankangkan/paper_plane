@@ -59,7 +59,6 @@ class LuoWangEssaysSpider(scrapy.Spider):
         href_old_list = flat_item_of_list(response.css('.essay-list div a::attr(href)').extract())
         href_list.append(href)
         href_list += href_old_list
-        print 'url_list: ', href_list
         for href in set(href_list):
             full_url = response.urljoin(href)
             yield scrapy.Request(full_url, callback=self.parse_essays)
@@ -89,7 +88,6 @@ class DouBanYiKeSpider(scrapy.Spider):
         for article in article_list:
             item = MusicWebSpiderItem()
             thumbs = json.loads(article['thumbs'])
-            print json.dumps(thumbs, indent=4)
             cover_url = response.urljoin(thumbs[0]['large']['url'])
             item.set_values(
                 page_url=article['url'],
@@ -99,7 +97,6 @@ class DouBanYiKeSpider(scrapy.Spider):
                 cover_url=cover_url,
                 desc=article['abstract']
             )
-            print json.dumps(dict(item), indent=4, cls=MusicWebSpiderItemJEncoder)
             yield item
 
 

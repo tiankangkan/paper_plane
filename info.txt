@@ -122,3 +122,8 @@ lib requirements
 ---------------------------
 # lxml
 sudo apt-get install python-dev libxml2-dev libxslt1-dev zlib1g-dev
+
+
+survey
+---------------------------
+http://wj.qq.com/s/478210/ff4d

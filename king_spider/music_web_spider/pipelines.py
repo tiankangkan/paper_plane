@@ -23,17 +23,18 @@ class MusicWebSpiderPipeline(object):
             i_static_json = json.dumps(dict(i_static), cls=MusicWebSpiderItemJEncoder)
             identify = str(gen_md5(i_static_json))
             content = json.dumps(dict(i), cls=MusicWebSpiderItemJEncoder)
-            web_page_info = WebPageInfo(
-                page_type=i['page_type'],
-                category=i['category'],
-                label=i['label'],
-                label_list=i['label_list'],
-                update_time=i['update_time'],
-                update_time_str=i['update_time_str'],
-                page_url=i['page_url'],
-                title=i['title'],
-                content=content,
-                identify=identify
-            )
-            web_page_info.save()
+            if not len(WebPageInfo.objects.filter(identify=identify)):
+                web_page_info = WebPageInfo(
+                    page_type=i['page_type'],
+                    category=i['category'],
+                    label=i['label'],
+                    label_list=i['label_list'],
+                    update_time=i['update_time'],
+                    update_time_str=i['update_time_str'],
+                    page_url=i['page_url'],
+                    title=i['title'],
+                    content=content,
+                    identify=identify
+                )
+                web_page_info.save()
         return item
