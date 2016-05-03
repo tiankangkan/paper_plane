@@ -82,9 +82,6 @@ class DouBanYiKeSpider(scrapy.Spider):
 
     def parse(self, response):
         article_list = json.loads(response.body)
-        print json.dumps(article_list, indent=4)
-        # import time
-        # time.sleep(1000)
         for article in article_list:
             item = MusicWebSpiderItem()
             thumbs = json.loads(article['thumbs'])
