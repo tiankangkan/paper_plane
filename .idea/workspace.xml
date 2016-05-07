@@ -5,85 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ac30c56-41d3-4db5-bb2f-36054425ef0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/thumbs/01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/thumbs/01.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/thumbs/02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/thumbs/02.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/thumbs/03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/thumbs/03.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/thumbs/04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/thumbs/04.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/thumbs/05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/thumbs/05.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/thumbs/06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/thumbs/06.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/end.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/end.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/five.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/five.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/four.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/four.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/intro.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/intro.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/intro.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/media/image/logo/music_sea.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/one.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/one.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/one.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/css/images/overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/assets/css/images/overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/assets/css/images/overlay.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/three.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/three.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/three.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/images/two.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/images/two.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/images/two.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/css/images/dark-arrow.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/assets/css/images/dark-arrow.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/assets/css/images/dark-arrow.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/jquery.poptrox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/jquery.poptrox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/jquery.poptrox.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/jquery.scrollex.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/jquery.scrollex.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/jquery.scrollex.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/jquery.scrolly.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/jquery.scrolly.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/jquery.scrolly.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/ppt.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/skel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/skel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/skel.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/apps/power_point/js/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/big-picture/big-picture_files/util.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/big-picture_files/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/info.txt" afterPath="$PROJECT_DIR$/info.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache_configs/paper_plane.conf" afterPath="$PROJECT_DIR$/apache_configs/paper_plane.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paper_plane/settings.py" afterPath="$PROJECT_DIR$/paper_plane/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lin/urls.py" afterPath="$PROJECT_DIR$/lin/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/paper_plane/urls.py" afterPath="$PROJECT_DIR$/paper_plane/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lin/views.py" afterPath="$PROJECT_DIR$/lin/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/power_point/my_ppt/ppt.html" afterPath="$PROJECT_DIR$/template/power_point/my_ppt/ppt.html" />
     </list>
     <ignored path="paper_plane.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/info.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -145,7 +67,7 @@
       <file leaf-file-name="big-picture.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/power_point/big-picture/big-picture.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="113.791664">
               <caret line="6763" column="0" selection-start-line="6763" selection-start-column="0" selection-end-line="6770" selection-end-column="10" />
               <folding />
             </state>
@@ -155,8 +77,8 @@
       <file leaf-file-name="ppt.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/power_point/my_ppt/ppt.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1530613">
-              <caret line="6659" column="23" selection-start-line="6659" selection-start-column="23" selection-end-line="6659" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.2857143">
+              <caret line="6662" column="34" selection-start-line="6662" selection-start-column="34" selection-end-line="6662" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -509,62 +431,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="power_point" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="paper_plane" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="power_point" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1305,22 +1171,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/info.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/power_point/big-picture/big-picture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6763" column="0" selection-start-line="6763" selection-start-column="0" selection-end-line="6770" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/power_point/big-picture/images/three.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1396,10 +1246,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/info.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/power_point/big-picture/big-picture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="113.791664">
+          <caret line="6763" column="0" selection-start-line="6763" selection-start-column="0" selection-end-line="6770" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template/power_point/my_ppt/ppt.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1530613">
-          <caret line="6659" column="23" selection-start-line="6659" selection-start-column="23" selection-end-line="6659" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.2857143">
+          <caret line="6662" column="34" selection-start-line="6662" selection-start-column="34" selection-end-line="6662" selection-end-column="34" />
           <folding />
         </state>
       </provider>

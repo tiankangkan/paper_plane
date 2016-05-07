@@ -6660,7 +6660,7 @@
             "points": [
                 "∵ 天底下这么多事情都和撩妹有关",
                 "∴ 撩妹是IT屌丝进击的源动力",
-                "<h2>Thanks</h2>", "...", "", ""
+                "<h2>Thanks</h2>",
             ]},
     };
 
@@ -6686,7 +6686,7 @@
         $content.hide(500);
 
         setTimeout(function() {
-            if (is_append == true){
+            if (is_append == true && doc_data[identify]['index'] < doc_data[identify]['points'].length){
                 var old_html = $content.html();
                 $content.html("<p>" + old_html + "<br/>" + text + "</p>");
             }else {
@@ -6694,7 +6694,7 @@
             }
             $content.show(500);
             doc_data[identify]['index'] += 1;
-            if (doc_data[identify]['index'] - doc_data[identify]['points'].length > 1){
+            if (is_append != true && doc_data[identify]['index'] - doc_data[identify]['points'].length > 1){
                 doc_data[identify]['index'] = 0;
             }
         }, 500);
