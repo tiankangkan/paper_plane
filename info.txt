@@ -5,7 +5,7 @@ Update
 cd /data/project/paper_plane/
 git fetch --all
 git reset --hard origin/master
-service apache2 restart
+service apache2 graceful
 
 
 Path
@@ -41,7 +41,10 @@ curl 127.0.0.1
 
 configs:
 /etc/apache2/apache2.conf
-/etc/apache2/sites-available/paper_plane.conf
+/etc/apache2/sites-enabled/paper_plane.conf
+
+v-evn python path:
+/data/project/magnifier/magnifier_env/lib/python2.7/site-packages/
 
 log:
 ErrorLog "|/usr/bin/cronolog  /data/logs/error/errorLog-%Y-%m-%d.log --period='1 days'"

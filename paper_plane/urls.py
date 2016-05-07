@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('django.views.static',
-    url(r'^static/(?P<path>.*)$', 'serve', {'document_root': settings.STATIC_ROOT}),
+    url(r'^apps/(?P<path>.*)$', 'serve', {'document_root': os.path.join(settings.STATIC_ROOT, 'apps')}),
     url(r'^jslib/(?P<path>.*)$', 'serve', {'document_root': os.path.join(settings.STATIC_ROOT, 'jslib')}),
     url(r'^res/(?P<path>.*)$', 'serve', {'document_root': os.path.join(settings.STATIC_ROOT, 'res')}),
     url(r'^media/(?P<path>.*)$', 'serve', {'document_root': os.path.join(settings.STATIC_ROOT, 'media')}),

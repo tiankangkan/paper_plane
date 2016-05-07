@@ -65,11 +65,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
-    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'django.middleware.security.SecurityMiddleware',
+    'django.middleware.security.SecurityMiddleware',
 )
 
 
@@ -187,11 +187,11 @@ else:
 IMAGE_RES = os.path.join(RES_DIR, 'img')
 
 
-# STATICFILES_DIRS = [
-#     STATIC_ROOT,
-#     RES_DIR,
-#     IMAGE_RES
-# ]
+STATICFILES_DIRS = [
+    STATIC_ROOT,
+    RES_DIR,
+    IMAGE_RES
+]
 
 from k_util.k_logger import log_inst
 
