@@ -3,9 +3,9 @@
 import scrapy
 import json
 
-from items import MusicWebSpiderItem, MusicWebSpiderItemJEncoder
+from items import MusicWebSpiderItem
 from music_rss.models import PageType, CategoryType
-from spider_util import get_first_item_of_list, flat_item_of_list, get_text_of_list, clean_string
+from spider_util import get_first_item_of_list, flat_item_of_list, get_text_of_list
 
 
 class StackOverflowSpider(scrapy.Spider):
