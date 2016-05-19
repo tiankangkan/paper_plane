@@ -11,13 +11,21 @@
     <script type="text/javascript" src="/jslib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 </head>
 
+<style>
+@media(max-width:1200px) {
+    .featurette-image {
+        width: 95%;
+    }
+}
+</style>
+
 <body>
     <div style="margin-top: 50px">
         <div id='div_close' align="center">
-            <a id='img_close'> <img src="/media/image/treasure/box_close.jpg" class="img-rounded" onclick="handle_open_click()"> </a>
+            <a id='img_close'> <img src="/media/image/treasure/box_close.jpg" class="featurette-image img-rounded" onclick="handle_open_click()"> </a>
             <a id='a_close' href="javascript:handle_open_click()" onclick="handle_open_click()"><h2>点击免费开启</h2></a>
         </div>
-        <div id='div_open' align="center" style="display: none" class="img-rounded">
+        <div id='div_open' align="center" style="display: none" class="featurette-image img-rounded">
             <img src="/media/image/treasure/box_open.jpg">
             <h2>宝箱已开启，请等待 ...</h2>
         </div>
