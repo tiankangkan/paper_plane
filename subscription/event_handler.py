@@ -10,6 +10,7 @@ from wechat_sdk import WechatBasic
 from talker.speech_translate import speech_trans_inst, SpeechPeople
 from talker.talker_main import talker_inst
 from love_me.views import get_paper_plane_url_of_user_id, get_confess_url_of_user_id
+from treasure.views import get_treasure
 from paper_plane.proj_setting import MSG_LOVE_ME_REQUEST, MSG_WX_EVENT_FOLLOW, MSG_WX_EVENT_IGNORE, MSG_WX_TEXT_MSG, MSG_MAIL_GET_NEW
 from paper_plane.settings import log_inst, DB_DIR
 from k_util.key_value_store import KVStoreShelve
@@ -76,6 +77,10 @@ class WeChatMsgHandler(object):
             log_inst.info(log_msg)
         elif u'纸条' in content:
             resp_content = self.handle_text_message_contains_confess()
+            log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_LOVE_ME_REQUEST, source, target, self.wechat.message.content, resp_content)
+            log_inst.info(log_msg)
+        elif u'海底捞' in content or u'寻宝':
+            resp_content = self.handle_text_message_contains_treasure()
             log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_LOVE_ME_REQUEST, source, target, self.wechat.message.content, resp_content)
             log_inst.info(log_msg)
         else:
@@ -158,6 +163,15 @@ class WeChatMsgHandler(object):
     def handle_text_message_contains_confess(self):
         url = get_confess_url_of_user_id(self.wechat.message.source)
         return '给 TA 扔一个小纸条吧: \n%s' % url
+
+    def handle_text_message_contains_treasure(self):
+        treasure = get_treasure()
+        if treasure['type'] == 'thanks':
+            return '很遗憾，但是你得到了: %s' % treasure['content']
+        elif treasure['type'] == 'bt':
+            return '请叫我打捞能手 !\n-- 点击链接打开宝箱 --\n%s' % treasure['content']
+        else:
+            return '谢谢参与 ～～'
 
     def reply_to_voice_message(self):
         self.save_user_to_db()

@@ -15,4 +15,3 @@ class FileMapping(models.Model):
         return 'file_path: %s' % self.file_path
 
 
-TREASURE_FILE_MUN = len(FileMapping.objects.all())

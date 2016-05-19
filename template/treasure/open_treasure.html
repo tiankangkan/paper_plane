@@ -26,6 +26,8 @@
 
 <script>
     var url_get_treasure = 'get_url/';
+    var para = {{ parameter | safe }};
+    console.log(para);
 
     function handle_open_click(){
         $('#div_close').hide(500);
@@ -36,7 +38,8 @@
         $.ajax({
             url: url_get_treasure,
             type: "POST",
-            data: {},
+            data: {
+                identify: para['identify']},
             success: function(data){
                 //alert(data);
                 var resp = JSON.parse(data);
