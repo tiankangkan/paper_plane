@@ -22,6 +22,7 @@ http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/love_me/paper_plane/
 http://127.0.0.1:8000/music_rss/one_page/
 http://127.0.0.1:8000/subscription/weixin_entry/
+http://127.0.0.1:8000/treasure/treasure/
 
 http://115.159.81.50/admin/
 http://115.159.81.50/love_me/paper_plane/
@@ -31,6 +32,7 @@ http://115.159.81.50/subscription/weixin_entry/
 http://iready-go.com/love_me/paper_plane/
 http://iready-go.com/lin/do_you_love_me/
 http://iready-go.com/lin/you_are_the_one/
+
 
 
 
@@ -51,12 +53,11 @@ ErrorLog "|/usr/bin/cronolog  /data/logs/error/errorLog-%Y-%m-%d.log --period='1
 CustomLog "|/usr/bin/cronolog /data/logs/custom/customLog-%Y-%m-%d.log --period='1 days'" common
 
 
-:: lin-master config
+:: paper_plane config
 <VirtualHost *:80>
     DocumentRoot "/data/project/paper_plane"
     ServerName lin-masterkang.com
-    ErrorLog "|bin/rotatelogs -l /data/logs/error-%Y-%m-%d.log 86400"
-    CustomLog "|bin/rotatelogs -l /data/logs/access-%Y-%m-%d.log 1M” common
+    CustomLog "|/usr/bin/cronolog /data/logs/custom/customLog-%Y-%m-%d.log --period=days" common
     <Directory />
         Options FollowSymLinks
         AllowOverride None
@@ -64,6 +65,22 @@ CustomLog "|/usr/bin/cronolog /data/logs/custom/customLog-%Y-%m-%d.log --period=
         Allow from all
     </Directory>
     WSGIScriptAlias / "/data/project/paper_plane/paper_plane/wsgi.py"
+</VirtualHost>
+::
+
+:: magnifier config
+<VirtualHost *:8000>
+    DocumentRoot "/data/project/magnifier"
+    ServerName magnifier.com
+    ErrorLog "/data/logs/magnifier_app_errlog.txt"
+    CustomLog "|/usr/bin/cronolog /data/logs/custom/magnifier_customLog-%Y-%m-%d.log --period=days" common
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Allow from all
+    </Directory>
+    WSGIScriptAlias / "/data/project/magnifier/magnifier/wsgi.py"
 </VirtualHost>
 ::
 
@@ -101,6 +118,7 @@ format: jpeg
 SQL
 ---------------------------
 kill `cat /usr/local/mysql/data/kangtian.local.pid`
+mysqld_safe
 
 alert database *** character set utf8
 alter table *** convert to character set utf8

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>开启宝藏</title>
+
+    <script type="text/javascript" src="/jslib/jquery/jquery-2.2.3.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/jslib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="/jslib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div style="margin-top: 50px">
+        <div id='div_close' align="center">
+            <a id='img_close'> <img src="/media/image/treasure/box_close.jpg" onclick="handle_open_click()"> </a>
+            <a id='a_close' href="javascript:handle_open_click()" onclick="handle_open_click()"><h2>点击免费开启</h2></a>
+        </div>
+        <div id='div_open' align="center" style="display: none">
+            <img src="/media/image/treasure/box_open.jpg">
+            <h2>宝箱已开启，请等待 ...</h2>
+        </div>
+    </div>
+</body>
+
+<script>
+    var url_get_treasure = 'get_url/';
+
+    function handle_open_click(){
+        $('#div_close').hide(500);
+        $('#div_open').show(500);
+    }
+
+    function get_treasure(){
+        $.ajax({
+            url: url_get_treasure,
+            type: "POST",
+            data: {},
+            success: function(data){
+                //alert(data);
+                var resp = JSON.parse(data);
+                var url = resp['url'];
+                console.log(url);
+                $('#a_close').attr('href', url);
+                $('#img_close').attr('href', url);
+            }
+        })
+    }
+
+    get_treasure();
+
+
+</script>
+
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500054876" ></script>
+</html>
+

@@ -9,6 +9,7 @@ import lin.urls
 import subscription.urls
 import common.urls
 import music_rss.urls
+import treasure.urls
 import views
 
 admin.autodiscover()
@@ -20,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^subscription/', include(subscription.urls)),
     url(r'^common/', include(common.urls)),
     url(r'^music_rss/', include(music_rss.urls)),
+    url(r'^treasure/', include(treasure.urls)),
 )
 
 urlpatterns += patterns('django.views.static',

@@ -59,6 +59,7 @@ INSTALLED_APPS = (
     'common',
     'mail_msg',
     'music_rss',
+    'treasure',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -179,6 +180,7 @@ else:
     TEMP_DIR = '/tmp/paper_plane/'
 
 RES_DIR = '/data/res/'
+
 if 'windows' in SYSTEM:
     TEMP_DIR = 'D:\\paper_plane\\res\\'
 else:
