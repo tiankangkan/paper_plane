@@ -169,7 +169,7 @@ class WeChatMsgHandler(object):
         if treasure['type'] == 'thanks':
             return '很遗憾，但是你得到了: %s' % treasure['content']
         elif treasure['type'] == 'bt':
-            return '请叫我打捞能手 !\n--点击链接打开宝箱 --\n%s\n温馨提示：记得使用独立的浏览器打开\n微信自带的浏览器无法下载文件' % treasure['content']
+            return '请叫我打捞能手 !\n--点击链接打开宝箱 --\n%s\n--温馨提示--\n使用独立的浏览器打开哦\n微信自带的浏览器无法下载文件' % treasure['content']
         else:
             return '谢谢参与 ～～'
 
