@@ -79,7 +79,7 @@ class WeChatMsgHandler(object):
             resp_content = self.handle_text_message_contains_confess()
             log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_LOVE_ME_REQUEST, source, target, self.wechat.message.content, resp_content)
             log_inst.info(log_msg)
-        elif u'海底捞' in content or u'寻宝':
+        elif u'海底捞' in content or u'寻宝' in content:
             resp_content = self.handle_text_message_contains_treasure()
             log_msg = '%s: source_id: %s, target_id: %s, ask: %s, resp: %s' % (MSG_LOVE_ME_REQUEST, source, target, self.wechat.message.content, resp_content)
             log_inst.info(log_msg)
