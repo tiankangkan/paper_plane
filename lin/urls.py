@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^do_you_love_me/$', views.reply_to_do_you_love_me),
     url(r'^you_are_the_one/$', views.reply_to_you_are_the_one),
     url(r'^ppt/$', views.reply_to_ppt),
+    url(r'^exam/$', views.reply_to_exam),
 )

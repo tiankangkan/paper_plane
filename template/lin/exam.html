@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>驾考夺命五连杀</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+</head>
+
+<style>
+    .no-padding {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    .item-answer {
+        margin: 5px 0 5px 0;
+    }
+
+    .btn-style-01 {
+        padding:8px 30px;
+        line-height:24px;
+        color: black;
+        font:16px "Microsoft YaHei", Verdana, Geneva, sans-serif;
+        cursor:pointer;
+        border:1px black solid;
+        -webkit-box-shadow:inset 0px 0px 1px #fff;
+        -moz-box-shadow:inset 0px 0px 1px #fff;
+        box-shadow:inset 0px 0px 1px #fff;/*内发光效果*/
+        -webkit-border-radius:4px;
+        -moz-border-radius:4px;
+        border-radius:4px;/*边框圆角*/
+        text-shadow:1px 1px 0px lightblue;/*字体阴影效果*/
+        background-color:lightblue;
+        background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(lightblue), to(lightblue));
+        background-image: -webkit-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: -moz-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: -ms-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: -o-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: linear-gradient(top, lightblue 0%, lightblue 100%);/*颜色渐变效果*/
+    }
+
+    .btn-style-01:hover {
+        background-color:lightblue;
+        background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(lightblue), to(lightblue));
+        background-image: -webkit-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: -moz-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: -ms-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: -o-linear-gradient(top, lightblue 0%, lightblue 100%);
+        background-image: linear-gradient(top, lightblue 0%, lightblue 100%);
+    }
+</style>
+
+<body style="margin: 0">
+    <div style="height: 100px; line-height: 100px; background-color: lightblue;" class="no-padding">
+        <h1 class="no-padding" style="text-align: left; margin-left: 20px">驾考夺命五连杀</h1>
+    </div>
+
+    <div id="div_container" style="width: 100%">
+        <div id="div_items">
+            <div id="div_template" class="item-root" style="background-color: lightblue; margin: 30px; padding: 20px; display: none;" data-index="">
+                <h2 class="no-padding" style='text-align: left; margin-left: 10px; font-family: "Courier New", courier, monospace'>Round. 1 </h2>
+                <div id="item_template" style="margin-left: 10px">
+                    <h3 id="item_template_title">* 这个标志是何含义？</h3>
+                    <img class="item_template_img" src="">
+                    <table class="table_template">
+                        <tr class="tr_template">
+                            <td class="option_template">
+                                <span style="height: 25px; line-height: 25px; font-size: 14px">
+                                    <input class="item_template_radio" type="radio" value="A"> <span class="item_template_label">A</span>
+                                </span>
+                                <span class="item_template_text" style="cursor:pointer;" onclick="handle_option_click(this)">靠道路左侧停车</span>
+                                <br>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="item_template_hint" style="display: none">
+                        <hr>
+                        <span class="hint">回答错误，正确答案为 C</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="div_score" style="background-color: lightblue; margin: 30px; padding: 20px; display: none;">
+            <h2 class="score_content"></h2>
+        </div>
+
+        <div style="max-width: 50%; min-width: 300px; margin-bottom: 75px; margin-left: auto; margin-right: auto">
+            <button class="btn-style-01" style="width: 100%" onclick="check_answers()">交卷</button>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    var index = 0;
+    var answer = {};
+    var item_list = [
+        {
+            title: '这个标志是何含义？',
+            img_url: 'http://ww4.sinaimg.cn/large/72011e19jw1e2cs7jyawvj.jpg',
+            option_list: ['禁止在路口掉头', '禁止向左向右变道', '禁止向左向右转弯', '禁止车辆直行'],
+            correct: 'A'
+        },
+        {
+            title: '发现前方道路堵塞，正确的做法是什么？',
+            option_list: ['按顺序停车等候', '鸣喇叭示意前方车辆快速行驶', '选择空当逐车超越', '继续穿插绕行'],
+            correct: 'A'
+        },
+        {
+            title: '在一般道路倒车时，若发现有过往车辆通过，应怎样做？',
+            option_list: ['鸣喇叭示意', '主动停车避让', '加速倒车', '继续倒车'],
+            correct: 'B'
+        },
+        {
+            title: '图中圈内三角填充区域是什么标线？',
+            img_url: 'http://ww1.sinaimg.cn/large/72011e19jw1e2czsr8yzpj.jpg',
+            option_list: ['停车线', '减速线', '导流线', '网状线'],
+            correct: 'C'
+        },
+        {
+            title: '驾驶车辆通过无人看守的铁路道口时，应怎样做？',
+            option_list: ['减速通过', '匀速通过', '一停、二看、三通过', '加速通过'],
+            correct: 'C'
+        },
+    ];
+
+    /** Dom Part Start **/
+    function append_one_item(item){
+        var title = item['title'];
+        var option_list = item['option_list'];
+        var img_url = item['img_url'];
+        var $new_div = $('#div_template').clone();
+        var $new_item = $new_div.find("div");
+
+        $new_div.attr('id', 'div_'+index);
+        $new_div.attr('data-index', index);
+        $new_div.css('display', 'block');
+        $new_div.find("h2").text('Round. '+(index+1));
+
+        $new_item.attr('id', 'item_'+index);
+        $new_item.find("h3").attr('id', 'item_'+index+'title');
+        $new_item.find("h3").text(title);
+
+        if (img_url)
+            $new_item.find(".item_template_img").attr('src', img_url);
+
+        gen_option_list($new_div, index, option_list);
+
+        $('#div_items').append($new_div);
+
+        index += 1;
+    }
+
+    function gen_one_option($elem, index, label, text){
+        $elem.find(".item_template_label").text(label + '. ');
+        $elem.find(".item_template_radio").attr('id', 'item_'+index+'radio');
+        $elem.find(".item_template_radio").attr('onclick', 'handle_option_click(this)');
+        $elem.find(".item_template_radio").attr('value', label);
+        $elem.find(".item_template_text").text(text);
+    }
+
+    function gen_option_list($div_elem, index, option_list){
+        var label_list = ['A', 'B', 'C', 'D'];
+        var $table_elem = $div_elem.find('.table_template');
+        var $tr_elem = $table_elem.find('.tr_template');
+
+        $table_elem.empty();
+        for (var i = 0; i < option_list.length; i ++){
+            var option_label = label_list[i];
+            var option_text = option_list[i];
+            var $new_tr_elem = $tr_elem.clone();
+            gen_one_option($new_tr_elem, index, option_label, option_text);
+            $table_elem.append($new_tr_elem);
+        }
+    }
+
+    function gen_items(){
+        for (var i = 0; i < item_list.length; i ++){
+            var item = item_list[i];
+            append_one_item(item);
+        }
+    }
+    /** Dom Part End **/
+
+
+    function handle_option_click(elem){
+        var $elem = $(elem);
+        var $tr_elem = $elem.parents(".tr_template");
+        var $tr_elem_siblings = $tr_elem.siblings();
+        var value = $tr_elem.find(".item_template_radio").attr('value');
+
+        var index = $tr_elem.parents(".item-root").attr('data-index');
+        item_list[index]['user_answer'] = value;    // 记录用户选择的答案
+
+        // 清空题目已选择的选项
+        $tr_elem.find(".item_template_radio").attr('checked', true);
+        $tr_elem_siblings.each(function(){
+            var $tr_elem_other = $(this);
+            $tr_elem_other.find('.item_template_radio').attr('checked', false);
+        });
+        console.log(index + '____' + value);
+    }
+
+    function check_answers(){
+        var correct_count = 0;
+
+        // 对每道题进行判断对错
+        var $div_items = $('#div_items');
+        $div_items.children().each(function() {
+            var i = $(this).index();
+            $(this).find('.item_template_hint').show(1000);
+            console.log(i);
+            if (item_list[i]['correct'] == item_list[i]['user_answer']){
+                console.log(i);
+                $(this).find('.hint').text('回答正确 ～');
+                $(this).find('.hint').css('color', 'blue');
+                correct_count += 1;    // 计数 + 1
+            }else{
+                $(this).find('.hint').text('回答错误 (╯□╰)，正确答案是: ' + item_list[i]['correct']);
+                $(this).find('.hint').css('color', 'red');
+            }
+        });
+
+        // 总体打分
+        var $div_score = $('#div_score');
+        var mesg;
+        if (correct_count > 3)
+            mesg = '亲，你答对了 '+ correct_count + ' 道题目，棒棒达～';
+        else if (correct_count <= 3 && correct_count > 0)
+            mesg = '亲，你答对了 '+ correct_count + ' 道题目，继续努力哦～';
+        else if (correct_count == 0)
+            mesg = '不考零分的人生是不完美的人生 ～';
+        $div_score.find('.score_content').text(mesg);
+        $div_score.show();
+    }
+
+
+    gen_items(item_list);
+    $('#div_template').remove();
+
+
+</script>
+
+</html>
